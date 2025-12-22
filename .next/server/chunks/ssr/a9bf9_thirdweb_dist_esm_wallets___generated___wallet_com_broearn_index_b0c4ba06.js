@@ -1,0 +1,3 @@
+module.exports=[179359,a=>{"use strict";a.s(["wallet",0,{id:"com.broearn",name:"Broearn Wallet",homepage:"https://www.broearn.com",image_id:"b3c2c77c-a8cf-46e1-095a-77f0a3891500",app:{browser:"https://www.broearn.com",ios:"https://apps.apple.com/us/app/broearn/id6444156587",android:"https://play.google.com/store/apps/details?id=com.broearn.browser",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"broearn://wallet/",universal:"https://www.broearn.com/link/wallet"},desktop:{native:null,universal:"https://www.broearn.com"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_broearn_index_b0c4ba06.js.map

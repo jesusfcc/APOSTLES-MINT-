@@ -1,0 +1,3 @@
+module.exports=[839558,a=>{"use strict";a.s(["wallet",0,{id:"technology.jambo",name:"Jambo",homepage:"https://www.jambo.technology/",image_id:"b0fd39a1-d147-4bf7-4cb5-68a294b26f00",app:{browser:null,ios:null,android:"https://play.google.com/store/apps/details?id=com.jambo",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"jbw://walletconnect",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_technology_jambo_index_a343bd58.js.map

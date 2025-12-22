@@ -1,0 +1,3 @@
+module.exports=[750493,a=>{"use strict";a.s(["wallet",0,{id:"io.fizen",name:"Fizen Wallet",homepage:"https://fizen.io",image_id:"1160bfa2-b669-42ba-b224-13edcd40c700",app:{browser:null,ios:"https://apps.apple.com/us/app/fizen-wallet/id1621269508",android:"https://play.google.com/store/apps/details?id=com.fizen.io.wallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"fw://",universal:""},desktop:{native:"",universal:""}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_io_fizen_index_1be51648.js.map

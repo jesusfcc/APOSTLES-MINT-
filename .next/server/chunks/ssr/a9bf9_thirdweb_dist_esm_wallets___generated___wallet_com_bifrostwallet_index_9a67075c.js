@@ -1,0 +1,3 @@
+module.exports=[17123,a=>{"use strict";a.s(["wallet",0,{id:"com.bifrostwallet",name:"Bifrost Wallet",homepage:"https://bifrostwallet.com",image_id:"c1ab3987-7e3c-43fa-0b27-c746f6135a00",app:{browser:null,ios:"https://apps.apple.com/us/app/bifrost-wallet/id1577198351",android:"https://play.google.com/store/apps/details?id=com.bifrostwallet.app",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:"com.bifrostwallet",mobile:{native:"bifrostwallet://",universal:"https://app.bifrostwallet.com/"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_bifrostwallet_index_9a67075c.js.map

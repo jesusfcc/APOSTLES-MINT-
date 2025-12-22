@@ -1,0 +1,3 @@
+module.exports=[978146,a=>{"use strict";a.s(["wallet",0,{id:"nl.greenhood.wallet",name:"Greenhood",homepage:"https://www.greenhood.nl",image_id:"7b6aaa4d-fa17-4cc6-71e1-79f2e68c0900",app:{browser:null,ios:"https://apps.apple.com/us/app/greenhood-wallet/id1661248135",android:"https://play.google.com/store/apps/details?id=com.greehood.wallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:"nl.greenhood.wallet",mobile:{native:"greenhood://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_nl_greenhood_wallet_index_c0fd3f27.js.map

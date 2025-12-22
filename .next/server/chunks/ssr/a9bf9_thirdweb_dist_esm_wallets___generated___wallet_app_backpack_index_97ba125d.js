@@ -1,0 +1,3 @@
+module.exports=[825848,a=>{"use strict";a.s(["wallet",0,{id:"app.backpack",name:"Backpack",homepage:"https://backpack.app",image_id:"71ca9daf-a31e-4d2a-fd01-f5dc2dc66900",app:{browser:null,ios:"https://apps.apple.com/us/app/backpack-wallet-exchange/id6445964121",android:"https://play.google.com/store/apps/details?id=app.backpack.mobile",mac:null,windows:null,linux:null,chrome:"https://chrome.google.com/webstore/detail/backpack/aflkmfhebedbjioipglgcbcmnbpgliof",firefox:null,safari:null,edge:null,opera:null},rdns:"app.backpack",mobile:{native:"backpack://",universal:"https://backpack.app/ul/v1"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_app_backpack_index_97ba125d.js.map

@@ -1,0 +1,3 @@
+module.exports=[892772,a=>{"use strict";a.s(["wallet",0,{id:"org.uniswap",name:"Uniswap Wallet",homepage:"https://uniswap.org",image_id:"6033c33c-0773-48e3-a12f-e7fbf409e700",app:{browser:null,ios:"https://apps.apple.com/us/app/uniswap-wallet/id6443944476",android:"https://play.google.com/store/apps/details?id=com.uniswap.mobile",mac:null,windows:null,linux:null,chrome:"https://chromewebstore.google.com/detail/uniswap-extension/nnpmfplkfogfpmcngplhnbdnnilmcdcg",firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"uniswap://",universal:"https://uniswap.org/app"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_org_uniswap_index_6edc5cf2.js.map

@@ -1,0 +1,3 @@
+module.exports=[835657,a=>{"use strict";a.s(["wallet",0,{id:"pk.modular",name:"Modular Wallet Prod",homepage:"https://modular.pk",image_id:"70485da2-2568-463d-722c-25082997cc00",app:{browser:"https://modular.pk",ios:"https://testflight.apple.com/join/Zbf6wZaP",android:"https://play.google.com/store/apps/details?id=com.modular",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"modularwallet://",universal:null},desktop:{native:null,universal:"https://modular.pk"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_pk_modular_index_4e3081db.js.map

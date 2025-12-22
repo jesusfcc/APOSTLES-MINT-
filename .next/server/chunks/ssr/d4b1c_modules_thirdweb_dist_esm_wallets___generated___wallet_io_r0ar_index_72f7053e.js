@@ -1,0 +1,3 @@
+module.exports=[439340,a=>{"use strict";a.s(["wallet",0,{id:"io.r0ar",name:"r0ar platform",homepage:"https://r0ar.io",image_id:"c29756b6-3a78-4af2-e2d1-ab743fe30e00",app:{browser:null,ios:"https://apps.apple.com/br/app/r0ar-wallet",android:"https://play.google.com/store/apps/details?id=com.roar_wallet&pcampaignid=web_share",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"Roarwallet://",universal:""},desktop:{native:"",universal:""}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_io_r0ar_index_72f7053e.js.map

@@ -1,0 +1,3 @@
+module.exports=[458941,a=>{"use strict";a.s(["wallet",0,{id:"fi.dropmate",name:"Dropmate",homepage:"https://dropmate.fi",image_id:"bf19fe4b-d712-45e8-95f2-b7be36e4c400",app:{browser:null,ios:"https://testflight.apple.com/join/KHOMtqE4",android:"https://play.google.com/store/apps/details?id=app.dropmate",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"dropmate://app",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_fi_dropmate_index_a40a744e.js.map

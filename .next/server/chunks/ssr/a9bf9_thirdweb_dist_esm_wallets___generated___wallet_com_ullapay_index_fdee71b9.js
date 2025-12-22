@@ -1,0 +1,3 @@
+module.exports=[426422,a=>{"use strict";a.s(["wallet",0,{id:"com.ullapay",name:"WOW EARN",homepage:"https://www.ullapay.com/",image_id:"1985a753-7fd8-4d75-4c50-7998ea68a800",app:{browser:null,ios:"https://apps.apple.com/us/app/id6443434220",android:"https://play.google.com/store/apps/details?id=com.hxg.wallet&pli=1",mac:"",windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"ullawallet://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_ullapay_index_fdee71b9.js.map

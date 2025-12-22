@@ -1,0 +1,3 @@
+module.exports=[561619,a=>{"use strict";a.s(["wallet",0,{id:"social.gm2",name:"GM² Social",homepage:"https://gm2.social/",image_id:"f5c2218d-56b4-4fc8-63bf-0ece7276d600",app:{browser:null,ios:"https://apps.apple.com/us/app/gm-social/id6502584673",android:"https://play.google.com/store/apps/details?id=com.gm2.app.prod&hl=en",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"gm2://home",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_social_gm2_index_ac87a8d8.js.map

@@ -1,0 +1,3 @@
+module.exports=[506594,a=>{"use strict";a.s(["wallet",0,{id:"com.coincircle",name:"CoinCircle",homepage:"https://coincircle.com",image_id:"eae63a23-c7ba-4f7e-24b3-e6fc69215d00",app:{browser:"https://coincircle.com",ios:"https://coincircle.com/app",android:"https://coincircle.com/app",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:null,universal:"https://coincircle.com/app/walletconnect"},desktop:{native:null,universal:"https://coincircle.com"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_coincircle_index_63b95526.js.map

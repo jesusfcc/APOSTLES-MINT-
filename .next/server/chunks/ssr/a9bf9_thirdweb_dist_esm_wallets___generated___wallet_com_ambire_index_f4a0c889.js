@@ -1,0 +1,3 @@
+module.exports=[48245,a=>{"use strict";a.s(["wallet",0,{id:"com.ambire",name:"Ambire Wallet",homepage:"https://www.ambire.com",image_id:"c39b3a16-1a38-4588-f089-cb7aeb584700",app:{browser:"https://wallet.ambire.com",ios:"https://apps.apple.com/bg/app/ambire-smart-crypto-wallet/id6444863857",android:"https://play.google.com/store/apps/details?id=com.ambire.wallet&hl=en&gl=US",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"ambire://",universal:"https://mobile.ambire.com"},desktop:{native:null,universal:"https://wallet.ambire.com"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_ambire_index_f4a0c889.js.map

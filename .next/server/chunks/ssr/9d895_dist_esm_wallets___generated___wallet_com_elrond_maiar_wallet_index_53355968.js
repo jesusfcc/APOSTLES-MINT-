@@ -1,0 +1,3 @@
+module.exports=[385049,a=>{"use strict";a.s(["wallet",0,{id:"com.elrond.maiar.wallet",name:"xPortal",homepage:"https://xportal.com",image_id:"22bdb11a-39d3-42bb-f7cb-84b77f5a5200",app:{browser:null,ios:"https://apps.apple.com/ro/app/xportal/id1519405832",android:"https://play.google.com/store/apps/details?id=com.elrond.maiar.wallet",mac:null,windows:null,linux:null,chrome:"-",firefox:null,safari:null,edge:null,opera:null},rdns:"com.elrond.maiar.wallet",mobile:{native:"xportal://",universal:"https://xportal.app.link"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_com_elrond_maiar_wallet_index_53355968.js.map

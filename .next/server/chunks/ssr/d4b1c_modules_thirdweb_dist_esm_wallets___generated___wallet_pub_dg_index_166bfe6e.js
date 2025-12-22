@@ -1,0 +1,3 @@
+module.exports=[176065,a=>{"use strict";a.s(["wallet",0,{id:"pub.dg",name:"DGPub App",homepage:"https://dg.pub",image_id:"9d9a2700-4ab0-4c1c-4acf-8ed0037cc500",app:{browser:null,ios:"https://apps.apple.com/jo/app/dg-pub-a-gateway-to-web3/id6478573535",android:"https://play.google.com/store/apps/details?id=pub.dg.wallet&pli=1",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"dgpub://",universal:"https://dgpub.app.link"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_pub_dg_index_166bfe6e.js.map

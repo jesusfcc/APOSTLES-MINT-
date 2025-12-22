@@ -1,0 +1,3 @@
+module.exports=[92931,a=>{"use strict";a.s(["wallet",0,{id:"app.onto",name:"ONTO",homepage:"https://onto.app",image_id:"14934596-632e-4b29-d45f-61109e959000",app:{browser:null,ios:"https://apps.apple.com/us/app/onto-an-ontology-dapp/id1436009823",android:"https://play.google.com/store/apps/details?id=com.github.ontio.onto",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"ontoprovider://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_app_onto_index_a14b522f.js.map

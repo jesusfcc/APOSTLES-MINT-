@@ -1,0 +1,3 @@
+module.exports=[367820,a=>{"use strict";a.s(["wallet",0,{id:"com.bitnovo",name:"Bitnovo Wallet",homepage:"https://bitnovo.com",image_id:"c22b2af0-15a0-4e35-3417-1378b8239100",app:{browser:null,ios:"https://apps.apple.com/es/app/bitnovo-compra-bitcoin/id1553430666",android:"https://play.google.com/store/apps/details?id=com.bitnovo.Wallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"bitnovowallet://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_bitnovo_index_9df02baa.js.map

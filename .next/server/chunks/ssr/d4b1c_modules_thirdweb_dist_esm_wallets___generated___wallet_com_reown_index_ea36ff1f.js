@@ -1,0 +1,3 @@
+module.exports=[733245,a=>{"use strict";a.s(["wallet",0,{id:"com.reown",name:"React Native Sample Wallet",homepage:"https://reown.com/walletkit",image_id:"78bbcc97-c450-4685-5faa-276ef8fc5f00",app:{browser:null,ios:"https://testflight.apple.com/join/kdlGVGLo",android:"https://appdistribution.firebase.dev/i/e7711e780547234e",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"rn-web3wallet-internal://",universal:"https://appkit-lab.reown.com/rn_walletkit_internal"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_com_reown_index_ea36ff1f.js.map

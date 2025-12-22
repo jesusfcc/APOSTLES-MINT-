@@ -1,0 +1,3 @@
+module.exports=[621136,a=>{"use strict";a.s(["wallet",0,{id:"app.xverse",name:"Xverse Wallet",homepage:"https://www.xverse.app/",image_id:"785e20ef-c68c-4a85-6cb9-053443871e00",app:{browser:null,ios:"https://apps.apple.com/us/app/xverse-wallet-buy-bitcoin/id1552272513",android:"https://play.google.com/store/apps/details?id=com.secretkeylabs.xverse",mac:null,windows:null,linux:null,chrome:"https://chromewebstore.google.com/detail/xverse-wallet-buy-bitcoin/idnnbdplmphpflfnlkomgpfbpcgelopg",firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"xverse://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_app_xverse_index_84ea9489.js.map

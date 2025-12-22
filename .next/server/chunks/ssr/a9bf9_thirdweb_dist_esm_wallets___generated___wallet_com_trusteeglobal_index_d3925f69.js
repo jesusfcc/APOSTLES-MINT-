@@ -1,0 +1,3 @@
+module.exports=[128020,a=>{"use strict";a.s(["wallet",0,{id:"com.trusteeglobal",name:"Trustee Wallet",homepage:"https://trusteeglobal.com",image_id:"853e6f0a-ccb6-4b7e-e73b-89171a4e0a00",app:{browser:null,ios:"https://apps.apple.com/app/trustee-wallet/id1462924276",android:"https://play.google.com/store/apps/details?id=com.trusteewallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"tw://",universal:"https://trusteeglobal.com/link/Pxxum8Yt"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_trusteeglobal_index_d3925f69.js.map

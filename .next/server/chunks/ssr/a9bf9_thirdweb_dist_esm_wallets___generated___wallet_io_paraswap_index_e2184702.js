@@ -1,0 +1,3 @@
+module.exports=[244603,a=>{"use strict";a.s(["wallet",0,{id:"io.paraswap",name:"ParaSwap Wallet",homepage:"https://paraswap.io",image_id:"73dc6b30-b644-46e6-020c-5926851df600",app:{browser:null,ios:"https://apps.apple.com/us/app/paraswap-multichain-wallet/id1584610690",android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"paraswap://",universal:"https://wallet.paraswap.io/#/"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_paraswap_index_e2184702.js.map

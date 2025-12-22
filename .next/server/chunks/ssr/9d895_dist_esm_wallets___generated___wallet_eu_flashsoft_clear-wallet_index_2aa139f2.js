@@ -1,0 +1,3 @@
+module.exports=[917378,a=>{"use strict";a.s(["wallet",0,{id:"eu.flashsoft.clear-wallet",name:"clear-wallet",homepage:"https://clear-wallet.flashsoft.eu",image_id:"a6d4c2de-1bd9-404f-f3d2-3d2ed9bf5000",app:{browser:null,ios:null,android:null,mac:null,windows:null,linux:null,chrome:"https://chromewebstore.google.com/detail/clear-evm-wallet-clw/djlahdpfkflehaepgohnnodmaajabdlg?hl=en&authuser=0",firefox:null,safari:null,edge:null,opera:null},rdns:"eu.flashsoft.clear-wallet",mobile:{native:null,universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_eu_flashsoft_clear-wallet_index_2aa139f2.js.map

@@ -1,0 +1,3 @@
+module.exports=[429607,a=>{"use strict";a.s(["wallet",0,{id:"inc.tomo",name:"Tomo Wallet",homepage:"https://tomo.inc",image_id:"95c9f957-b1e4-4619-fa7c-a77569d2fe00",app:{browser:null,ios:"https://apps.apple.com/us/app/tomo-inc/id6468010287",android:"https://play.google.com/store/apps/details?id=tomo.app.unyx",mac:null,windows:null,linux:null,chrome:"https://chromewebstore.google.com/detail/tomo-wallet/pfccjkejcgoppjnllalolplgogenfojk",firefox:null,safari:null,edge:null,opera:null},rdns:"inc.tomo",mobile:{native:"tomo://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_inc_tomo_index_0e338e1c.js.map

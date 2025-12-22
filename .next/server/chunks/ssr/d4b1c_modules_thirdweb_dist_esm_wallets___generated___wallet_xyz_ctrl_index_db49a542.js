@@ -1,0 +1,3 @@
+module.exports=[328933,a=>{"use strict";a.s(["wallet",0,{id:"xyz.ctrl",name:"Ctrl Wallet",homepage:"https://ctrl.xyz/",image_id:"55e59c54-43bf-434a-e966-547514f21500",app:{browser:"",ios:"https://apps.apple.com/us/app/ctrl-wallet/id6630386336",android:"https://play.google.com/store/apps/details?id=xyz.ctrl.wallet",mac:null,windows:null,linux:null,chrome:"https://chrome.google.com/webstore/detail/ctrl-wallet/hmeobnfnfcmdkdcmlblgagmfpfboieaf?hl=en",firefox:null,safari:null,edge:null,opera:null},rdns:"xyz.ctrl",mobile:{native:"ctrl-mobile://",universal:"https://ctrl.xyz/deeplink/wallet"},desktop:{native:"",universal:""}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_xyz_ctrl_index_db49a542.js.map

@@ -1,0 +1,3 @@
+module.exports=[246933,a=>{"use strict";a.s(["wallet",0,{id:"io.zelcore",name:"Zelcore",homepage:"https://zelcore.io",image_id:"1b9e652e-1667-425a-f828-707bf9b05400",app:{browser:null,ios:"https://apps.apple.com/us/app/zelcore/id1436296839",android:"https://play.google.com/store/apps/details?id=com.zelcash.zelcore",mac:null,windows:null,linux:"https://zelcore.io/downloads/",chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"zel://",universal:null},desktop:{native:"zel://",universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_zelcore_index_c8e8f3ac.js.map

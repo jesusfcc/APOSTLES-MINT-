@@ -1,0 +1,3 @@
+module.exports=[270433,a=>{"use strict";a.s(["wallet",0,{id:"app.beewallet",name:"Bee Wallet",homepage:"https://www.beewallet.app",image_id:"f90bc33f-f085-40cf-7538-fae5ae84f900",app:{browser:null,ios:"https://apps.apple.com/lt/app/bee-for-uniswap-pancakeswap/id1617257467",android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"beewallet.app://",universal:"https://beewallet.app/wc"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_app_beewallet_index_448bbdeb.js.map

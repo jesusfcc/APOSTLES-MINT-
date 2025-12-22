@@ -1,0 +1,3 @@
+module.exports=[940145,a=>{"use strict";a.s(["wallet",0,{id:"com.blockchain.login",name:"Blockchain.com",homepage:"https://login.blockchain.com/auth/signup",image_id:"0884948c-c6ce-421e-b4bd-3d2adb261500",app:{browser:null,ios:"https://apps.apple.com/us/app/blockchain-bitcoin-wallet/id493253309",android:"https://play.google.com/store/apps/details?id=piuk.blockchain.android",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"blockchain-wallet://",universal:"https://login.blockchain.com/app"},desktop:{native:"",universal:""}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_com_blockchain_login_index_71fe830d.js.map

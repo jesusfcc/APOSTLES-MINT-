@@ -1,0 +1,3 @@
+module.exports=[917320,a=>{"use strict";a.s(["wallet",0,{id:"xyz.roam.wallet",name:"Roam",homepage:"https://roam.xyz",image_id:"a4500b0c-47e3-4c4a-207e-d72a57f1ca00",app:{browser:null,ios:"https://testflight.apple.com/join/hM8Ba1Qd",android:"https://google.com",mac:"https://google.com",windows:"https://google.com",linux:"https://google.com",chrome:"Roam.xyz",firefox:"https://google.com",safari:"https://google.com",edge:"https://google.com",opera:"https://google.com"},rdns:"xyz.roam.wallet",mobile:{native:"roam://",universal:null},desktop:{native:"roam://",universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_xyz_roam_wallet_index_f406847d.js.map

@@ -1,0 +1,3 @@
+module.exports=[902050,a=>{"use strict";a.s(["wallet",0,{id:"io.neopin",name:"NEOPIN",homepage:"https://neopin.io/",image_id:"424c54b5-b786-4c14-871f-61d5c5ded800",app:{browser:null,ios:"https://itunes.apple.com/app/id1600381072",android:"https://play.google.com/store/apps/details?id=com.blockchain.crypto.wallet.neopin",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"nptwc://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_io_neopin_index_3905e1dd.js.map

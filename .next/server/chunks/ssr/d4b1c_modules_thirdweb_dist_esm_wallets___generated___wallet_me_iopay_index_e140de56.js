@@ -1,0 +1,3 @@
+module.exports=[520793,a=>{"use strict";a.s(["wallet",0,{id:"me.iopay",name:"ioPay",homepage:"https://iopay.me/",image_id:"411d80d0-3a75-4932-560f-565d8c715e00",app:{browser:"https://iopay.me/",ios:"https://apps.apple.com/app/apple-store/id1478086371",android:"https://play.google.com/store/apps/details?id=io.iotex.iopay.gp",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"iopay://",universal:null},desktop:{native:null,universal:"https://iopay.me/"}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_me_iopay_index_e140de56.js.map

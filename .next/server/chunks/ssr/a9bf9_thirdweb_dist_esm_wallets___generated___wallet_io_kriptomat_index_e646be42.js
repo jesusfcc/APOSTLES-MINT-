@@ -1,0 +1,3 @@
+module.exports=[639117,a=>{"use strict";a.s(["wallet",0,{id:"io.kriptomat",name:"Kriptomat",homepage:"https://kriptomat.io/web3/",image_id:"774110aa-70f6-4d0c-210f-ab434838fa00",app:{browser:null,ios:"https://apps.apple.com/app/id1440135740",android:"https://play.google.com/store/apps/details?id=io.kriptomat.app",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"kriptomatapp://wallet-connect",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_kriptomat_index_e646be42.js.map

@@ -1,0 +1,3 @@
+module.exports=[455699,a=>{"use strict";a.s(["wallet",0,{id:"gg.indi",name:"IndiGG",homepage:"https://indi.gg",image_id:"8e90a32f-130d-4317-7294-4884510aa300",app:{browser:"https://indi.gg/",ios:null,android:"https://play.google.com/store/apps/details?id=com.indiggcommunity&hl=en_US",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"indigg://walletconnect",universal:null},desktop:{native:null,universal:"https://indi.gg/"}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_gg_indi_index_d88b1fd3.js.map

@@ -1,0 +1,3 @@
+module.exports=[223609,a=>{"use strict";a.s(["wallet",0,{id:"io.miraiapp",name:"Mirai App",homepage:"https://miraiapp.io",image_id:"0c8022b0-d5a3-4561-64d5-a3e60d1ed500",app:{browser:"https://miraiapp.io",ios:"https://apps.apple.com/vn/app/mirai-app-mpc-powered-wallet/id6472134236",android:"https://play.google.com/store/apps/details?id=co.mirailabs.app",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"miraiapp://",universal:"https://go.miraiapp.io"},desktop:{native:null,universal:"https://miraiapp.io"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_miraiapp_index_449c26a6.js.map

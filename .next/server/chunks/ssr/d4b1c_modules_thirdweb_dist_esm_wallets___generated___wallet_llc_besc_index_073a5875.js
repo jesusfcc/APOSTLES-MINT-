@@ -1,0 +1,3 @@
+module.exports=[77896,a=>{"use strict";a.s(["wallet",0,{id:"llc.besc",name:"BeanBag",homepage:"https://besc.llc",image_id:"5fad49d2-a138-47bb-ac87-6368d8bd9000",app:{browser:null,ios:null,android:"https://play.google.com/store/apps/details?id=com.beanbag.wallet",mac:"",windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"beanbag://wallet/connect",universal:"https://play.google.com/store/apps/details?id=com.beanbag.wallet"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_llc_besc_index_073a5875.js.map

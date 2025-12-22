@@ -1,0 +1,3 @@
+module.exports=[67440,a=>{"use strict";a.s(["wallet",0,{id:"money.unstoppable",name:"Unstoppable Wallet",homepage:"https://unstoppable.money/",image_id:"a63cbfce-0726-4f94-9187-a761afb94400",app:{browser:null,ios:"https://apps.apple.com/us/app/unstoppable-crypto-wallet/id1447619907",android:"https://play.google.com/store/apps/details?id=io.horizontalsystems.bankwallet",mac:"",windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"unstoppable.money://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_money_unstoppable_index_832b7f7a.js.map

@@ -1,0 +1,3 @@
+module.exports=[424200,a=>{"use strict";a.s(["wallet",0,{id:"app.tofee",name:"Tofee Wallet Official",homepage:"https://tofee.app/",image_id:"d4dbb723-b1ec-4cfc-daab-1d559a151f00",app:{browser:null,ios:"https://apps.apple.com/in/app/tofee/id6504269605",android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"tofee://wallet",universal:"https://tofee.app/"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_app_tofee_index_b38b968f.js.map

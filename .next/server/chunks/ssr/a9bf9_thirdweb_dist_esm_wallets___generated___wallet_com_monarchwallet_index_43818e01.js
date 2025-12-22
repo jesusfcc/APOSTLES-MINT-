@@ -1,0 +1,3 @@
+module.exports=[345400,a=>{"use strict";a.s(["wallet",0,{id:"com.monarchwallet",name:"Monarch Wallet",homepage:"https://monarchwallet.com",image_id:"c664d955-8a1e-4460-3917-4cfcf198f000",app:{browser:null,ios:"https://apps.apple.com/us/app/monarch-wallet/id1386397997",android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:null,universal:"https://monarchwallet.com"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_monarchwallet_index_43818e01.js.map

@@ -1,0 +1,3 @@
+module.exports=[349228,a=>{"use strict";a.s(["wallet",0,{id:"io.buzz-up",name:"BUZZUP",homepage:"https://buzz-up.io",image_id:"fb24f0a3-83f5-43e7-2204-25c6348f0000",app:{browser:null,ios:"https://apps.apple.com/app/6479512180",android:"https://play.google.com/store/apps/details?id=io.chainon.lsyim",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"buzzup://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_buzz-up_index_ae446ab3.js.map

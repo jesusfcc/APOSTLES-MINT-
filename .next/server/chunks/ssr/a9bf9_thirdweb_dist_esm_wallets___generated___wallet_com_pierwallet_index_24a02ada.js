@@ -1,0 +1,3 @@
+module.exports=[136248,a=>{"use strict";a.s(["wallet",0,{id:"com.pierwallet",name:"pier",homepage:"https://www.pierwallet.com",image_id:"cf3f0da1-40ec-4940-aebe-df075513d100",app:{browser:"https://www.pierwallet.com",ios:"https://apps.apple.com/lb/app/id1613187762",android:"https://play.google.com/store/apps/details?id=one.nobank.app",mac:"",windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:null,universal:"https://pierwallet.xyz/wc"},desktop:{native:null,universal:"https://www.pierwallet.com"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_pierwallet_index_24a02ada.js.map

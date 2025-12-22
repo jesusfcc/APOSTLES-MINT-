@@ -1,0 +1,3 @@
+module.exports=[859119,a=>{"use strict";a.s(["wallet",0,{id:"io.enjin",name:"Enjin Wallet",homepage:"https://enjin.io/products/wallet",image_id:"add9626b-a5fa-4c12-178c-e5584e6dcd00",app:{browser:null,ios:"https://apps.apple.com/us/app/enjin-nft-crypto-wallet/id1349078375",android:"https://play.google.com/store/apps/details?id=com.enjin.mobile.wallet",mac:"",windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"enjinwallet://",universal:"https://deeplink.wallet.enjin.io/"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_io_enjin_index_0f4d2037.js.map

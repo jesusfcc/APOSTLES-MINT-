@@ -1,0 +1,3 @@
+module.exports=[56098,a=>{"use strict";a.s(["wallet",0,{id:"xyz.sequence",name:"Sequence Wallet",homepage:"https://sequence.xyz/",image_id:"b2d5c39c-a485-4efa-5736-a782204e4a00",app:{browser:"https://sequence.app",ios:null,android:null,mac:null,windows:null,linux:"https://sequence.app/",chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:null,universal:"https://sequence.app"},desktop:{native:null,universal:"https://sequence.app"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_xyz_sequence_index_4070861f.js.map

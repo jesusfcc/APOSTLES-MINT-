@@ -1,0 +1,3 @@
+module.exports=[647569,a=>{"use strict";a.s(["wallet",0,{id:"com.peakdefi",name:"PEAKDEFI",homepage:"https://peakdefi.com/",image_id:"918006e2-2f6d-4233-0e72-10c2caaed500",app:{browser:null,ios:null,android:"https://play.google.com/store/apps/details?id=com.peakdefiwallet&pli=1",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"wc://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_peakdefi_index_fa8786d7.js.map

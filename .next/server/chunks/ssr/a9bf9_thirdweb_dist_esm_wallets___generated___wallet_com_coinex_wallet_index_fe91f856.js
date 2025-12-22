@@ -1,0 +1,3 @@
+module.exports=[202709,a=>{"use strict";a.s(["wallet",0,{id:"com.coinex.wallet",name:"CoinEx Wallet",homepage:"https://wallet.coinex.com/en/",image_id:"67650667-cc52-4e7f-2d4b-26fcdb160100",app:{browser:null,ios:"https://apps.apple.com/us/app/coinex-wallet-crypto-defi/id1462031389",android:"https://play.google.com/store/apps/details?id=com.viabtc.wallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"myApp://https://wallet.coinex.com",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_coinex_wallet_index_fe91f856.js.map

@@ -1,0 +1,3 @@
+module.exports=[316323,a=>{"use strict";a.s(["wallet",0,{id:"app.wombat",name:"Wombat",homepage:"https://wombat.app",image_id:"e675efa3-4ffc-4199-9c22-b9692baea900",app:{browser:null,ios:"https://apps.apple.com/app/wombat-home-of-nft-gaming/id1474392110",android:"https://play.google.com/store/apps/details?id=io.getwombat.android",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"wombat-wc://",universal:null},desktop:{native:"wombat://",universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_app_wombat_index_70d230a6.js.map

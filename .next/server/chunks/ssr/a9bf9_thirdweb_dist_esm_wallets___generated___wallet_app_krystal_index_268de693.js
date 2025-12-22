@@ -1,0 +1,3 @@
+module.exports=[692017,a=>{"use strict";a.s(["wallet",0,{id:"app.krystal",name:"Krystal",homepage:"https://krystal.app/",image_id:"d2b59965-4eb8-4828-d3d4-fbc0b3379e00",app:{browser:"https://defi.krystal.app/",ios:"https://apps.apple.com/us/app/krystal-one-platform-all-defi/id1558105691",android:"https://play.google.com/store/apps/details?id=com.kyrd.krystal",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"krystalwallet://",universal:"https://wallet.krystal.app/"},desktop:{native:null,universal:"https://defi.krystal.app/"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_app_krystal_index_268de693.js.map

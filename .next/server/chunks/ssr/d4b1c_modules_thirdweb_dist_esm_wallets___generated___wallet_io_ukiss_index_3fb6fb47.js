@@ -1,0 +1,3 @@
+module.exports=[501600,a=>{"use strict";a.s(["wallet",0,{id:"io.ukiss",name:"UKISS Hub",homepage:"https://www.ukiss.io",image_id:"23f4c933-68e6-46f9-75b6-2d2905ca1300",app:{browser:null,ios:null,android:"https://play.google.com/store/apps/details?id=io.ukiss.uhub.mobile",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"ukisshub://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_io_ukiss_index_3fb6fb47.js.map

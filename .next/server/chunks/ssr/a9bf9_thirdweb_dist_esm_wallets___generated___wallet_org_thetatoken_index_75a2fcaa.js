@@ -1,0 +1,3 @@
+module.exports=[355997,a=>{"use strict";a.s(["wallet",0,{id:"org.thetatoken",name:"Theta Wallet",homepage:"https://www.thetatoken.org/wallet",image_id:"d4afb810-5925-4f00-4ebb-d180fcf29000",app:{browser:"https://wallet.thetatoken.org",ios:"https://apps.apple.com/app/theta-wallet/id1451094550",android:"https://play.google.com/store/apps/details?id=org.theta.wallet&pli=1",mac:"",windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"wc://",universal:null},desktop:{native:null,universal:"https://wallet.thetatoken.org"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_org_thetatoken_index_75a2fcaa.js.map

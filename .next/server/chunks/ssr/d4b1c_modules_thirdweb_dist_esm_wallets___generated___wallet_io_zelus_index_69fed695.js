@@ -1,0 +1,3 @@
+module.exports=[659082,a=>{"use strict";a.s(["wallet",0,{id:"io.zelus",name:"Zelus Wallet",homepage:"https://zelus.io",image_id:"a173eba6-05b4-43f4-0df6-400563637b00",app:{browser:"https://rollingloud.bridge.zelus.io",ios:"https://apps.apple.com/us/app/zelus/id1588430343",android:"https://play.google.com/store/apps/details?id=com.zelus.wallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"zeluswallet://",universal:null},desktop:{native:null,universal:"https://rollingloud.bridge.zelus.io"}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_io_zelus_index_69fed695.js.map

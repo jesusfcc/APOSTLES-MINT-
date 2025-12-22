@@ -1,0 +1,3 @@
+module.exports=[582728,a=>{"use strict";a.s(["wallet",0,{id:"jp.co.rakuten-wallet",name:"Rakuten Wallet",homepage:"https://www.rakuten-wallet.co.jp/web3/",image_id:"ce8ac290-b727-493c-7b9c-ca63ae2e9300",app:{browser:"https://www.rakuten-wallet.co.jp/",ios:"https://apps.apple.com/jp/app/id6504903632",android:"https://play.google.com/store/apps/details?id=jp.co.rakuten.web3wallet.crypto",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"rakutenwalletweb3://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_jp_co_rakuten-wallet_index_c197baa8.js.map

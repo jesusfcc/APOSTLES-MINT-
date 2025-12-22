@@ -1,0 +1,3 @@
+module.exports=[557066,a=>{"use strict";a.s(["wallet",0,{id:"com.ellipal",name:"ELLIPAL",homepage:"https://www.ellipal.com",image_id:"0a5b45a1-c974-4f41-6c14-376714478c00",app:{browser:null,ios:"https://itunes.apple.com/us/app/ellipal/id1426179665?l=zh&ls=1&mt=8",android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"ELLIPAL://",universal:"https://www.ellipal.com"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_ellipal_index_c9df3d33.js.map

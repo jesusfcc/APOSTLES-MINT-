@@ -1,0 +1,3 @@
+module.exports=[278818,a=>{"use strict";a.s(["wallet",0,{id:"org.creditcoin.app",name:"Credit Wallet",homepage:"https://app.creditcoin.org",image_id:"cf606650-415f-4e7f-a45d-fd6b16769400",app:{browser:null,ios:"https://apps.apple.com/us/app/apple-store/id6478491272",android:"https://play.google.com/store/apps/details?id=com.creditcoin.mobile",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"creditwallet://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_org_creditcoin_app_index_5e48229e.js.map

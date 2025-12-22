@@ -1,0 +1,3 @@
+module.exports=[639334,a=>{"use strict";a.s(["wallet",0,{id:"com.withpaper",name:"Paper",homepage:"https://withpaper.com",image_id:"37d7a10f-d94d-4a56-c30e-267e8afbd500",app:{browser:"https://withpaper.com",ios:null,android:null,mac:"",windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:null,universal:"https://withpaper.com"},desktop:{native:null,universal:"https://withpaper.com"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_withpaper_index_6b437cff.js.map

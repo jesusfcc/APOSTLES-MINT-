@@ -1,0 +1,3 @@
+module.exports=[665415,a=>{"use strict";a.s(["wallet",0,{id:"io.finoa",name:"FinoaConnect",homepage:"https://app.finoa.io/",image_id:"b7a0c6fe-10bd-423c-6aa5-0637bd2b9900",app:{browser:"https://app.finoa.io/",ios:"https://apps.apple.com/us/app/finoa-2fa/id1484058524",android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:"io.finoa",mobile:{native:null,universal:null},desktop:{native:null,universal:"https://app.finoa.io/"}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_io_finoa_index_5e9d6564.js.map

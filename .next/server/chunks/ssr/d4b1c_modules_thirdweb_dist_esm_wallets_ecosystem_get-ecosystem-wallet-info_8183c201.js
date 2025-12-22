@@ -1,0 +1,3 @@
+module.exports=[674999,a=>{"use strict";var b=a.i(893975);async function c(a){let c=await (0,b.getEcosystemInfo)(a);return{app:{android:null,browser:null,chrome:null,edge:null,firefox:null,ios:null,linux:null,mac:null,opera:null,safari:null,windows:null},desktop:{native:null,universal:null},homepage:c.homepage||"",id:a,image_id:c.imageUrl||"",mobile:{native:null,universal:null},name:c.name,rdns:null}}a.s(["getEcosystemWalletInfo",()=>c])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets_ecosystem_get-ecosystem-wallet-info_8183c201.js.map

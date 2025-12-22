@@ -1,0 +1,3 @@
+module.exports=[919628,a=>{"use strict";a.s(["wallet",0,{id:"ai.hacken",name:"hAI by Hacken",homepage:"https://hacken.ai",image_id:"d2ff6baf-5051-4bf2-edec-32450b451000",app:{browser:"https://hacken.ai",ios:"https://apps.apple.com/us/app/hai-by-hacken/id1501384789",android:"https://play.google.com/store/apps/details?id=com.hackenai.hackenaiapp&hl=en_US",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"hai://",universal:"https://hacken.ai"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_ai_hacken_index_48ddb105.js.map

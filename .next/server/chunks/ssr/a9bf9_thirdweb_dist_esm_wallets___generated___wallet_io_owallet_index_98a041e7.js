@@ -1,0 +1,3 @@
+module.exports=[760319,a=>{"use strict";a.s(["wallet",0,{id:"io.owallet",name:"OWallet",homepage:"https://owallet.io",image_id:"68489978-9f79-47f4-fd59-86a29df9bf00",app:{browser:null,ios:"https://apps.apple.com/app/owallet/id1626035069",android:"https://play.google.com/store/apps/details?id=com.io.owallet",mac:null,windows:null,linux:null,chrome:"https://chrome.google.com/webstore/detail/owallet/hhejbopdnpbjgomhpmegemnjogflenga",firefox:null,safari:null,edge:null,opera:null},rdns:"io.owallet",mobile:{native:"owallet://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_owallet_index_98a041e7.js.map

@@ -1,0 +1,3 @@
+module.exports=[313672,a=>{"use strict";a.s(["wallet",0,{id:"app.girin",name:"Girin Wallet",homepage:"https://girin.app",image_id:"4a7f0768-f2b9-48be-f4a1-44c4c158e700",app:{browser:null,ios:"https://apps.apple.com/kr/app/girin-wallet/id6670226485",android:"https://play.google.com/store/apps/details?id=app.girinwallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"girinwallet://",universal:null},desktop:{native:"girinwallet://",universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_app_girin_index_b70ac459.js.map

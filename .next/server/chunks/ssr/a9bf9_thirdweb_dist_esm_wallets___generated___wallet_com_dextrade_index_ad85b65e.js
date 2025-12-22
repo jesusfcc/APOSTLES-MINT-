@@ -1,0 +1,3 @@
+module.exports=[685354,a=>{"use strict";a.s(["wallet",0,{id:"com.dextrade",name:"DexTrade",homepage:"https://dextrade.com",image_id:"d33237c0-a4e1-4339-9db8-a1087311c400",app:{browser:"https://pwa.dextrade.com",ios:null,android:null,mac:null,windows:null,linux:null,chrome:"https://chromewebstore.google.com/detail/dextrade/nmladckinifchdidkoaagbcpnieocoah?hl=en",firefox:null,safari:null,edge:null,opera:null},rdns:"com.dextrade",mobile:{native:null,universal:"https://pwa.dextrade.com"},desktop:{native:null,universal:"https://pwa.dextrade.com"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_dextrade_index_ad85b65e.js.map

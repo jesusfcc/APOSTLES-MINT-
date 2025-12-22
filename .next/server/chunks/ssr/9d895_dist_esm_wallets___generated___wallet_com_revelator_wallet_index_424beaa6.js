@@ -1,0 +1,3 @@
+module.exports=[68823,a=>{"use strict";a.s(["wallet",0,{id:"com.revelator.wallet",name:"Revelator Wallet",homepage:"https://wallet.revelator.com/",image_id:"2027dfea-316d-474a-1c7d-08dead7b4200",app:{browser:"",ios:"https://apps.apple.com/app/id1484642420?platform=iphone",android:"https://play.google.com/store/apps/details?id=com.revelator.originalworks",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"revelatorwallet://",universal:""},desktop:{native:"",universal:""}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_com_revelator_wallet_index_424beaa6.js.map

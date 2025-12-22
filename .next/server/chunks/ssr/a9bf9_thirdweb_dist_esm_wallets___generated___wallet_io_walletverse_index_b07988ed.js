@@ -1,0 +1,3 @@
+module.exports=[989645,a=>{"use strict";a.s(["wallet",0,{id:"io.walletverse",name:"Walletverse",homepage:"https://walletverse.io/",image_id:"ca91138e-0546-4cfe-071d-2181241dc600",app:{browser:null,ios:"https://apps.apple.com/us/app/wallet-verse-defi-buy-crypto/id6462672660",android:"https://play.google.com/store/apps/details?id=com.walletverse",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"walletverse://",universal:"https://walletverse.io"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_walletverse_index_b07988ed.js.map

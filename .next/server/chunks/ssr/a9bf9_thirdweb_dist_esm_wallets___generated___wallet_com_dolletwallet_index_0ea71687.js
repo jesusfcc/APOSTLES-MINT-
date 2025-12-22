@@ -1,0 +1,3 @@
+module.exports=[780003,a=>{"use strict";a.s(["wallet",0,{id:"com.dolletwallet",name:"Dollet",homepage:"https://dolletwallet.com/",image_id:"21679e58-e829-44f6-78d3-6a9d6e9ce900",app:{browser:null,ios:"https://apps.apple.com/us/app/dollet/id6451143361",android:"https://play.google.com/store/apps/details?id=com.dolllet.mainnet&pli=1",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"dolletwc://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_dolletwallet_index_0ea71687.js.map

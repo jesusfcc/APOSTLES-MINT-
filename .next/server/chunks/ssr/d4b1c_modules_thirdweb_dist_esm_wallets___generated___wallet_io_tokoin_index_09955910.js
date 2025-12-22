@@ -1,0 +1,3 @@
+module.exports=[131724,a=>{"use strict";a.s(["wallet",0,{id:"io.tokoin",name:"Tokoin | My-T Wallet",homepage:"https://tokoin.io",image_id:"88a2518c-16c2-4ee3-4699-1a1c6903bc00",app:{browser:null,ios:"https://apps.apple.com/my/app/tokow/id1489276175",android:"https://play.google.com/store/apps/details?id=com.tokoin.wallet",mac:"",windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"mtwallet://app",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_io_tokoin_index_09955910.js.map

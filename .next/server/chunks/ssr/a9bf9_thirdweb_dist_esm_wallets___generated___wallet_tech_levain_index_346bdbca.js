@@ -1,0 +1,3 @@
+module.exports=[682575,a=>{"use strict";a.s(["wallet",0,{id:"tech.levain",name:"Levain",homepage:"https://levain.tech/",image_id:"504f6043-9d47-4dd9-5332-49ea67e93100",app:{browser:"https://app.levain.tech/",ios:null,android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:"tech.levain",mobile:{native:null,universal:null},desktop:{native:null,universal:"https://app.levain.tech/"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_tech_levain_index_346bdbca.js.map

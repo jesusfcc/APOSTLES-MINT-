@@ -1,0 +1,3 @@
+module.exports=[211566,a=>{"use strict";a.s(["wallet",0,{id:"com.brave.wallet",name:"Brave Wallet",homepage:"https://brave.com/wallet/",image_id:"8cecad66-73e3-46ee-f45f-01503c032f00",app:{browser:null,ios:null,android:null,mac:null,windows:null,linux:null,chrome:"https://brave.com/wallet/",firefox:null,safari:null,edge:null,opera:null},rdns:"com.brave.wallet",mobile:{native:null,universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_brave_wallet_index_4f0b5b74.js.map

@@ -1,0 +1,3 @@
+module.exports=[911155,a=>{"use strict";a.s(["wallet",0,{id:"app.stickey",name:"Stickey Wallet",homepage:"https://stickey.app",image_id:"12aab9fb-f3d4-4248-10e0-4eda17a5de00",app:{browser:"https://stickey.app",ios:"https://apps.apple.com/app/id1671113083",android:"https://play.google.com/store/apps/details?id=app.stickey",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"stickyapp://",universal:"https://stickeyapp.page.link"},desktop:{native:"stickyapp://",universal:"https://stickeyapp.page.link"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_app_stickey_index_c7c39745.js.map

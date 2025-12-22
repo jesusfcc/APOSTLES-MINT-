@@ -1,0 +1,3 @@
+module.exports=[207934,a=>{"use strict";a.s(["wallet",0,{id:"com.kaxaa",name:"KAXAA Wallet",homepage:"https://kaxaa.com/",image_id:"2a7981aa-14f4-400d-86ae-ffa3ea866900",app:{browser:"https://ewallet.kaxaa.com/",ios:"https://ewallet.kaxaa.com",android:null,mac:null,windows:null,linux:"https://ewallet.kaxaa.com",chrome:"https://chromewebstore.google.com/detail/kaxaa/njlpbnllmbgdjcmjogmlheldgkcdjnol",firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:null,universal:"https://link.kaxaa.com/"},desktop:{native:null,universal:"https://link.kaxaa.com/"}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_com_kaxaa_index_45be7e8c.js.map

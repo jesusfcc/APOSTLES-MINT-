@@ -1,0 +1,3 @@
+module.exports=[467410,a=>{"use strict";a.s(["wallet",0,{id:"sh.frame",name:"Frame Wallet",homepage:"https://frame.sh/",image_id:"frame.png",app:{browser:null,ios:null,android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:"sh.frame",mobile:{native:null,universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_sh_frame_index_fc157ece.js.map

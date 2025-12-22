@@ -1,0 +1,3 @@
+module.exports=[100143,a=>{"use strict";a.s(["wallet",0,{id:"io.legionnetwork",name:"LegionNetwork",homepage:"https://www.legionnetwork.io/",image_id:"26044229-4a61-4b14-a2ed-5413fe435a00",app:{browser:null,ios:"https://apps.apple.com/gb/app/legion-network-crypto-superapp/id1602921528",android:"https://play.google.com/store/apps/details?id=com.legion.production&pcampaignid=web_share",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"legionapp://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_legionnetwork_index_7085b514.js.map

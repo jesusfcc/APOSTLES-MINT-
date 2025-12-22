@@ -1,0 +1,3 @@
+module.exports=[701504,a=>{"use strict";a.s(["wallet",0,{id:"org.thorwallet",name:"THORWallet",homepage:"https://www.thorwallet.org/",image_id:"45165bea-fdae-454e-7caa-31681f255200",app:{browser:null,ios:"https://apps.apple.com/ch/app/thorwallet-defi-wallet/id1592064324",android:"https://play.google.com/store/apps/details?id=defisuisse.thorwallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"thorwallet://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_org_thorwallet_index_bfe01ec6.js.map

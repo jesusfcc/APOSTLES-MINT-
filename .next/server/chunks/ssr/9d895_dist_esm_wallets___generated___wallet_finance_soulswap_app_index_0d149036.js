@@ -1,0 +1,3 @@
+module.exports=[62250,a=>{"use strict";a.s(["wallet",0,{id:"finance.soulswap.app",name:"SoulSwap",homepage:"https://app.soulswap.finance",image_id:"24fc6e6e-a276-4c95-fa77-91ec1097d600",app:{browser:null,ios:"https://apps.apple.com/us/app/soulwallet-defi-portal/id6469735252",android:null,mac:"https://apps.apple.com/us/app/soulwallet-defi-portal/id6469735252",windows:null,linux:null,chrome:"https://apps.apple.com/us/app/soulwallet-defi-portal/id6469735252",firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"soulwallet://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_finance_soulswap_app_index_0d149036.js.map

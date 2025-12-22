@@ -1,0 +1,3 @@
+module.exports=[589580,a=>{"use strict";a.s(["wallet",0,{id:"co.xellar",name:"Xellar",homepage:"https://xellar.co",image_id:"67b5a91d-a9ce-4268-d73d-b2f924a0b400",app:{browser:null,ios:"https://apps.apple.com/us/app/xellar-crypto-wallet/id1671215861",android:"https://play.google.com/store/apps/details?id=com.xellar.wallets",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"xellar://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_co_xellar_index_70a69e8b.js.map

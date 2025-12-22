@@ -1,0 +1,3 @@
+module.exports=[187068,a=>{"use strict";a.s(["wallet",0,{id:"org.thepulsewallet",name:"The Pulse Wallet",homepage:"https://thepulsewallet.org/",image_id:"1f3d46b8-2569-4601-5084-845f7e64da00",app:{browser:null,ios:"https://apps.apple.com/vn/app/pulse-wallet/id6458346951",android:"https://play.google.com/store/apps/details?id=com.wallet.thepulse",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"wallet.pulse://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_org_thepulsewallet_index_3dfd92a2.js.map

@@ -1,0 +1,3 @@
+module.exports=[448744,a=>{"use strict";a.s(["wallet",0,{id:"com.saitamatoken",name:"SaitaPro",homepage:"https://www.saitamatoken.com/saitapro/",image_id:"fedd85cd-fa5e-4c66-0b05-1ff2ce864e00",app:{browser:null,ios:"https://apps.apple.com/us/app/saitapro/id1636523777",android:"https://play.google.com/store/apps/details?id=com.saitapro&hl=en&gl=US",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"SaitaPro://app",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_saitamatoken_index_c9e66cfc.js.map

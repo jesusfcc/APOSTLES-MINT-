@@ -1,0 +1,3 @@
+module.exports=[79256,a=>{"use strict";a.s(["wallet",0,{id:"finance.openwallet",name:"Open Wallet",homepage:"https://openwallet.finance",image_id:"68a3c433-d944-4bf6-5093-4ac415fd5400",app:{browser:"https://openwallet.finance/",ios:"https://apps.apple.com/ee/app/open-wallet-keyless-mastery/id6502636684",android:"https://play.google.com/store/apps/details?id=com.finverselabs.openwallet&pli=1",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"x-app-open-wallet://",universal:null},desktop:{native:null,universal:"https://openwallet.finance/"}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_finance_openwallet_index_1fa42365.js.map

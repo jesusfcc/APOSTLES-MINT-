@@ -1,0 +1,3 @@
+module.exports=[532842,a=>{"use strict";a.s(["wallet",0,{id:"io.tradestrike",name:"StrikeX Wallet",homepage:"https://tradestrike.io/",image_id:"f81642e4-2355-454a-25f5-72e27f2c6f00",app:{browser:null,ios:"https://apps.apple.com/us/app/strikex-wallet/id6443517613",android:"https://play.google.com/store/apps/details?id=com.tradestrike",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"strikex://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_tradestrike_index_fab51cee.js.map

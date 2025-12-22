@@ -1,0 +1,3 @@
+module.exports=[589165,a=>{"use strict";a.s(["wallet",0,{id:"fun.tobi",name:"Tobi",homepage:"https://tobi.fun",image_id:"3cd2d066-56f7-4272-4a98-b39b41ea8200",app:{browser:"https://t.me/TobiWalletBot",ios:"https://t.me/TobiWalletBot",android:"https://t.me/TobiWalletBot",mac:"https://t.me/TobiWalletBot",windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:null,universal:"https://api.tobiwallet.app/dapp/wallet-connect/redirect"},desktop:{native:null,universal:"https://api.tobiwallet.app/dapp/wallet-connect/redirect"}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_fun_tobi_index_05c41140.js.map

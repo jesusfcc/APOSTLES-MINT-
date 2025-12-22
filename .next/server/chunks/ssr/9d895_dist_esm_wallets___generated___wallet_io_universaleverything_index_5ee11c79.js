@@ -1,0 +1,3 @@
+module.exports=[155938,a=>{"use strict";a.s(["wallet",0,{id:"io.universaleverything",name:"UniversalProfiles",homepage:"https://universaleverything.io",image_id:"4537fb11-ada3-4009-37c2-c70ed4b46300",app:{browser:null,ios:"https://apps.apple.com/us/app/universalprofiles/id6702018631",android:"https://play.google.com/store/apps/details?id=io.universaleverything.universalprofiles",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"io.universaleverything.universalprofiles://wallet-connect",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_io_universaleverything_index_5ee11c79.js.map

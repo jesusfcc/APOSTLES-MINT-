@@ -1,0 +1,3 @@
+module.exports=[730961,a=>{"use strict";a.s(["wallet",0,{id:"com.gayawallet",name:"Gaya Wallet",homepage:"https://gayawallet.com",image_id:"67e7c918-8cf2-4781-0a10-e7e6f4c48900",app:{browser:null,ios:"https://apps.apple.com/pk/app/gaya-wallet/id6741714278",android:"https://play.google.com/store/apps/details?id=com.gayawalletmobapp&pcampaignid=web_share&pli=1",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:null,universal:"https://gayawallet.com"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_gayawallet_index_103309ba.js.map

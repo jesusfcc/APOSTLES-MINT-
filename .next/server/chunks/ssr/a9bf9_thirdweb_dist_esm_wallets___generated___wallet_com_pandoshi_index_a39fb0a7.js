@@ -1,0 +1,3 @@
+module.exports=[522937,a=>{"use strict";a.s(["wallet",0,{id:"com.pandoshi",name:"Pandoshi Wallet",homepage:"https://pandoshi.com",image_id:"d5be0305-ff38-4412-6089-a94c2e445300",app:{browser:null,ios:null,android:"https://play.google.com/store/apps/details?id=com.pandoshi.wallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"pandoshiwallet://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_pandoshi_index_a39fb0a7.js.map

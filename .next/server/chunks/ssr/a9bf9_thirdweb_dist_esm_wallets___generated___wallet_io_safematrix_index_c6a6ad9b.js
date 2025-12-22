@@ -1,0 +1,3 @@
+module.exports=[505738,a=>{"use strict";a.s(["wallet",0,{id:"io.safematrix",name:"Safematrix",homepage:"https://safematrix.io/",image_id:"48ea5de9-869a-4994-2402-97afba060900",app:{browser:null,ios:"https://apps.apple.com/sg/app/safematrix/id1613333481",android:"https://download.safematrix.io/abm/safematrix.apk",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:null,universal:"https://safematrix.io/"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_safematrix_index_c6a6ad9b.js.map

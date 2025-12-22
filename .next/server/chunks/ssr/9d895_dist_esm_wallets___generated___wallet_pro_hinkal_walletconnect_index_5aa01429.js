@@ -1,0 +1,3 @@
+module.exports=[986500,a=>{"use strict";a.s(["wallet",0,{id:"pro.hinkal.walletconnect",name:"Hinkal Wallet",homepage:"https://hinkal.pro",image_id:"9618af59-f333-4e56-09f1-dd1e24cca800",app:{browser:"https://hinkal.pro",ios:null,android:null,mac:null,windows:null,linux:null,chrome:"https://chromewebstore.google.com/detail/hinkal-wallet/khfjgapjfcdoffmklchibpepboholpbe",firefox:null,safari:null,edge:null,opera:null},rdns:"pro.hinkal.walletconnect",mobile:{native:null,universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_pro_hinkal_walletconnect_index_5aa01429.js.map

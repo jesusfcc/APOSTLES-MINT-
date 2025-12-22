@@ -1,0 +1,3 @@
+module.exports=[867676,a=>{"use strict";a.s(["wallet",0,{id:"app.edge",name:"Edge",homepage:"https://edge.app/",image_id:"f0261e29-4981-4e16-4441-165e2d5d6300",app:{browser:null,ios:"https://apps.apple.com/us/app/edge-bitcoin-wallet/id1344400091",android:"https://play.google.com/store/apps/details?id=co.edgesecure.app",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"edge://",universal:"https://deep.edge.app/wc"},desktop:{native:"",universal:""}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_app_edge_index_b2444f66.js.map

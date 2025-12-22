@@ -1,0 +1,3 @@
+module.exports=[537956,a=>{"use strict";a.s(["wallet",0,{id:"com.klipwallet",name:"Klip",homepage:"https://klipwallet.com/",image_id:"f7b6b2a6-ebe7-4779-6ad1-79a3142e6b00",app:{browser:null,ios:"https://apps.apple.com/kr/app/클립-klip/id1627665524",android:"https://play.google.com/store/apps/details?id=com.klipwallet.app",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"klipwallet://",universal:""},desktop:{native:"",universal:""}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_klipwallet_index_f545e2b4.js.map

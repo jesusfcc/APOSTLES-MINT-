@@ -1,0 +1,3 @@
+module.exports=[925520,a=>{"use strict";a.s(["wallet",0,{id:"xyz.joeywallet",name:"Joey Wallet",homepage:"https://joeywallet.xyz/",image_id:"eefe45e8-0a5e-421c-29d0-fd8191e7e600",app:{browser:null,ios:"https://apps.apple.com/us/app/joey-wallet/id6745415911",android:"https://play.google.com/store/apps/details?id=xyz.joeywallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"joey://settings",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_xyz_joeywallet_index_8c75ee59.js.map

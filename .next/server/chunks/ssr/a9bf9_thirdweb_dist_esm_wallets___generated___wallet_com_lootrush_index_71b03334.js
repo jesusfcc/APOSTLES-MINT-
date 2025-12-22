@@ -1,0 +1,3 @@
+module.exports=[96010,a=>{"use strict";a.s(["wallet",0,{id:"com.lootrush",name:"LootRush",homepage:"https://www.lootrush.com/lootrush-wallet",image_id:"lootrush.svg",app:{browser:null,ios:null,android:null,mac:null,windows:null,linux:null,chrome:"https://chrome.google.com/webstore/detail/lootrush-wallet/lfmmjkfllhmfmkcobchabopkcefjkoip",firefox:"https://addons.mozilla.org/en-US/firefox/addon/lootrush-wallet/",safari:null,edge:null,opera:null},rdns:"com.lootrush",mobile:{native:null,universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_lootrush_index_71b03334.js.map

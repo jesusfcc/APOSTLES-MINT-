@@ -1,0 +1,3 @@
+module.exports=[276823,a=>{"use strict";a.s(["wallet",0,{id:"io.wallet3",name:"Wallet 3",homepage:"https://wallet3.io",image_id:"34ab7558-9e64-4436-f4e6-9069f2533d00",app:{browser:"https://wallet3.io",ios:"https://itunes.apple.com/us/app/wallet-3/id1597395741",android:"https://play.google.com/store/apps/details?id=jp.co.chainbow.wallet3.mobile",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"wallet3://",universal:null},desktop:{native:"wallet3://",universal:"https://wallet3.io"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_wallet3_index_3556f5a0.js.map

@@ -1,0 +1,3 @@
+module.exports=[72765,a=>{"use strict";a.s(["wallet",0,{id:"com.3swallet",name:"3S Wallet",homepage:"https://3swallet.com/",image_id:"f3b6a89d-ec8f-49dc-e07f-6bf723e1e500",app:{browser:"https://3swallet.com/",ios:"https://apps.apple.com/us/app/3s-wallet-crypto-wallet/id1622316272",android:"https://play.google.com/store/apps/details?id=network.bho.wallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"bhcwallet://",universal:null},desktop:{native:null,universal:"https://3swallet.com/"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_3swallet_index_093e37cf.js.map

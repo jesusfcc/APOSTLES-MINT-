@@ -1,0 +1,3 @@
+module.exports=[65031,a=>{"use strict";a.s(["wallet",0,{id:"money.keychain",name:"Keychain",homepage:"http://keychain.money/",image_id:"2b6e9e4b-7dca-45dd-45d5-d96f45010200",app:{browser:"https://app.keychain.money/",ios:null,android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:null,universal:"https://app.keychain.money/"},desktop:{native:null,universal:"https://app.keychain.money/"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_money_keychain_index_49ae70df.js.map

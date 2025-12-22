@@ -1,0 +1,3 @@
+module.exports=[870615,a=>{"use strict";a.s(["wallet",0,{id:"com.dokwallet",name:"Dokwallet",homepage:"https://www.dokwallet.com",image_id:"5707f35e-17a1-42b3-35c5-664f7655cd00",app:{browser:"https://www.dokwallet.app",ios:"https://apps.apple.com/il/app/dokwallet-crypto-wallet/id1533065700",android:"https://play.google.com/store/apps/details?id=com.dok.wallet&pli=1",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"dokwallet://",universal:"https://www.dokwallet.app"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_dokwallet_index_aa716316.js.map

@@ -1,0 +1,3 @@
+module.exports=[121642,a=>{"use strict";a.s(["wallet",0,{id:"xyz.timelesswallet",name:"Timeless Wallet",homepage:"https://timelesswallet.xyz",image_id:"32e89601-0490-42fc-0cc4-8627d62a2000",app:{browser:null,ios:"https://apps.apple.com/app/timeless-wallet/id1592807339",android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"timeless-wallet://",universal:"https://timelesswallet.xyz"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_xyz_timelesswallet_index_c6795eb7.js.map

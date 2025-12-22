@@ -1,0 +1,3 @@
+module.exports=[896954,a=>{"use strict";a.s(["wallet",0,{id:"com.gemspocket",name:"Gems Pocket",homepage:"https://gemspocket.com/",image_id:"085ac257-f026-469d-4f6b-e947b6aa4a00",app:{browser:null,ios:"https://apps.apple.com/in/app/ancrypto/id1660898349",android:"https://play.google.com/store/apps/details?id=com.ancryptoWallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"ancrypto://app",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_gemspocket_index_a3924ae3.js.map

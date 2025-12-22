@@ -1,0 +1,3 @@
+module.exports=[387894,a=>{"use strict";a.s(["wallet",0,{id:"com.ipmb",name:"IPMB Wallet",homepage:"https://www.ipmb.com",image_id:"846ae068-c112-412a-c103-7aa414bc9400",app:{browser:null,ios:"https://apps.apple.com/gb/app/ipmb-wallet/id6474244533",android:"https://play.google.com/store/apps/details?id=com.ipmb.app",mac:null,windows:null,linux:null,chrome:"https://chromewebstore.google.com/detail/ipmb-wallet/gohpeceldnpglangfimhdjlfhgalohco",firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"com.ipmb.app://walletcon",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_com_ipmb_index_eccdb4f6.js.map

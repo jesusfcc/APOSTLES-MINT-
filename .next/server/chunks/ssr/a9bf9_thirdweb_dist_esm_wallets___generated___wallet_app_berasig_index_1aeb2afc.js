@@ -1,0 +1,3 @@
+module.exports=[786324,a=>{"use strict";a.s(["wallet",0,{id:"app.berasig",name:"BeraSig",homepage:"https://www.berasig.com/",image_id:"4b9e9716-c86d-4f1e-4bcc-12af74af7400",app:{browser:null,ios:null,android:null,mac:null,windows:null,linux:null,chrome:"https://chromewebstore.google.com/detail/berasig/ckedkkegjbflcfblcjklibnedmfjppbj",firefox:null,safari:null,edge:null,opera:null},rdns:"app.berasig",mobile:{native:null,universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_app_berasig_index_1aeb2afc.js.map

@@ -1,0 +1,3 @@
+module.exports=[68879,a=>{"use strict";a.s(["wallet",0,{id:"one.mixin.messenger",name:"Mixin Messenger",homepage:"https://messenger.mixin.one",image_id:"c5516ab5-57c3-45ec-09e2-b149c9709600",app:{browser:"https://mixin.one",ios:"https://apps.apple.com/app/mixin/id1322324266",android:"https://play.google.com/store/apps/details?id=one.mixin.messenger",mac:null,windows:"https://apps.microsoft.com/detail/9nq6hf99b8nj?hl=en-US&gl=US",linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:"one.mixin.messenger",mobile:{native:"mixin://",universal:""},desktop:{native:"",universal:"https://mixin.one"}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_one_mixin_messenger_index_3ab6d928.js.map

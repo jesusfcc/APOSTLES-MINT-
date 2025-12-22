@@ -1,0 +1,3 @@
+module.exports=[424973,a=>{"use strict";a.s(["wallet",0,{id:"com.crypto.wallet",name:"Crypto.com Onchain",homepage:"https://crypto.com/onchain",image_id:"4903acdd-6463-44b6-3cf9-f23f4c75ca00",app:{browser:null,ios:"https://apps.apple.com/US/app/id1512048310?mt=8",android:"https://play.google.com/store/apps/details?id=com.defi.wallet",mac:null,windows:null,linux:null,chrome:"https://chromewebstore.google.com/detail/cryptocom-wallet-extensio/hifafgmccdpekplomjjkcfgodnhcellj",firefox:null,safari:null,edge:null,opera:null},rdns:"com.crypto.wallet",mobile:{native:"dfw://",universal:"https://wallet.crypto.com/deeplink"},desktop:{native:"",universal:""}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_crypto_wallet_index_7707825f.js.map

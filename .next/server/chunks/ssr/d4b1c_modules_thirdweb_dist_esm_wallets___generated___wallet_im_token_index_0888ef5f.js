@@ -1,0 +1,3 @@
+module.exports=[103568,a=>{"use strict";a.s(["wallet",0,{id:"im.token",name:"imToken",homepage:"https://token.im/",image_id:"67336675-0daa-489b-6885-cb95234bc400",app:{browser:"https://token.im/",ios:"https://apps.apple.com/us/app/imtoken2/id1384798940",android:"https://play.google.com/store/apps/details?id=im.token.app",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"imtokenv2://",universal:null},desktop:{native:null,universal:"https://token.im/"}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_im_token_index_0888ef5f.js.map

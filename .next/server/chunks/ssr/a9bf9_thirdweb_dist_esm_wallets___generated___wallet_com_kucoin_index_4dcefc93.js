@@ -1,0 +1,3 @@
+module.exports=[743752,a=>{"use strict";a.s(["wallet",0,{id:"com.kucoin",name:"KuCoin Web3 Wallet",homepage:"https://www.kucoin.com/Web3",image_id:"70d8a90b-457b-4c04-4bc3-791e97caab00",app:{browser:null,ios:"https://www.kucoin.com/download",android:"https://www.kucoin.com/download",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"kucoin:///wallet/walletConnect",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_kucoin_index_4dcefc93.js.map

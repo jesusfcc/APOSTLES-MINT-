@@ -1,0 +1,3 @@
+module.exports=[701043,a=>{"use strict";a.s(["wallet",0,{id:"com.coldwallet",name:"Cold Wallet",homepage:"https://coldwallet.com/",image_id:"fa63c977-9637-4d85-960d-058da23e4300",app:{browser:null,ios:"https://apps.apple.com/us/app/cold-wallet-crypto-wallet-app/id6467651848",android:"https://play.google.com/store/apps/details?id=com.PlusWallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"pluswallet://",universal:"https://coldwallet.com/"},desktop:{native:"",universal:""}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_coldwallet_index_7d12a1e8.js.map

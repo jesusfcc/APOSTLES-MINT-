@@ -1,0 +1,3 @@
+module.exports=[510584,a=>{"use strict";a.s(["wallet",0,{id:"pro.assure",name:"Assure",homepage:"https://www.assure.pro",image_id:"64db7104-c8b7-44ea-e102-11ce87124200",app:{browser:null,ios:"http://itunes.apple.com/app/id1604825026",android:"https://play.google.com/store/apps/details?id=com.neuxs.assure",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"assure://",universal:"https://www.assure.pro/Official"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_pro_assure_index_94ad2b18.js.map

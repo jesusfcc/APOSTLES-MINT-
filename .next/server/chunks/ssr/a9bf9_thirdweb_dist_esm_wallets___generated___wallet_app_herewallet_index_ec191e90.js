@@ -1,0 +1,3 @@
+module.exports=[606748,a=>{"use strict";a.s(["wallet",0,{id:"app.herewallet",name:"HERE Wallet",homepage:"https://herewallet.app",image_id:"21cadc07-2f45-4860-3358-83a2057b6300",app:{browser:null,ios:"https://download.herewallet.app?ios",android:"https://download.herewallet.app?android",mac:"",windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"herewallet://",universal:"https://my.herewallet"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_app_herewallet_index_ec191e90.js.map

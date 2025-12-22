@@ -1,0 +1,3 @@
+module.exports=[224307,a=>{"use strict";a.s(["wallet",0,{id:"com.itoken",name:"iToken Wallet",homepage:"https://www.itoken.com/",image_id:"5cd60c34-038d-470c-c024-d58f64260200",app:{browser:null,ios:"https://apps.apple.com/us/app/id1433883012",android:"https://play.google.com/store/apps/details?id=com.huobionchainwallet.gp",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"huobiwallet://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_itoken_index_a2c2d5da.js.map

@@ -1,0 +1,3 @@
+module.exports=[270665,a=>{"use strict";a.s(["wallet",0,{id:"io.ttmwallet",name:"MDAO Wallet",homepage:"https://ttmwallet.io/",image_id:"82014e92-838b-4e75-e77e-76cdc5539d00",app:{browser:null,ios:"https://apps.apple.com/ru/app/ttm-wallet/id1540851562",android:"https://play.google.com/store/apps/details?id=com.ttmbank.wallet.app&hl=ru&gl=US",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"ttmwalletapp://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_ttmwallet_index_33a51bc5.js.map

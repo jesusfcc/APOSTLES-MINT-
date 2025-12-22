@@ -1,0 +1,3 @@
+module.exports=[576869,a=>{"use strict";a.s(["wallet",0,{id:"io.streakk",name:"Streakk Wallet",homepage:"https://streakk.io/",image_id:"45ec6eb9-d7fe-4b9b-6dbf-cc675c5d1d00",app:{browser:null,ios:"https://apps.apple.com/in/app/streakk-wallet/id1636671089",android:"https://play.google.com/store/apps/details?id=com.streakk",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"streakk://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_streakk_index_8fb10bd9.js.map

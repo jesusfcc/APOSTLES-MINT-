@@ -1,0 +1,3 @@
+module.exports=[692339,a=>{"use strict";a.s(["wallet",0,{id:"com.liberawallet",name:"Libera",homepage:"https://liberawallet.com",image_id:"9485d17f-c413-47fe-ebee-a876a9dc9100",app:{browser:null,ios:null,android:"https://play.google.com/store/apps/details?id=com.impactmarket.mobile&&pli=1",mac:"",windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"libera://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_liberawallet_index_08804a20.js.map

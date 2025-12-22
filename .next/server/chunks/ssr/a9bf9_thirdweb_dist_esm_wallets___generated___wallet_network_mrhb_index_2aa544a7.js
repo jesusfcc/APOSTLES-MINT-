@@ -1,0 +1,3 @@
+module.exports=[469302,a=>{"use strict";a.s(["wallet",0,{id:"network.mrhb",name:"Sahal Wallet",homepage:"https://mrhb.network",image_id:"afa1e46a-331a-418f-ef1f-a29f76def100",app:{browser:"https://mrhb.network",ios:"https://apps.apple.com/gb/app/sahal-wallet/id1602366920",android:"https://play.google.com/store/apps/details?id=sahal.wallet.app&gl=GB",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"sahalwallet://",universal:null},desktop:{native:"sahalwallet://",universal:"https://sahalwallet.app"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_network_mrhb_index_2aa544a7.js.map

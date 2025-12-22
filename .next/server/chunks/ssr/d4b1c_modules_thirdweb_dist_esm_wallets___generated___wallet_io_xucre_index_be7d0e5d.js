@@ -1,0 +1,3 @@
+module.exports=[183057,a=>{"use strict";a.s(["wallet",0,{id:"io.xucre",name:"Xucre",homepage:"https://www.xucre.io",image_id:"6a560c0d-817d-4f62-ef21-b91636b30f00",app:{browser:null,ios:null,android:"https://play.google.com/store/apps/details?id=xucre.expo.client",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"xucre.expo.client://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_io_xucre_index_be7d0e5d.js.map

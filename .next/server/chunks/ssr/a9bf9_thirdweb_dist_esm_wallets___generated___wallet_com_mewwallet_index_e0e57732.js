@@ -1,0 +1,3 @@
+module.exports=[173023,a=>{"use strict";a.s(["wallet",0,{id:"com.mewwallet",name:"MEW wallet",homepage:"https://mewwallet.com",image_id:"e2024511-2c9b-46d7-3111-52df3d241700",app:{browser:"https://download.mewwallet.com/?source=wc",ios:"https://apps.apple.com/app/id1464614025",android:"https://play.google.com/store/apps/details?id=com.myetherwallet.mewwallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:"https://apps.apple.com/app/id1464614025",edge:null,opera:null},rdns:null,mobile:{native:"mewwallet://",universal:"https://mewwallet.com"},desktop:{native:null,universal:"https://download.mewwallet.com/?source=wc"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_mewwallet_index_e0e57732.js.map

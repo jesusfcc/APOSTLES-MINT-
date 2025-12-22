@@ -1,0 +1,3 @@
+module.exports=[828677,a=>{"use strict";var b=a.i(756800),c=a.i(63408),d=a.i(464352),e=a.i(557565);let f="0x6352211e",g=[{name:"tokenId",type:"uint256"}],h=[{type:"address"}];function i(a){return(0,e.detectMethod)({availableSelectors:a,method:[f,g,h]})}function j(a){return(0,d.encodeAbiParameters)(g,[a.tokenId])}function k(a){return f+j(a).slice(2)}function l(a){return(0,b.decodeAbiParameters)(h,a)[0]}async function m(a){return(0,c.readContract)({contract:a.contract,method:[f,g,h],params:[a.tokenId]})}a.s(["FN_SELECTOR",0,f,"decodeOwnerOfResult",()=>l,"encodeOwnerOf",()=>k,"encodeOwnerOfParams",()=>j,"isOwnerOfSupported",()=>i,"ownerOf",()=>m])}];
+
+//# sourceMappingURL=9d895_dist_esm_extensions_erc721___generated___IERC721A_read_ownerOf_ddb44148.js.map

@@ -1,0 +1,3 @@
+module.exports=[79302,a=>{"use strict";a.s(["wallet",0,{id:"io.yusetoken",name:"Yuse Wallet",homepage:"https://yusetoken.io/",image_id:"2cd61458-59c2-4208-c8ee-98b5e0076b00",app:{browser:null,ios:"https://apps.apple.com/us/app/yuse-wallet/id6449364813",android:"https://play.google.com/store/apps/details?id=com.yuse.wallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"yuse://wallet://",universal:"https://yusewallet.page.link/tobR"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_yusetoken_index_41a95bc0.js.map

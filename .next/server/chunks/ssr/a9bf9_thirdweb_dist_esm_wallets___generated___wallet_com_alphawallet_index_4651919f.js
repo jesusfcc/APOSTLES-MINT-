@@ -1,0 +1,3 @@
+module.exports=[47590,a=>{"use strict";a.s(["wallet",0,{id:"com.alphawallet",name:"AlphaWallet",homepage:"https://alphawallet.com/",image_id:"5b1cddfb-056e-4e78-029a-54de5d70c500",app:{browser:null,ios:"https://apps.apple.com/us/app/alphawallet-eth-wallet/id1358230430",android:"https://play.google.com/store/apps/details?id=io.stormbird.wallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"awallet://",universal:"https://aw.app"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_alphawallet_index_4651919f.js.map

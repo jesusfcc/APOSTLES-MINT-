@@ -1,0 +1,3 @@
+module.exports=[980728,a=>{"use strict";a.s(["wallet",0,{id:"digital.minerva",name:"Minerva Wallet",homepage:"https://minerva.digital/",image_id:"b57b2163-1bd8-4f6b-3311-470767e6d200",app:{browser:null,ios:null,android:"https://play.google.com/store/apps/details?id=digital.minerva",mac:"",windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"minerva://",universal:"https://minerva.digital"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_digital_minerva_index_276f8503.js.map

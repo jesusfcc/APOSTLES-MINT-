@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,306657,t=>{"use strict";t.s(["default",0,{connecting:"正在连接智能账户",failedToConnect:"连接智能账户失败",wrongNetworkScreen:{failedToSwitch:"网络切换失败",subtitle:"钱包未连接至所需网络",title:"网络错误"}}])}]);

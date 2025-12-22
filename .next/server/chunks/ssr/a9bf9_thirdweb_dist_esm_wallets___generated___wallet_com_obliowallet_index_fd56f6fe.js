@@ -1,0 +1,3 @@
+module.exports=[76966,a=>{"use strict";a.s(["wallet",0,{id:"com.obliowallet",name:"Oblio Wallet",homepage:"https://obliowallet.com",image_id:"a0ff2932-e049-4622-a9c8-fa41278cff00",app:{browser:null,ios:"https://play.google.com/store/apps/details?id=com.oblio.wallet",android:"https://play.google.com/store/apps/details?id=com.oblio.wallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"oblio://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_obliowallet_index_fd56f6fe.js.map

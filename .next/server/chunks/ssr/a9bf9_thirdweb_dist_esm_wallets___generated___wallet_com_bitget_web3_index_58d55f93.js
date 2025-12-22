@@ -1,0 +1,3 @@
+module.exports=[105854,a=>{"use strict";a.s(["wallet",0,{id:"com.bitget.web3",name:"Bitget Wallet",homepage:"https://web3.bitget.com",image_id:"f6ff957e-7e74-4f43-a3ae-a643bf18a200",app:{browser:"https://bitkeep.com",ios:"https://web3.bitget.com/en/wallet-download?type=0",android:"https://web3.bitget.com/en/wallet-download?type=0",mac:null,windows:null,linux:null,chrome:"https://chrome.google.com/webstore/detail/bitkeep-crypto-nft-wallet/jiidiaalihmmhddjgbnbgdfflelocpak",firefox:null,safari:null,edge:null,opera:null},rdns:"com.bitget.web3",mobile:{native:"bitkeep://",universal:"https://bkapp.vip"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_bitget_web3_index_58d55f93.js.map

@@ -1,0 +1,3 @@
+module.exports=[81317,a=>{"use strict";a.s(["wallet",0,{id:"io.kigo",name:"Kigo",homepage:"https://kigo.io",image_id:"ad83d869-de11-4685-2a24-d3ce93a86400",app:{browser:null,ios:"https://apps.apple.com/us/app/kigo-digital/id6449599872",android:"https://play.google.com/store/apps/details?id=com.augeo.kigo",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"kigo-mobile-app://",universal:"https://kigo-digital.app.link/"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_io_kigo_index_92a9e20a.js.map

@@ -1,0 +1,3 @@
+module.exports=[300614,a=>{"use strict";a.s(["wallet",0,{id:"com.socios.app",name:"Socios.com - Wallet & Tokens",homepage:"https://app.socios.com",image_id:"eb55679f-9462-45e2-e0ec-dfb851f9e700",app:{browser:"https://app.socios.com",ios:"https://apps.apple.com/app/id1464868277",android:"https://play.google.com/store/apps/details?id=com.socios&hl=en",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"socios-mob://",universal:null},desktop:{native:null,universal:"https://app.socios.com"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_socios_app_index_3f22e3fe.js.map

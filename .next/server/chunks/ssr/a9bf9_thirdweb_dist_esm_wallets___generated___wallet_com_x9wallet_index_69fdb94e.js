@@ -1,0 +1,3 @@
+module.exports=[205194,a=>{"use strict";a.s(["wallet",0,{id:"com.x9wallet",name:"X9Wallet",homepage:"https://x9wallet.com",image_id:"f64f7bf8-62ea-4d1e-087b-82d374d04d00",app:{browser:null,ios:"https://expo.dev/accounts/teza8899x/projects/x9wallet/updates/d8aa245f-076d-4634-b2ba-e23489b04dde",android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"x9wallet://a",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_x9wallet_index_69fdb94e.js.map

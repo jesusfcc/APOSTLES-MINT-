@@ -1,0 +1,3 @@
+module.exports=[516460,a=>{"use strict";a.s(["wallet",0,{id:"app.everspace",name:"Everspace",homepage:"https://everspace.app",image_id:"80eaa630-6392-4b0a-a604-0a0f808e4d00",app:{browser:"https://everspace.app/",ios:"https://apps.apple.com/ru/app/everspace/id1585434994?l=en",android:"https://play.google.com/store/apps/details?id=com.oberton.app",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"everspace://",universal:"https://everspace.app/deeplink"},desktop:{native:null,universal:"https://everspace.app/"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_app_everspace_index_c724016d.js.map

@@ -1,0 +1,3 @@
+module.exports=[437380,a=>{"use strict";a.s(["wallet",0,{id:"me.astrox",name:"Me Wallet",homepage:"https://astrox.me/",image_id:"e9666b15-4296-4384-3661-7e99a5f2a900",app:{browser:"https://app.astrox.me/",ios:"https://apps.apple.com/us/app/astrox-me-wallet/id1634031707",android:"https://play.google.com/store/apps/details?id=com.astrox.me",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"astrox://me/wcx",universal:null},desktop:{native:null,universal:"https://app.astrox.me/"}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_me_astrox_index_8aa6a057.js.map

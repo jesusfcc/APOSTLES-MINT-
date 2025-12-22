@@ -1,0 +1,3 @@
+module.exports=[454628,a=>{"use strict";a.s(["wallet",0,{id:"io.nash",name:"Nash",homepage:"https://nash.io",image_id:"65c53de2-05fd-4a62-5f9c-979dcb406c00",app:{browser:null,ios:"https://apps.apple.com/nl/app/nash-spend-save-invest/id1475759236",android:"https://play.google.com/store/apps/details?id=io.nash.app",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"nash://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_io_nash_index_c5d165fd.js.map

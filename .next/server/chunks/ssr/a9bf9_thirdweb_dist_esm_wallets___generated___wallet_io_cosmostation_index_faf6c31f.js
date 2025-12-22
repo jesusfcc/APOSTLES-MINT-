@@ -1,0 +1,3 @@
+module.exports=[340354,a=>{"use strict";a.s(["wallet",0,{id:"io.cosmostation",name:"Cosmostation",homepage:"https://www.cosmostation.io/",image_id:"ea26c3c8-adb6-4dc4-ee02-35d6eee02800",app:{browser:null,ios:"https://apps.apple.com/kr/app/cosmostation/id1459830339",android:"https://play.google.com/store/apps/details?id=wannabit.io.cosmostaion",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"cosmostation://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_cosmostation_index_faf6c31f.js.map

@@ -1,0 +1,3 @@
+module.exports=[761452,a=>{"use strict";a.s(["wallet",0,{id:"com.holdstation",name:"Holdstation Wallet",homepage:"https://www.holdstation.com",image_id:"dba228fc-d0c9-497b-903e-843ad1076e00",app:{browser:null,ios:"https://apps.apple.com/us/app/holdstation-web3-wallet/id6444925618",android:"https://play.google.com/store/apps/details?id=io.holdstation",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"holdstation://",universal:"https://staging-referral.holdstation.com/wallet-connect?uri="},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_holdstation_index_185ee964.js.map

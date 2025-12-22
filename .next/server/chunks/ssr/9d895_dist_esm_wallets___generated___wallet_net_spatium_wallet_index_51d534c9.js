@@ -1,0 +1,3 @@
+module.exports=[510551,a=>{"use strict";a.s(["wallet",0,{id:"net.spatium.wallet",name:"Spatium",homepage:"https://wallet.spatium.net",image_id:"8b966926-cdcf-4eae-1432-b400fe014700",app:{browser:null,ios:"https://apps.apple.com/ru/app/spatium/id6476919875",android:"https://play.google.com/store/apps/details?id=net.spatium.next",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"spatium-next://",universal:"https://link.spatium.net"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_net_spatium_wallet_index_51d534c9.js.map

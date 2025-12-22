@@ -1,0 +1,3 @@
+module.exports=[348967,a=>{"use strict";a.s(["wallet",0,{id:"my.mone",name:"mOne superapp",homepage:"https://mone.my/",image_id:"031df921-c5a5-451c-1ad4-f41d4f8fbb00",app:{browser:null,ios:"https://apps.apple.com/us/app/mone-my-one-superapp/id1628087356",android:"https://play.google.com/store/apps/details?id=com.metapro.app&hl=en&gl=US",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"mone://",universal:"https://mone.my/app"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_my_mone_index_909dce5f.js.map

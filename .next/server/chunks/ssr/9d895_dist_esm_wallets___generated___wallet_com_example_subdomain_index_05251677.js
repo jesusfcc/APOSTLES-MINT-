@@ -1,0 +1,3 @@
+module.exports=[364755,a=>{"use strict";a.s(["wallet",0,{id:"com.example.subdomain",name:"Key3",homepage:"https://key3.ai",image_id:"76bda797-d3e7-4dfe-ccf2-a940c5e8a700",app:{browser:null,ios:"https://apps.apple.com/us/app/key3-crypto-wallet-keyboard/id6742847091",android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:"com.example.subdomain",mobile:{native:"walletapp://",universal:"https://www.key3.ai/"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_com_example_subdomain_index_05251677.js.map

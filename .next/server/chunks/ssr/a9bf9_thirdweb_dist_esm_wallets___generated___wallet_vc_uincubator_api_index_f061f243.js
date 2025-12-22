@@ -1,0 +1,3 @@
+module.exports=[888367,a=>{"use strict";a.s(["wallet",0,{id:"vc.uincubator.api",name:"UIIC",homepage:"https://api.uincubator.vc/download/?company_id=NTU2NjIwMDA=",image_id:"cdd77592-c1ba-4dc2-f2a6-c454e2c19800",app:{browser:null,ios:null,android:"https://api.uincubator.vc/download/?company_id=NTU2NjIwMDA=",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"uiwallet://?uri=",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_vc_uincubator_api_index_f061f243.js.map

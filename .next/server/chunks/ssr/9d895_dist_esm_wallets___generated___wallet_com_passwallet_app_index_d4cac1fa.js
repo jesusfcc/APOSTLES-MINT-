@@ -1,0 +1,3 @@
+module.exports=[232928,a=>{"use strict";a.s(["wallet",0,{id:"com.passwallet.app",name:"Pass App",homepage:"https://pass.app/",image_id:"d098fb77-70ae-4230-3059-3623ba048100",app:{browser:null,ios:"https://apps.apple.com/il/app/pass-app-web3-smart-wallet/id6670792141",android:"https://play.google.com/store/apps/details?id=com.passwallet.app&hl=en",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:"com.passwallet.app",mobile:{native:"passwallet://",universal:"https://pass.app/connect"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_com_passwallet_app_index_d4cac1fa.js.map

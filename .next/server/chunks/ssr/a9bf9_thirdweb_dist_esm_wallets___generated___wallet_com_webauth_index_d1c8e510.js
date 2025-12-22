@@ -1,0 +1,3 @@
+module.exports=[317065,a=>{"use strict";a.s(["wallet",0,{id:"com.webauth",name:"WebAuth",homepage:"https://webauth.com",image_id:"93fcd24e-431d-421f-32c2-9563d725c800",app:{browser:null,ios:"https://apps.apple.com/us/app/webauth/id1594500069",android:"https://play.google.com/store/apps/details?id=com.metallicus.webauth&hl=en_US",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"proton://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_webauth_index_d1c8e510.js.map

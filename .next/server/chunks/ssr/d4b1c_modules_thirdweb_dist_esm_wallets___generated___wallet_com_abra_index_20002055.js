@@ -1,0 +1,3 @@
+module.exports=[518440,a=>{"use strict";a.s(["wallet",0,{id:"com.abra",name:"Abra Wallet",homepage:"https://abra.com",image_id:"2219db01-e0c9-471c-5def-fd3b4e7a7a00",app:{browser:"https://abra.com",ios:"https://abra.com",android:"https://abra.com",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"abra://",universal:null},desktop:{native:null,universal:"https://abra.com"}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_com_abra_index_20002055.js.map

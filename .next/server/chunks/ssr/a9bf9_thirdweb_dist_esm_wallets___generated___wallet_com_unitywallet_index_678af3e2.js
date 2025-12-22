@@ -1,0 +1,3 @@
+module.exports=[951557,a=>{"use strict";a.s(["wallet",0,{id:"com.unitywallet",name:"Unity Wallet",homepage:"https://unitywallet.com",image_id:"09b4aad3-c007-40e7-ec8f-6a62585e6900",app:{browser:null,ios:"https://apps.apple.com/us/app/savl-wallet-bitcoin-solana/id1369912925",android:"https://play.google.com/store/apps/details?id=com.savl",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"savl://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_unitywallet_index_678af3e2.js.map

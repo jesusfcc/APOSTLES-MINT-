@@ -1,0 +1,3 @@
+module.exports=[6403,a=>{"use strict";a.s(["wallet",0,{id:"io.certhis",name:"Certhis",homepage:"https://certhis.io",image_id:"fbd441cc-e861-46dc-48ae-a04228ddb500",app:{browser:"https://explorer.certhis.io",ios:null,android:null,mac:"",windows:null,linux:"https://certhis.io/",chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:null,universal:"https://certhis.io/"},desktop:{native:null,universal:"https://certhis.io"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_certhis_index_28aa4d09.js.map

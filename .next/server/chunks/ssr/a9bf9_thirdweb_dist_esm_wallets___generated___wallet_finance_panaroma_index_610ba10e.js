@@ -1,0 +1,3 @@
+module.exports=[153492,a=>{"use strict";a.s(["wallet",0,{id:"finance.panaroma",name:"Panaroma Wallet",homepage:"https://panaroma.finance",image_id:"4394f728-0c57-4560-acba-48bfd82ddf00",app:{browser:null,ios:null,android:"http://play.google.com/store/apps/details?id=com.panaroma.wallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"panaromawallet://walletconnect",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_finance_panaroma_index_610ba10e.js.map

@@ -1,0 +1,3 @@
+module.exports=[21834,a=>{"use strict";a.s(["wallet",0,{id:"social.halo",name:"Halo Wallet",homepage:"https://halo.social/",image_id:"80583973-8b44-4bef-0af9-099cfdbed600",app:{browser:null,ios:"https://apps.apple.com/hk/app/id1633572905",android:"https://play.google.com/store/apps/details?id=com.kucoin.wallet",mac:"",windows:null,linux:null,chrome:"https://chrome.google.com/webstore/detail/halo-wallet/nbdpmlhambbdkhkmbfpljckjcmgibalo",firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"halowallet://",universal:"https://link.kuwallet.com/universallink"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_social_halo_index_1c3d4d5a.js.map

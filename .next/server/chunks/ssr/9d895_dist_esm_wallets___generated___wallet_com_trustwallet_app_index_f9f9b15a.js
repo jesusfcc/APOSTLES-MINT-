@@ -1,0 +1,3 @@
+module.exports=[185528,a=>{"use strict";a.s(["wallet",0,{id:"com.trustwallet.app",name:"Trust Wallet",homepage:"https://trustwallet.com/",image_id:"3386dde1-8b24-48c8-4b81-16979e342000",app:{browser:null,ios:"https://apps.apple.com/app/apple-store/id1288339409",android:"https://play.google.com/store/apps/details?id=com.wallet.crypto.trustapp",mac:null,windows:null,linux:null,chrome:"https://chrome.google.com/webstore/detail/trust-wallet/egjidjbpglichdcondbcbdnbeeppgdph",firefox:null,safari:null,edge:null,opera:null},rdns:"com.trustwallet.app",mobile:{native:"trust://",universal:"https://link.trustwallet.com"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_com_trustwallet_app_index_f9f9b15a.js.map

@@ -1,0 +1,3 @@
+module.exports=[841442,a=>{"use strict";a.s(["wallet",0,{id:"com.dcentwallet",name:"D'CENT Wallet",homepage:"https://dcentwallet.com",image_id:"e7e60788-6806-47d4-7b4a-a410e7aa3300",app:{browser:null,ios:"https://apps.apple.com/app/dcent-hardware-wallet/id1447206611",android:"https://play.google.com/store/apps/details?id=com.kr.iotrust.dcent.wallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"dcent://",universal:"https://link.dcentwallet.com"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_dcentwallet_index_0cb8aa2d.js.map

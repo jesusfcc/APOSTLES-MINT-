@@ -1,0 +1,3 @@
+module.exports=[986710,a=>{"use strict";a.s(["wallet",0,{id:"app.linen",name:"Linen",homepage:"https://linen.app/",image_id:"aff3e4e1-92a9-4066-f48f-3591947cf200",app:{browser:null,ios:"https://apps.apple.com/app/linen-app-investing-in-defi/id1480509067",android:"https://play.google.com/store/apps/details?id=app.linen.wallet",mac:"",windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"linen://",universal:"https://linen.app/"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_app_linen_index_2464e411.js.map

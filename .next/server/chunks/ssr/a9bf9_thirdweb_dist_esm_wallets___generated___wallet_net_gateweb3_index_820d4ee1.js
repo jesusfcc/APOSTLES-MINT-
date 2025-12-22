@@ -1,0 +1,3 @@
+module.exports=[395729,a=>{"use strict";a.s(["wallet",0,{id:"net.gateweb3",name:"GateWallet",homepage:"https://www.gateweb3.net/web3",image_id:"6e528abf-7a7d-47bd-d84d-481f169b1200",app:{browser:null,ios:"https://www.gate.io/mobileapp",android:"https://www.gate.io/mobileapp",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"gtweb3wallet://",universal:null},desktop:{native:"gtweb3wallet://",universal:"https://www.gateweb3.net/web3"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_net_gateweb3_index_820d4ee1.js.map

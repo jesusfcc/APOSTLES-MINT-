@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,242159,t=>{"use strict";var e=t.i(803702);async function a(t,a){let s=await t({method:"eth_estimateGas",params:[a]});return(0,e.hexToBigInt)(s)}t.s(["eth_estimateGas",()=>a])}]);

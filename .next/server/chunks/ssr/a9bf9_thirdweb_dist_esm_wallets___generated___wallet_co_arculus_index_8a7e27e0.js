@@ -1,0 +1,3 @@
+module.exports=[877231,a=>{"use strict";a.s(["wallet",0,{id:"co.arculus",name:"Arculus Wallet",homepage:"https://www.arculus.co",image_id:"3882c5aa-61f8-4ef6-a628-97cdc4494000",app:{browser:null,ios:"https://apps.apple.com/us/app/arculus-wallet/id1575425801",android:"https://play.google.com/store/apps/details?id=co.arculus.wallet.android&hl=en_US&gl=US",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"arculuswc://",universal:"https://gw.arculus.co/app/wc"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_co_arculus_index_8a7e27e0.js.map

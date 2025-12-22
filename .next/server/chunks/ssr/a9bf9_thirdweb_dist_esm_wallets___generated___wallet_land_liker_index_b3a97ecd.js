@@ -1,0 +1,3 @@
+module.exports=[843887,a=>{"use strict";a.s(["wallet",0,{id:"land.liker",name:"LikerLand App",homepage:"https://liker.land/getapp",image_id:"501fa316-f0df-4a1b-ead6-5523251b7100",app:{browser:null,ios:"https://apps.apple.com/app/liker-land/id1248232355",android:"https://play.google.com/store/apps/details?id=com.oice",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"com.oice://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_land_liker_index_b3a97ecd.js.map

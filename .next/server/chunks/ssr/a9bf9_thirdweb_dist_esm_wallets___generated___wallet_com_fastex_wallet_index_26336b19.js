@@ -1,0 +1,3 @@
+module.exports=[834642,a=>{"use strict";a.s(["wallet",0,{id:"com.fastex.wallet",name:"Yo Wallet",homepage:"https://yowallet.io",image_id:"a38db32b-8291-4d25-9aae-4bf4b6e6f300",app:{browser:null,ios:"https://apps.apple.com/us/app/fastex-wallet/id6474118944",android:"https://play.google.com/store/apps/details?id=com.yowallet.app",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:"com.fastex.wallet",mobile:{native:"yo-wallet://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_fastex_wallet_index_26336b19.js.map

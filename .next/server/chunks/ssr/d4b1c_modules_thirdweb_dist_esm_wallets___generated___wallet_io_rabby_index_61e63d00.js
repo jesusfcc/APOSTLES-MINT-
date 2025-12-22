@@ -1,0 +1,3 @@
+module.exports=[982124,a=>{"use strict";a.s(["wallet",0,{id:"io.rabby",name:"Rabby",homepage:"https://rabby.io/",image_id:"255e6ba2-8dfd-43ad-e88e-57cbb98f6800",app:{browser:"https://chrome.google.com/webstore/detail/rabby/acmacodkjbdgmoleebolmdjonilkdbch",ios:null,android:null,mac:null,windows:null,linux:null,chrome:"https://chrome.google.com/webstore/detail/rabby-wallet/acmacodkjbdgmoleebolmdjonilkdbch",firefox:null,safari:null,edge:null,opera:null},rdns:"io.rabby",mobile:{native:null,universal:null},desktop:{native:null,universal:"https://chrome.google.com/webstore/detail/rabby/acmacodkjbdgmoleebolmdjonilkdbch"}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_io_rabby_index_61e63d00.js.map

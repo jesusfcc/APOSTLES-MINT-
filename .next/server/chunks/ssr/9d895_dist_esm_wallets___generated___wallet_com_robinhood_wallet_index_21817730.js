@@ -1,0 +1,3 @@
+module.exports=[784712,a=>{"use strict";a.s(["wallet",0,{id:"com.robinhood.wallet",name:"Robinhood Wallet",homepage:"https://robinhood.com/web3-wallet/",image_id:"dfe0e3e3-5746-4e2b-12ad-704608531500",app:{browser:"https://robinhood.com/web3-wallet/",ios:"https://robinhood.com/web3-wallet/",android:"https://play.google.com/store/apps/details?id=com.robinhood.gateway",mac:null,windows:null,linux:null,chrome:"https://robinhood.com/web3-wallet/",firefox:null,safari:null,edge:null,opera:null},rdns:"com.robinhood.wallet",mobile:{native:"robinhood-wallet://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_com_robinhood_wallet_index_21817730.js.map

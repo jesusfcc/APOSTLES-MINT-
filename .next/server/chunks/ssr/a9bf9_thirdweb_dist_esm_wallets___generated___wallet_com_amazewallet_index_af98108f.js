@@ -1,0 +1,3 @@
+module.exports=[128251,a=>{"use strict";a.s(["wallet",0,{id:"com.amazewallet",name:"AmazeWallet",homepage:"https://amazewallet.com/",image_id:"38495eb4-efcf-47cb-be73-a695510f9f00",app:{browser:null,ios:"https://apps.apple.com/gb/app/amazewallet/id1622941204",android:"https://play.google.com/store/apps/details?id=com.mining.amaze.wallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"amazeapp://amazewallet.com",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_amazewallet_index_af98108f.js.map

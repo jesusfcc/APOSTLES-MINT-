@@ -1,0 +1,3 @@
+module.exports=[669909,a=>{"use strict";a.s(["wallet",0,{id:"com.optowallet",name:"Opto Wallet",homepage:"https://optowallet.com/",image_id:"3df102e4-e435-49dd-d4b1-5ea74ebed500",app:{browser:null,ios:"https://apps.apple.com/us/app/opto-wallet/id6443854537",android:"https://play.google.com/store/apps/details?id=app.opto.wallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"opto://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_optowallet_index_bd52d81c.js.map

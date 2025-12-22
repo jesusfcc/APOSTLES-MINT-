@@ -1,0 +1,3 @@
+module.exports=[663373,a=>{"use strict";a.s(["wallet",0,{id:"io.klever",name:"Klever Wallet",homepage:"https://klever.io/",image_id:"2e181ba3-bf6f-4599-5349-f7409bc62100",app:{browser:null,ios:"https://apps.apple.com/us/app/klever-wallet/id1615064243",android:"https://play.google.com/store/apps/details?id=finance.klever.bitcoin.wallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"klever-wallet://dp/walletconnect",universal:"https://klever.page.link"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_io_klever_index_de8b6bcc.js.map

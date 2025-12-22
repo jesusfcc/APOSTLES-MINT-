@@ -1,0 +1,3 @@
+module.exports=[135773,a=>{"use strict";a.s(["wallet",0,{id:"io.huddln",name:"Huddln",homepage:"https://www.huddln.io",image_id:"7ba1571c-10c4-4284-b438-04dac27cb700",app:{browser:null,ios:"https://apps.apple.com/us/app/huddln-nft-social-network/id1503825604",android:"https://play.google.com/store/apps/details?id=com.huddln&hl=en_US&gl=US",mac:"",windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"huddln://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_io_huddln_index_5e913791.js.map

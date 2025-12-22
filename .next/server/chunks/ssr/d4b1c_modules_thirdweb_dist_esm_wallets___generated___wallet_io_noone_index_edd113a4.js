@@ -1,0 +1,3 @@
+module.exports=[813787,a=>{"use strict";a.s(["wallet",0,{id:"io.noone",name:"Noone Wallet",homepage:"https://noone.io/",image_id:"fbae89d3-d6cb-4b98-bd1c-b2007b61ed00",app:{browser:null,ios:"https://apps.apple.com/us/app/noone-wallet/id1668333995",android:"https://play.google.com/store/apps/details?id=io.noone.androidwallet&hl=en&gl=US",mac:null,windows:null,linux:null,chrome:"https://chrome.google.com/webstore/detail/noone-wallet/bgfhmafjampalkbjicjcjiikhlaggdnm",firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"crypto.noone.wallet://walletcon",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_io_noone_index_edd113a4.js.map

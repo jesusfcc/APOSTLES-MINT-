@@ -1,0 +1,3 @@
+module.exports=[912021,a=>{"use strict";a.s(["wallet",0,{id:"com.pionewallet",name:"PioneWallet",homepage:"https://pionewallet.com/",image_id:"d3ab5013-f497-4857-d169-4e666db89a00",app:{browser:null,ios:"https://apps.apple.com/us/app/pione-wallet/id6738914833",android:"https://play.google.com/store/apps/details?id=com.companyname.swaptobe&hl=vi",mac:"https://apps.apple.com/us/app/pione-wallet/id6738914833",windows:"",linux:"",chrome:"https://",firefox:null,safari:null,edge:null,opera:null},rdns:"com.pionewallet",mobile:{native:"pionewallet://",universal:""},desktop:{native:"",universal:""}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_pionewallet_index_99fab8d9.js.map

@@ -1,0 +1,3 @@
+module.exports=[668022,a=>{"use strict";a.s(["wallet",0,{id:"app.clot",name:"Clot",homepage:"https://clot.app",image_id:"a7d2716d-69b8-4422-9797-ed63b1f9c000",app:{browser:"https://clot.app",ios:"https://apps.apple.com/app/clot-wallet/id1584113315",android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"clot://",universal:null},desktop:{native:null,universal:"https://clot.app"}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_app_clot_index_f349469e.js.map

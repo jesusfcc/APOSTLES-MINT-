@@ -1,0 +1,3 @@
+module.exports=[550516,a=>{"use strict";a.s(["wallet",0,{id:"com.ledger",name:"Ledger Live",homepage:"https://www.ledger.com/ledger-live",image_id:"c20e1cec-05e8-4ac6-a086-7ce355092400",app:{browser:null,ios:"https://itunes.apple.com/app/id1361671700",android:"https://play.google.com/store/apps/details?id=com.ledger.live",mac:"https://www.ledger.com/ledger-live",windows:"https://www.ledger.com/ledger-live",linux:"https://www.ledger.com/ledger-live",chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"ledgerlive://",universal:null},desktop:{native:"ledgerlive://",universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_ledger_index_a522d653.js.map

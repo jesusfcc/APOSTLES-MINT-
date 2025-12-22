@@ -1,0 +1,3 @@
+module.exports=[27098,a=>{"use strict";a.s(["wallet",0,{id:"ai.purewallet",name:"PureWallet app",homepage:"https://purewallet.ai",image_id:"4e97b9d6-60eb-42cd-6256-5cd7205e3f00",app:{browser:null,ios:"https://apps.apple.com/us/app/purewallet/id6738949168?platform=iphone",android:"https://play.google.com/store/apps/details?id=com.nslab.purewalletp&pli=1",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"purewalletp://",universal:""},desktop:{native:"",universal:""}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_ai_purewallet_index_3c92b55f.js.map

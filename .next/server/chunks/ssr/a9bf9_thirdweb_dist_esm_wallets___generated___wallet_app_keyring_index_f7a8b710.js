@@ -1,0 +1,3 @@
+module.exports=[612569,a=>{"use strict";a.s(["wallet",0,{id:"app.keyring",name:"KEYRING PRO",homepage:"https://keyring.app/",image_id:"dda0f0fb-34e8-4a57-dcea-b008e7d1ff00",app:{browser:"https://keyring.app/",ios:"https://apps.apple.com/us/app/keyring-pro-wallet-management/id1546824976",android:"https://play.google.com/store/apps/details?id=co.bacoor.keyring",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"keyring://",universal:"https://keyring.app/"},desktop:{native:null,universal:"https://keyring.app/"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_app_keyring_index_f7a8b710.js.map

@@ -1,0 +1,3 @@
+module.exports=[574903,a=>{"use strict";a.s(["wallet",0,{id:"com.vgxfoundation",name:"VGX Wallet",homepage:"https://vgxfoundation.com/",image_id:"91035734-c365-4341-6835-c056a22cc200",app:{browser:null,ios:"https://apps.apple.com/us/app/safemoon/id1579735495",android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"safemoon://",universal:"https://safemoon.com/wc/wc"},desktop:{native:"safemoon://",universal:"https://safemoon.com/wc/wc"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_vgxfoundation_index_74584270.js.map

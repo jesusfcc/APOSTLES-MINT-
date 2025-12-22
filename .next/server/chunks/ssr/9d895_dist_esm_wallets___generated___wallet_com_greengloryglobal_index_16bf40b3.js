@@ -1,0 +1,3 @@
+module.exports=[475089,a=>{"use strict";a.s(["wallet",0,{id:"com.greengloryglobal",name:"Blockaura",homepage:"https://greengloryglobal.com/",image_id:"8cc7ddbc-a257-4383-4f84-3847e707bb00",app:{browser:null,ios:null,android:"https://play.google.com/store/apps/details?id=com.blockaura_classic",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"blockaura://walletconnect",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_com_greengloryglobal_index_16bf40b3.js.map

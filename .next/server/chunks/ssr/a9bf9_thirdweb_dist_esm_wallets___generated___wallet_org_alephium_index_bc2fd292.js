@@ -1,0 +1,3 @@
+module.exports=[965935,a=>{"use strict";a.s(["wallet",0,{id:"org.alephium",name:"Alephium Wallet",homepage:"https://alephium.org/",image_id:"3ece76f1-fc71-4fad-2d28-707f5a8d2300",app:{browser:null,ios:"https://apps.apple.com/us/app/alephium-wallet/id6469043072",android:"https://play.google.com/store/apps/details?id=org.alephium.wallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"alephium://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_org_alephium_index_bc2fd292.js.map

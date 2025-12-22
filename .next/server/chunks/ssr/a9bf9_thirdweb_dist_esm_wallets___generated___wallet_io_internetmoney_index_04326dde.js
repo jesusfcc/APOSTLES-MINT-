@@ -1,0 +1,3 @@
+module.exports=[221223,a=>{"use strict";a.s(["wallet",0,{id:"io.internetmoney",name:"Internet Money Wallet",homepage:"https://internetmoney.io",image_id:"204b2240-5ce4-4996-6ec4-f06a22726900",app:{browser:null,ios:"https://apps.apple.com/us/app/id1641771042",android:"https://play.google.com/store/apps/details?id=com.internetmoneywallet.app",mac:null,windows:null,linux:null,chrome:"https://chrome.google.com/webstore/detail/ckklhkaabbmdjkahiaaplikpdddkenic",firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"internetmoney://",universal:"https://internetmoney.io"},desktop:{native:null,universal:"https://internetmoney.io"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_internetmoney_index_04326dde.js.map

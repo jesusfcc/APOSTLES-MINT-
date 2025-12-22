@@ -1,0 +1,3 @@
+module.exports=[515460,a=>{"use strict";a.s(["wallet",0,{id:"app.omni",name:"Omni",homepage:"https://omni.app",image_id:"2cd67b4c-282b-4809-e7c0-a88cd5116f00",app:{browser:null,ios:"https://apps.apple.com/de/app/steakwallet/id1569375204?l=en",android:"https://play.google.com/store/apps/details?id=fi.steakwallet.app",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"omni://",universal:"https://links.omni.app"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_app_omni_index_da1660a5.js.map

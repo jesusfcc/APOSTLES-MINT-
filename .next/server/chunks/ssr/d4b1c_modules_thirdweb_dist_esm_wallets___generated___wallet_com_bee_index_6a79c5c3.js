@@ -1,0 +1,3 @@
+module.exports=[491391,a=>{"use strict";a.s(["wallet",0,{id:"com.bee",name:"BeeWallet",homepage:"https://www.bee.com/en",image_id:"77743ed9-5ac6-48f7-867d-0f98e481b500",app:{browser:null,ios:"https://apps.apple.com/app/id1529988919",android:"https://play.google.com/store/apps/details?id=network.bee.app",mac:null,windows:null,linux:null,chrome:"https://chrome.google.com/webstore/detail/bee-wallet/nankopfjhdflikcokhgohiaoehnjfako",firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"bee://",universal:"https://main.apple.bee9527.com"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_com_bee_index_6a79c5c3.js.map

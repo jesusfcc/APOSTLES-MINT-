@@ -1,0 +1,3 @@
+module.exports=[526960,a=>{"use strict";a.s(["wallet",0,{id:"io.ricewallet",name:"RiceWallet",homepage:"https://ricewallet.io/",image_id:"df94578e-19be-4f00-258f-2470343e7b00",app:{browser:"https://ricewallet.io",ios:null,android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"ricewallet://",universal:"https://ricewallet.io"},desktop:{native:null,universal:"https://ricewallet.io"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_ricewallet_index_35e65b56.js.map

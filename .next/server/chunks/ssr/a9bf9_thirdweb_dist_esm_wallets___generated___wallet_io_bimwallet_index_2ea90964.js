@@ -1,0 +1,3 @@
+module.exports=[411583,a=>{"use strict";a.s(["wallet",0,{id:"io.bimwallet",name:"BIM Wallet",homepage:"https://www.bimwallet.io/",image_id:"dae5a6bb-ac44-4d75-8c25-a361801d3b00",app:{browser:null,ios:null,android:"https://play.google.com/store/apps/details?id=io.bimwallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"bimwallet://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_bimwallet_index_2ea90964.js.map

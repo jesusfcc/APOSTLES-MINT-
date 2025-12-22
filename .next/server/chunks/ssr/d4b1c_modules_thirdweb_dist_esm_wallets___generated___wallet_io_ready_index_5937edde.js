@@ -1,0 +1,3 @@
+module.exports=[485429,a=>{"use strict";a.s(["wallet",0,{id:"io.ready",name:"Ready",homepage:"https://ready.io/",image_id:"00ba080d-fb0a-4a31-940e-f75388500500",app:{browser:null,ios:"https://apps.apple.com/us/app/ready-next-gen-messenger/id1668536401",android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"readywallet://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_io_ready_index_5937edde.js.map

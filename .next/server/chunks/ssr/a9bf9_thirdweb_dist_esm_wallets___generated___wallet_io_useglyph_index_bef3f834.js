@@ -1,0 +1,3 @@
+module.exports=[393067,a=>{"use strict";a.s(["wallet",0,{id:"io.useglyph",name:"Glyph Wallet",homepage:"https://useglyph.io/",image_id:"glyph.png",app:{browser:null,ios:null,android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:"io.useglyph",mobile:{native:null,universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_useglyph_index_bef3f834.js.map

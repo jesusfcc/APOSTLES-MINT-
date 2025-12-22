@@ -1,0 +1,3 @@
+module.exports=[64459,a=>{"use strict";a.s(["wallet",0,{id:"xyz.talisman",name:"Talisman Wallet",homepage:"https://talisman.xyz",image_id:"ba290222-c3f3-4194-23bf-28ba7587af00",app:{browser:null,ios:null,android:null,mac:null,windows:null,linux:null,chrome:"https://chromewebstore.google.com/detail/talisman-wallet/fijngjgcjhjmmpcmkeiomlglpeiijkld",firefox:null,safari:null,edge:null,opera:null},rdns:"xyz.talisman",mobile:{native:null,universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_xyz_talisman_index_9700bd3b.js.map

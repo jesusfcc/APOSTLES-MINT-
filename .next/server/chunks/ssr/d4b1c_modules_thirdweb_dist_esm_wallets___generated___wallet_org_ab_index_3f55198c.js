@@ -1,0 +1,3 @@
+module.exports=[822753,a=>{"use strict";a.s(["wallet",0,{id:"org.ab",name:"ABWallet",homepage:"https://ab.org/abwallet",image_id:"c2cb1d47-305e-45da-cdb8-b55b73ea4300",app:{browser:null,ios:"https://apps.apple.com/us/app/ab-wallet/id6745787849",android:"https://play.google.com/store/apps/details?id=org.ab.abwallet.android.release",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"abwallet://walletconnect",universal:""},desktop:{native:"",universal:""}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_org_ab_index_3f55198c.js.map

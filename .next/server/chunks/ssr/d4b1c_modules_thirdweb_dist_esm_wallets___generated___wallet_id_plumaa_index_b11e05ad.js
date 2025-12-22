@@ -1,0 +1,3 @@
+module.exports=[535258,a=>{"use strict";a.s(["wallet",0,{id:"id.plumaa",name:"Plumaa ID",homepage:"https://plumaa.id",image_id:"dd6271ac-f9ba-4580-4db2-484bf4d0fc00",app:{browser:"https://app.plumaa.id",ios:"https://apps.apple.com/mx/app/plumaa-id/id6475269207",android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"plumaa://",universal:"https://api.plumaa.id/app/"},desktop:{native:"plumaa://",universal:"https://api.plumaa.id/app/"}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_id_plumaa_index_b11e05ad.js.map

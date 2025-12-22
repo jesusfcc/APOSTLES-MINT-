@@ -1,0 +1,3 @@
+module.exports=[91343,a=>{"use strict";a.s(["wallet",0,{id:"com.hootark",name:"HootArk",homepage:"https://www.hootark.com/",image_id:"c5f74b15-89cc-4f1f-8387-d3ffeb7a3400",app:{browser:null,ios:null,android:"https://play.google.com/store/apps/details?id=com.bose.meta.browser",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"HootArk://",universal:""},desktop:{native:"",universal:""}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_hootark_index_2cfebcd6.js.map

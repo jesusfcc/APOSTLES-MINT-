@@ -1,0 +1,3 @@
+module.exports=[37864,a=>{"use strict";a.s(["wallet",0,{id:"com.meld.app",name:"MELDapp",homepage:"https://app.meld.com",image_id:"7946da4c-c8b7-4037-f044-8c3f7f1cb200",app:{browser:"https://app.meld.com",ios:null,android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:"com.meld.app",mobile:{native:"meld://walletconnect",universal:null},desktop:{native:null,universal:"https://app.meld.com"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_meld_app_index_33149222.js.map

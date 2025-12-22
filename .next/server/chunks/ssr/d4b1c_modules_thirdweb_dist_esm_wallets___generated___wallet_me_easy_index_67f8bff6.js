@@ -1,0 +1,3 @@
+module.exports=[632185,a=>{"use strict";a.s(["wallet",0,{id:"me.easy",name:"EASY",homepage:"https://easy.me",image_id:"62feb41a-be1f-4b1c-e089-27f97c0e8d00",app:{browser:null,ios:"https://apps.apple.com/us/app/easy-web3-social-wallet/id1641192503",android:"https://play.google.com/store/apps/details?id=co.theeasy.app",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"co.theeasy.app://",universal:"https://link.easy.me"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_me_easy_index_67f8bff6.js.map

@@ -1,0 +1,3 @@
+module.exports=[818256,a=>{"use strict";a.s(["wallet",0,{id:"io.pltwallet",name:"PLTwallet",homepage:"https://pltwallet.io/",image_id:"a5d9dd15-8cef-42de-8bed-09e01a8b0200",app:{browser:null,ios:"https://apps.apple.com/us/app/id1581055631",android:"https://play.google.com/store/apps/details?id=com.palettechain.wallet&hl=ja&gl=US",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"pltwallet://",universal:"https://pltwallet.io/"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_pltwallet_index_a429fe14.js.map

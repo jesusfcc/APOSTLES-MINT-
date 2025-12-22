@@ -1,0 +1,3 @@
+module.exports=[394327,a=>{"use strict";a.s(["wallet",0,{id:"xyz.abs",name:"Abstract Global Wallet",homepage:"https://abs.xyz/",image_id:"abstract.png",app:{browser:null,ios:null,android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:"xyz.abs",mobile:{native:null,universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_xyz_abs_index_a690e7aa.js.map

@@ -1,0 +1,3 @@
+module.exports=[140383,a=>{"use strict";a.s(["wallet",0,{id:"com.reown.appkit-lab",name:"Flutter Sample Wallet",homepage:"https://appkit-lab.reown.com/flutter_walletkit",image_id:"db10ede4-39c3-48ff-f85b-de9b5f17d000",app:{browser:null,ios:"https://testflight.apple.com/join/ABbjL9Yu",android:"https://appdistribution.firebase.dev/i/86311d3c1caf8ea9",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"wcflutterwallet-internal://",universal:"https://appkit-lab.reown.com/flutter_walletkit_internal"},desktop:{native:"wcflutterwallet://",universal:"https://lab.web3modal.com/walletkit_flutter"}}])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_com_reown_appkit-lab_index_150f28c5.js.map

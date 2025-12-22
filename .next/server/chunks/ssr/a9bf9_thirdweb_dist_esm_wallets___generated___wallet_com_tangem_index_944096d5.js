@@ -1,0 +1,3 @@
+module.exports=[276499,a=>{"use strict";a.s(["wallet",0,{id:"com.tangem",name:"Tangem Wallet",homepage:"https://tangem.com",image_id:"80679c6f-bb0b-43d0-83e0-462ac268b600",app:{browser:null,ios:"https://apps.apple.com/uz/app/tangem/id1354868448",android:"https://play.google.com/store/apps/details?id=com.tangem.wallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"tangem://",universal:"https://app.tangem.com"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_tangem_index_944096d5.js.map

@@ -1,0 +1,3 @@
+module.exports=[426165,a=>{"use strict";a.s(["wallet",0,{id:"io.legacynetwork",name:"Legacy Wallet",homepage:"https://www.legacynetwork.io/",image_id:"ed181b1b-e4c0-4a2e-4a4c-f380a9f13c00",app:{browser:null,ios:"https://apps.apple.com/us/app/legacy-wallet/id6443578674",android:"https://play.google.com/store/apps/details?id=io.legacynetwork.app",mac:null,windows:null,linux:null,chrome:"https://chrome.google.com/webstore/detail/legacy-wallet/ammjlinfekkoockogfhdkgcohjlbhmff",firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"legacy://network.io",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_legacynetwork_index_3817cf3a.js.map

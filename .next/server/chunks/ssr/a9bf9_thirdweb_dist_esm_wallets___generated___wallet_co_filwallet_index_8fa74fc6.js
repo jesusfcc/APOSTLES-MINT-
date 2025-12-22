@@ -1,0 +1,3 @@
+module.exports=[893625,a=>{"use strict";a.s(["wallet",0,{id:"co.filwallet",name:"FILWallet",homepage:"https://filwallet.co/",image_id:"f400f6c2-ca6c-487b-654d-e119af247500",app:{browser:null,ios:"https://apps.apple.com/us/app/filwallet-io/id1572930901",android:"https://filwallet.co/",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:null,universal:"https://h5.filwallet.co"},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_co_filwallet_index_8fa74fc6.js.map

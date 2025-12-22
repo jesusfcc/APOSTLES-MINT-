@@ -1,0 +1,3 @@
+module.exports=[323831,a=>{"use strict";a.s(["wallet",0,{id:"com.kriptonio",name:"Kriptonio",homepage:"https://kriptonio.com",image_id:"331e57d3-d157-4bc3-8ea5-48a03f705e00",app:{browser:"https://kriptonio.com",ios:"https://apps.apple.com/hr/app/kriptonio/id6444807361",android:"https://play.google.com/store/apps/details?id=com.kriptonio.mobile.android",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"kriptonio://",universal:"https://app.kriptonio.com/mobile"},desktop:{native:null,universal:"https://kriptonio.com"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_kriptonio_index_2f297d8b.js.map

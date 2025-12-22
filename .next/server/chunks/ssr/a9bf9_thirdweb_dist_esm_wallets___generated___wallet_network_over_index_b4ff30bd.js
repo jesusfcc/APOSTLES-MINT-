@@ -1,0 +1,3 @@
+module.exports=[246368,a=>{"use strict";a.s(["wallet",0,{id:"network.over",name:"OverFlex",homepage:"https://over.network/overflex",image_id:"ac442ec8-206d-4885-41dc-005aa94bc500",app:{browser:null,ios:"https://apps.apple.com/us/app/overwallet-for-over-protocol/id6447250892",android:"https://play.google.com/store/apps/details?id=com.superblock.overmobile",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"overflex://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_network_over_index_b4ff30bd.js.map

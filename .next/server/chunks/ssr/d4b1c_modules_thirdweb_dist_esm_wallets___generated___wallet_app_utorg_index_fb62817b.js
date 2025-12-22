@@ -1,0 +1,3 @@
+module.exports=[763191,a=>{"use strict";a.s(["wallet",0,{id:"app.utorg",name:"UTORG",homepage:"https://utorg.app",image_id:"39c77c0b-d6ea-419d-92b7-513a5eac2c00",app:{browser:null,ios:"https://apps.apple.com/app/utorg-bitcoin-crypto-wallet/id6444720908",android:"https://play.google.com/store/apps/details?id=com.utorg",mac:"",windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"utorg://mainactivity",universal:"https://link.utorg.com/zp0f"},desktop:{native:"utorg://mainactivity",universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_app_utorg_index_fb62817b.js.map

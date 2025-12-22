@@ -1,0 +1,3 @@
+module.exports=[382277,a=>{"use strict";a.s(["wallet",0,{id:"xyz.tucop",name:"TuCOP Wallet",homepage:"https://tucop.xyz/",image_id:"2d38bfd6-85dc-41b5-a125-a0eca4100200",app:{browser:null,ios:null,android:"https://play.google.com/store/apps/details?id=org.tucop",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"myapp://tucop",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_xyz_tucop_index_e861366d.js.map

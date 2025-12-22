@@ -1,0 +1,3 @@
+module.exports=[782878,a=>{"use strict";a.s(["wallet",0,{id:"io.yowallet",name:"YoWallet",homepage:"https://yowallet.io",image_id:"750079a0-6372-4e32-d1af-fe8ec2bbe400",app:{browser:"https://yowallet.io",ios:"https://apps.apple.com/us/app/yowallet/id6474118944",android:"https://play.google.com/store/apps/details?id=com.yowallet.app&hl=en",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"yo-wallet://",universal:null},desktop:{native:null,universal:"https://yowallet.io"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_yowallet_index_11cf37e9.js.map

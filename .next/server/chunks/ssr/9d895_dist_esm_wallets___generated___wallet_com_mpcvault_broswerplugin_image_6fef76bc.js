@@ -1,0 +1,3 @@
+module.exports=[786887,a=>{"use strict";a.s(["default",0,"data:image/webp;base64,UklGRloBAABXRUJQVlA4IE4BAABwDACdASqAAIAAPm02l0gkIyIhJpiYKIANiWlu4XPhtADFBZApmfjr+lt+gJ9vhcmrqB8G2TaDpoQH7YjogbiFrWwAjK0Ob3j9RZNFeANor4zhrSs0Od42oCOhqK5hxAFeYhklEHwbZef+FAAA/v+DYAZ4oJo4MDROzYok/PXGekvWPTzRs0G4z7LGJuM1uHwyTkYQUd4xruoUzoJat/n3y/QByH1U1/Z2tVOTAcs05z9LbYYBMWm9jyLsRkb1/GtL7byW2ZXCd71n8793ZnAh3vtOSD8psis3wJWTS1FoIP+OPhaDz+l5eUVdvlfylyqISU1uhMz52bGXb0LeSwV/kmWm8RwcUPV0tfiPVnleAySgFfpK5+CEUcou9uIeni/mLbeli11ZImqH1RJZjoOVOUVSF8A/BkFxm94OoaLibtIYQsOoeKjDgDPMAAAA"])}];
+
+//# sourceMappingURL=9d895_dist_esm_wallets___generated___wallet_com_mpcvault_broswerplugin_image_6fef76bc.js.map

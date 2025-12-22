@@ -1,0 +1,3 @@
+module.exports=[546519,a=>{"use strict";a.s(["wallet",0,{id:"io.uptn.dapp-web",name:"UPTN",homepage:"https://dapp-web.uptn.io",image_id:"5e656c3e-96ae-484f-c0c6-37bc908daa00",app:{browser:null,ios:"https://apps.apple.com/kr/app/id6444606758",android:"https://play.google.com/store/apps/details?id=io.uptn.wallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"uptn://dapp-web.uptn.io/",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_uptn_dapp-web_index_26390e25.js.map

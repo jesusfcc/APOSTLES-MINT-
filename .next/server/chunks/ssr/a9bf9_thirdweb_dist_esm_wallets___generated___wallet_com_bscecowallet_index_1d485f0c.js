@@ -1,0 +1,3 @@
+module.exports=[335006,a=>{"use strict";a.s(["wallet",0,{id:"com.bscecowallet",name:"BSC Wallet",homepage:"https://bscecowallet.com",image_id:"63fe9162-b352-4a2c-1da1-a31d48008e00",app:{browser:null,ios:"https://apps.apple.com/us/app/bsc-wallet-bnb-chain/id6445821381",android:null,mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"bscwalletapp://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_bscecowallet_index_1d485f0c.js.map

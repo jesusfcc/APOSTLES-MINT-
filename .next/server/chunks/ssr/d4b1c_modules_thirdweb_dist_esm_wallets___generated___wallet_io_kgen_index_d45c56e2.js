@@ -1,0 +1,3 @@
+module.exports=[609242,a=>{"use strict";a.s(["wallet",0,{id:"io.kgen",name:"KGeN Wallet",homepage:"https://kgen.io/",image_id:"77b4b806-d17e-4b24-597c-bc11c0a88100",app:{browser:null,ios:"https://apps.apple.com/in/app/kgen/id6478902511",android:"https://play.google.com/store/apps/details?id=com.indiggcommunity&hl=en_IN",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"kgen://app/wallet",universal:""},desktop:{native:"",universal:""}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_io_kgen_index_d45c56e2.js.map

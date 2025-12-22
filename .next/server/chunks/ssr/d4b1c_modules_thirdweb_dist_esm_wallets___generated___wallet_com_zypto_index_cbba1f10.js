@@ -1,0 +1,3 @@
+module.exports=[447045,a=>{"use strict";a.s(["wallet",0,{id:"com.zypto",name:"Zypto",homepage:"https://zypto.com",image_id:"4f6ae851-7fe6-41ac-5714-3a910b2ff400",app:{browser:null,ios:"https://apps.apple.com/app/zypto-all-in-one-crypto-wallet/id6463755992",android:"https://play.google.com/store/apps/details?id=com.zypto&gl=US",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:"com.zypto",mobile:{native:"zypto://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_com_zypto_index_cbba1f10.js.map

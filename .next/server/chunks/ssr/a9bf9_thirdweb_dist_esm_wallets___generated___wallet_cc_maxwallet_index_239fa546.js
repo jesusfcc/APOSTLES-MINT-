@@ -1,0 +1,3 @@
+module.exports=[305273,a=>{"use strict";a.s(["wallet",0,{id:"cc.maxwallet",name:"MaxWallet",homepage:"https://maxwallet.cc",image_id:"2f6e63fb-6443-4ac9-5978-85d61defb600",app:{browser:null,ios:"https://apps.apple.com/es/app/6670610349",android:"https://play.google.com/store/apps/details?id=com.maxwallet.cc",mac:"https://apps.apple.com/en/app/6670610349",windows:"https://maxwallet.cc/download/MAX-Wallet-1.0.0-win.exe",linux:"https://maxwallet.cc/download/MAX-Wallet-1.0.0-linux.AppImage",chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"maxwallet://",universal:""},desktop:{native:"maxwallet://",universal:""}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_cc_maxwallet_index_239fa546.js.map

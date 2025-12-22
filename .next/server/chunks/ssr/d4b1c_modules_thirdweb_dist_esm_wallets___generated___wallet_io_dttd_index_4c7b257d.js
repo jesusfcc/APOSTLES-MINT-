@@ -1,0 +1,3 @@
+module.exports=[445044,a=>{"use strict";a.s(["wallet",0,{id:"io.dttd",name:"DTTD",homepage:"https://www.dttd.io/",image_id:"4a1da9d0-1a81-4e51-4758-b2157f4e6000",app:{browser:null,ios:"https://hop.dttd.app/appstoredownload",android:"https://hop.dttd.app/googleplaydownload",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"dotted://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_io_dttd_index_4c7b257d.js.map

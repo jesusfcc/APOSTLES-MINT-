@@ -1,0 +1,3 @@
+module.exports=[201848,a=>{"use strict";a.s(["wallet",0,{id:"com.bmawallet",name:"BMA Wallet",homepage:"https://bmawallet.com/",image_id:"5d8240f7-1d58-4ada-12b3-0b5e7d5b1300",app:{browser:null,ios:null,android:"https://play.google.com/store/apps/details?id=com.bmawallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"bmawalletapp://walletconnect",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_bmawallet_index_b91ec1aa.js.map

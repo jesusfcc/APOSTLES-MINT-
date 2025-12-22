@@ -1,0 +1,3 @@
+module.exports=[979911,a=>{"use strict";a.s(["wallet",0,{id:"io.armana.portal",name:"Armana Portal",homepage:"https://portal.armana.io",image_id:"fe3c264d-b595-437d-e5f9-5e5833dd4300",app:{browser:"https://arman.io/mint",ios:"https://apps.apple.com/us/app/armana-portal/id6448726023",android:"https://play.google.com/store/apps/details?id=io.armana.portal",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"armanaportal://",universal:"https://portal.armana.io/wc?uri="},desktop:{native:null,universal:"https://arman.io/mint"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_io_armana_portal_index_63fe954d.js.map

@@ -1,0 +1,3 @@
+module.exports=[164466,a=>{"use strict";a.s(["wallet",0,{id:"com.zengo",name:"Zengo Wallet",homepage:"https://zengo.com/",image_id:"6133c399-ae32-4eba-0c5a-0fb84492bf00",app:{browser:"https://web.zengo.com/",ios:"https://apps.apple.com/us/app/zengo-crypto-bitcoin-wallet/id1440147115",android:"https://play.google.com/store/apps/details?id=com.zengo.wallet",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"zengo://get.zengo.com/",universal:"https://get.zengo.com/"},desktop:{native:null,universal:"https://web.zengo.com/"}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_com_zengo_index_a316702d.js.map

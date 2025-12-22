@@ -1,0 +1,3 @@
+module.exports=[534802,a=>{"use strict";a.s(["wallet",0,{id:"com.wallet.reown",name:"Leather",homepage:"https://leather.io/",image_id:"0153454e-9313-4441-b6cf-838e3d023000",app:{browser:null,ios:null,android:null,mac:null,windows:null,linux:null,chrome:"https://chromewebstore.google.com/detail/leather/ldinpeekobnhjjdofggfgjlcehhmanlj",firefox:null,safari:null,edge:null,opera:null},rdns:"com.wallet.reown",mobile:{native:null,universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_wallet_reown_index_9555363a.js.map

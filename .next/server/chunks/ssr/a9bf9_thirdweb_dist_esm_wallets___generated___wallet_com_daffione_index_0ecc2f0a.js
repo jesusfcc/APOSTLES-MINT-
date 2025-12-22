@@ -1,0 +1,3 @@
+module.exports=[142731,a=>{"use strict";a.s(["wallet",0,{id:"com.daffione",name:"DaffiOne",homepage:"https://www.daffione.com/",image_id:"1e87bcb9-452c-4ad7-471c-130ae0115000",app:{browser:null,ios:null,android:"https://play.google.com/store/apps/details?id=com.me.daffione",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"DaffiOne:// wc://",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_daffione_index_0ecc2f0a.js.map

@@ -1,0 +1,3 @@
+module.exports=[784689,a=>{"use strict";a.s(["wallet",0,{id:"com.fireblocks",name:"Fireblocks",homepage:"https://www.fireblocks.com/",image_id:"94e7efd8-001d-40c0-e490-61e6b85e1b00",app:{browser:"https://console.fireblocks.io/",ios:"https://apps.apple.com/us/app/fireblocks/id1439296596",android:"https://play.google.com/store/apps/details?id=com.fireblocks.client&gl=IL",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"fireblocks-wc://",universal:null},desktop:{native:null,universal:"https://console.fireblocks.io/v2/"}}])}];
+
+//# sourceMappingURL=a9bf9_thirdweb_dist_esm_wallets___generated___wallet_com_fireblocks_index_c1e28bc6.js.map

@@ -1,0 +1,3 @@
+module.exports=[239325,a=>{"use strict";a.s(["wallet",0,{id:"org.rezor",name:"Rezor",homepage:"https://www.rezor.org/",image_id:"0239b3e4-2c96-4045-d7f1-390a1ffc7e00",app:{browser:null,ios:null,android:"https://play.google.com/store/apps/details?id=com.rezor&hl=en_IN",mac:null,windows:null,linux:null,chrome:null,firefox:null,safari:null,edge:null,opera:null},rdns:null,mobile:{native:"rezor://app",universal:null},desktop:{native:null,universal:null}}])}];
+
+//# sourceMappingURL=d4b1c_modules_thirdweb_dist_esm_wallets___generated___wallet_org_rezor_index_efccd8db.js.map
