@@ -1,0 +1,548 @@
+/* ===========================
+   CSS Reset & Base Styles
+   =========================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Colors */
+    --gold: #FFD700;
+    --gold-bright: #FFC400;
+    --dark-bg: #0a0a0a;
+    --overlay-bg: rgba(0, 0, 0, 0.92);
+    --red: #ff3333;
+    --white: #ffffff;
+    --gray: #888888;
+    
+    /* Fonts */
+    --font-title: 'Cinzel', serif;
+    --font-body: 'Inter', sans-serif;
+    
+    /* Spacing */
+    --spacing-xs: 8px;
+    --spacing-sm: 16px;
+    --spacing-md: 24px;
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+}
+
+body {
+    font-family: var(--font-body);
+    background: var(--dark-bg);
+    color: var(--white);
+    overflow-x: hidden;
+    position: relative;
+    min-height: 100vh;
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('images/bg-renaissance.png') center/cover no-repeat;
+    filter: brightness(0.4) blur(2px);
+    z-index: -1;
+}
+
+/* ===========================
+   Screen Management
+   =========================== */
+.screen {
+    display: none;
+    width: 100%;
+    min-height: 100vh;
+    padding: var(--spacing-md);
+    position: relative;
+}
+
+.screen.active {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.overlay-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: var(--overlay-bg);
+    z-index: 1000;
+}
+
+/* ===========================
+   Splash Screen
+   =========================== */
+#splash-screen {
+    background: #000;
+}
+
+.splash-content {
+    text-align: center;
+    animation: fadeIn 1s ease-in;
+}
+
+.apostles-logo {
+    width: min(80vw, 320px);
+    height: auto;
+    margin-bottom: var(--spacing-md);
+    image-rendering: pixelated;
+}
+
+.splash-title {
+    font-family: var(--font-title);
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 2px;
+    text-transform: lowercase;
+}
+
+/* ===========================
+   Mint Screen
+   =========================== */
+#mint-screen {
+    justify-content: flex-start;
+    padding-top: var(--spacing-lg);
+    gap: var(--spacing-lg);
+}
+
+/* Wallet Button */
+.wallet-btn {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: var(--gold);
+    color: #000;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.3);
+}
+
+.wallet-btn:hover {
+    background: var(--gold-bright);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 215, 0, 0.5);
+}
+
+.wallet-btn.connected {
+    background: #2ecc71;
+}
+
+/* Carousel */
+.carousel-container {
+    width: 100%;
+    max-width: 500px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-xl);
+}
+
+.cards-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    width: 100%;
+    perspective: 1000px;
+}
+
+.card {
+    flex-shrink: 0;
+    width: 140px;
+    height: 200px;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    opacity: 0.3;
+    transform: scale(0.85) rotateY(25deg);
+    filter: brightness(0.6);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+.card.active {
+    width: 260px;
+    height: 370px;
+    opacity: 1;
+    transform: scale(1) rotateY(0deg);
+    filter: brightness(1);
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    z-index: 10;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.carousel-btn {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--white);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+}
+
+.carousel-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+/* Info Panel */
+.info-panel {
+    width: 100%;
+    max-width: 500px;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 215, 0, 0.3);
+    border-radius: 8px;
+    padding: var(--spacing-sm);
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+    border-bottom: 1px solid rgba(255, 215, 0, 0.2);
+}
+
+.info-row:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    font-family: var(--font-title);
+    color: var(--gold);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.info-value {
+    color: var(--gold);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+.quantity-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+}
+
+.qty-btn {
+    background: transparent;
+    border: 2px solid var(--gold);
+    color: var(--gold);
+    width: 32px;
+    height: 32px;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+}
+
+.qty-btn:hover {
+    background: var(--gold);
+    color: #000;
+    transform: scale(1.1);
+}
+
+.qty-value {
+    color: var(--gold);
+    font-size: 1.2rem;
+    font-weight: 700;
+    min-width: 32px;
+    text-align: center;
+}
+
+/* Mint Button */
+.mint-btn {
+    width: 100%;
+    max-width: 500px;
+    background: var(--gold);
+    color: #000;
+    border: none;
+    padding: 18px 32px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    font-family: var(--font-title);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.4);
+    letter-spacing: 1px;
+}
+
+.mint-btn:hover {
+    background: var(--gold-bright);
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(255, 215, 0, 0.6);
+}
+
+.mint-btn:active {
+    transform: translateY(0);
+}
+
+.mint-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* ===========================
+   Overlay Screens (Minting/Failed)
+   =========================== */
+.overlay-content {
+    text-align: center;
+    animation: fadeIn 0.5s ease-in;
+}
+
+.loading-logo {
+    width: min(60vw, 240px);
+    height: auto;
+    margin-bottom: var(--spacing-md);
+    image-rendering: pixelated;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+.loading-text {
+    font-size: 1.5rem;
+    color: var(--white);
+    font-weight: 600;
+}
+
+.error-text {
+    font-size: 1.5rem;
+    color: var(--red);
+    font-weight: 700;
+    margin-bottom: var(--spacing-md);
+}
+
+.retry-btn {
+    background: transparent;
+    border: 3px solid var(--red);
+    color: var(--red);
+    width: 64px;
+    height: 64px;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.retry-btn:hover {
+    background: var(--red);
+    color: var(--white);
+    transform: rotate(180deg) scale(1.1);
+}
+
+/* ===========================
+   Success Screen
+   =========================== */
+#success-screen {
+    padding-top: var(--spacing-lg);
+    gap: var(--spacing-md);
+}
+
+.back-btn {
+    position: absolute;
+    top: var(--spacing-md);
+    left: var(--spacing-md);
+    background: transparent;
+    border: none;
+    color: var(--white);
+    cursor: pointer;
+    padding: 8px;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    transform: translateX(-4px);
+}
+
+.success-content {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+    align-items: center;
+}
+
+.success-card {
+    width: 100%;
+    max-width: 400px;
+    aspect-ratio: 3/4;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+    animation: scaleIn 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.success-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.success-info {
+    width: 100%;
+    text-align: left;
+}
+
+.success-title {
+    font-family: var(--font-title);
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: var(--spacing-sm);
+    color: var(--white);
+}
+
+.success-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: var(--gray);
+}
+
+.show-more {
+    color: var(--gold);
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.share-btn {
+    width: 100%;
+    background: var(--gold);
+    color: #000;
+    border: none;
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 6px 20px rgba(255, 215, 0, 0.4);
+}
+
+.share-btn:hover {
+    background: var(--gold-bright);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 215, 0, 0.6);
+}
+
+.mint-another-btn {
+    width: 100%;
+    background: transparent;
+    color: var(--gold);
+    border: 3px solid var(--gold);
+    padding: 16px 32px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.mint-another-btn:hover {
+    background: var(--gold);
+    color: #000;
+    transform: translateY(-2px);
+}
+
+/* ===========================
+   Animations
+   =========================== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+@media (max-width: 600px) {
+    .carousel-container {
+        gap: 8px;
+    }
+    
+    .card {
+        width: 100px;
+        height: 140px;
+    }
+    
+    .card.active {
+        width: 200px;
+        height: 280px;
+    }
+    
+    .carousel-btn {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .info-panel {
+        font-size: 0.9rem;
+    }
+    
+    .mint-btn {
+        font-size: 1.1rem;
+        padding: 16px 24px;
+    }
+}

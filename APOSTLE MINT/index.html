@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tHe AposTLes - Mint</title>
+    <meta name="description"
+        content="Witness the convergence of history, mythology, and the divine. Mint your Apostle NFT on Base.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Farcaster Mini App Config -->
+    <meta property="fc:frame"
+        content='{"version": "1", "imageUrl": "https://example.com/image.png", "button": {"title": "Mint Now", "action": {"type": "launch_frame", "name": "The Apostles", "url": "https://example.com", "splashImageUrl": "https://example.com/splash.png", "splashBackgroundColor": "#000000"}}}' />
+    <!-- fc:miniapp is deprecated/alternative, but adding as requested in plan if needed, though strict spec says fc:frame is the way for v2 frames (mini apps). Wait, the docs say "A Mini App URL must have a MiniAppEmbed in a serialized form in the fc:miniapp meta tag... For backward compatibility... fc:frame is also supported". So I should add fc:miniapp predominantly. -->
+    <meta name="fc:miniapp"
+        content='{"version": "1", "imageUrl": "https://example.com/image.png", "button": {"title": "Mint Now", "action": {"type": "launch_frame", "name": "The Apostles", "url": "https://example.com", "splashImageUrl": "https://example.com/splash.png", "splashBackgroundColor": "#000000"}}}' />
+</head>
+
+<body>
+    <!-- Splash Screen -->
+    <div id="splash-screen" class="screen active">
+        <div class="splash-content">
+            <img src="images/apostles-pixel.png" alt="The Apostles" class="apostles-logo">
+            <h1 class="splash-title">tHe AposTLes</h1>
+        </div>
+    </div>
+
+    <!-- Mint Page -->
+    <div id="mint-screen" class="screen">
+        <!-- Wallet Connect Button -->
+        <button id="wallet-btn" class="wallet-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <rect x="3" y="6" width="18" height="13" rx="2" stroke="currentColor" stroke-width="2" />
+                <path d="M3 10h18" stroke="currentColor" stroke-width="2" />
+                <circle cx="17" cy="14" r="1.5" fill="currentColor" />
+            </svg>
+        </button>
+
+        <!-- Card Carousel -->
+        <div class="carousel-container">
+            <button class="carousel-btn prev" id="prev-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M15 18l-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+
+            <div class="cards-wrapper">
+                <div class="card" data-index="0">
+                    <img src="images/apostle-1.png" alt="Apostle 1">
+                </div>
+                <div class="card active" data-index="1">
+                    <img src="images/apostle-2.png" alt="Apostle 2">
+                </div>
+                <div class="card" data-index="2">
+                    <img src="images/apostle-3.png" alt="Apostle 3">
+                </div>
+            </div>
+
+            <button class="carousel-btn next" id="next-btn">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M9 18l6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                </svg>
+            </button>
+        </div>
+
+        <!-- Info Panel -->
+        <div class="info-panel">
+            <div class="info-row">
+                <span class="info-label">Remaining</span>
+                <span class="info-value" id="remaining">2525</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Price</span>
+                <span class="info-value">12 Silver coins</span>
+            </div>
+            <div class="info-row">
+                <span class="info-label">Quantity</span>
+                <div class="quantity-controls">
+                    <button class="qty-btn" id="qty-minus">-</button>
+                    <span class="qty-value" id="quantity">1</span>
+                    <button class="qty-btn" id="qty-plus">+</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mint Button -->
+        <button id="mint-btn" class="mint-btn">MINT NOW</button>
+    </div>
+
+    <!-- Minting State -->
+    <div id="minting-screen" class="screen overlay-screen">
+        <div class="overlay-content">
+            <img src="images/apostles-pixel.png" alt="The Apostles" class="loading-logo">
+            <p class="loading-text">Minting...</p>
+        </div>
+    </div>
+
+    <!-- Minting Failed -->
+    <div id="failed-screen" class="screen overlay-screen">
+        <div class="overlay-content">
+            <img src="images/apostles-pixel.png" alt="The Apostles" class="loading-logo">
+            <p class="error-text">Minting failed</p>
+            <button class="retry-btn" id="retry-btn">
+                <svg width="32" height="32" viewBox="0 0 24 24" fill="none">
+                    <path
+                        d="M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z"
+                        fill="currentColor" />
+                </svg>
+            </button>
+        </div>
+    </div>
+
+    <!-- Success Screen -->
+    <div id="success-screen" class="screen">
+        <button class="back-btn" id="back-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M19 12H5M5 12l7-7M5 12l7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+        </button>
+
+        <div class="success-content">
+            <div class="success-card">
+                <img id="minted-image" src="images/apostle-2.png" alt="Minted Apostle">
+            </div>
+
+            <div class="success-info">
+                <h2 class="success-title" id="success-title">The Apostle #2158</h2>
+                <p class="success-description" id="success-description">
+                    Witness the convergence of history, mythology, and the divine. From the humble Apostles walking the
+                    earth to the thunderous Gods of Olympus <span class="show-more">show more...</span>
+                </p>
+            </div>
+
+            <button class="share-btn">Share On Farcaster</button>
+            <button class="mint-another-btn" id="mint-another-btn">Mint Another</button>
+        </div>
+    </div>
+
+    <script src="js/app.js"></script>
+</body>
+
+</html>
