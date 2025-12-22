@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { TransactionButton, useActiveAccount, MediaRenderer, ThirdwebProvider } from "thirdweb/react";
 import { defineChain, getContract } from "thirdweb";
 import { claimTo } from "thirdweb/extensions/erc721";
+import { client } from "@/lib/client";
 import { createWallet } from "thirdweb/wallets";
 import { useConnect } from "thirdweb/react";
 
@@ -49,9 +50,20 @@ export default function MintScreen({ context }: { context?: any }) {
                 const { default: sdk } = await import("@farcaster/frame-sdk");
                 if (sdk.wallet?.ethProvider) {
                     console.log("Connecting to Farcaster Wallet...");
-                    const wallet = createWallet("external:eip1193", {
-                        provider: sdk.wallet.ethProvider,
+                    const wallet = createWallet("io.metamask"); // Use any valid ID, we will override the provider
+                    // @ts-ignore - Override with Farcaster provider
+                    wallet.connect({
+                        client,
+                        // @ts-ignore
+                        ecosystem: undefined,
+                        // @ts-ignore
+                        provider: sdk.wallet.ethProvider
                     });
+
+                    // Alternatively, and more correctly for v5 if available:
+                    // const wallet = createWallet("external:eip1193");
+                    // wallet.setProvider(sdk.wallet.ethProvider);
+
                     await connect(wallet);
                 }
             } catch (error) {
