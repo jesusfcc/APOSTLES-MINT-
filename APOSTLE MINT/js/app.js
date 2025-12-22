@@ -35,6 +35,43 @@ const state = {
 };
 
 // ===========================
+// Helper: Visible Error (for mobile debugging)
+// ===========================
+function showVisibleError(title, message) {
+    const errorDiv = document.createElement('div');
+    errorDiv.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.95);
+        color: white;
+        padding: 30px;
+        border-radius: 12px;
+        z-index: 99999;
+        max-width: 80%;
+        text-align: center;
+        font-family: Inter, sans-serif;
+    `;
+    errorDiv.innerHTML = `
+        <h3 style="color: #ff4444; margin: 0 0 15px 0; font-size: 18px;">${title}</h3>
+        <p style="margin: 0; font-size: 14px; line-height: 1.5;">${message}</p>
+        <button onclick="this.parentElement.remove()" style="
+            margin-top: 20px;
+            padding: 10px 20px;
+            background: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            font-size: 14px;
+            cursor: pointer;
+        ">OK</button>
+    `;
+    document.body.appendChild(errorDiv);
+}
+
+
+// ===========================
 // DOM Elements
 // ===========================
 const screens = {
@@ -375,16 +412,35 @@ async function handleMint() {
 
     // PRODUCTION MODE - Real wallet transaction
     try {
+        console.log('💼 Checking Farcaster context...');
+        console.log('isFarcasterContext:', isFarcasterContext);
+
+        // Check if we're in Farcaster context
+        if (!isFarcasterContext) {
+            showVisibleError('Not in Farcaster', 'This app must be opened in the Farcaster app.');
+            handleMintFailure({ message: 'Not in Farcaster context' });
+            return;
+        }
+
+        // Check if SDK is initialized
+        if (!farcasterSDK || !farcasterSDK.wallet || !farcasterSDK.wallet.ethProvider) {
+            showVisibleError('SDK Error', 'Farcaster SDK not initialized. Try refreshing the app.');
+            handleMintFailure({ message: 'Farcaster SDK missing' });
+            return;
+        }
+
         console.log('💼 Checking wallet connection...');
         console.log('Wallet connected:', state.walletConnected);
         console.log('Wallet address:', state.walletAddress);
 
         // Check wallet connection
-        if (!state.walletConnected) {
+        if (!state.walletConnected || !state.walletAddress) {
             console.log('⚠️ Wallet not connected, attempting to connect...');
             await connectWallet();
-            if (!state.walletConnected) {
-                throw new Error('Wallet connection failed');
+            if (!state.walletConnected || !state.walletAddress) {
+                showVisibleError('Wallet Error', 'Could not connect to your wallet. Please try again.');
+                handleMintFailure({ message: 'Wallet connection failed' });
+                return;
             }
         }
 
@@ -396,7 +452,7 @@ async function handleMint() {
 
     } catch (error) {
         console.error('❌ Error in handleMint (before transaction):', error);
-        alert('Pre-transaction error: ' + error.message);
+        showVisibleError('Error', error.message || 'Unknown error occurred');
         handleMintFailure(error);
         return;
     }
