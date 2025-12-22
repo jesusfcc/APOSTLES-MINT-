@@ -36,6 +36,7 @@ export default function MintScreen({ context }: { context?: any }) {
     const [currentCardIndex, setCurrentCardIndex] = useState(0);
     const [mintedTokenId, setMintedTokenId] = useState<bigint | null>(null);
     const [mounted, setMounted] = useState(false);
+    const [debugStatus, setDebugStatus] = useState("Initializing...");
 
     React.useEffect(() => {
         setMounted(true);
@@ -43,15 +44,18 @@ export default function MintScreen({ context }: { context?: any }) {
 
     // Farcaster Wallet Connection
     React.useEffect(() => {
-        if (!mounted || account) return;
+        if (!mounted || account) {
+            if (account) setDebugStatus(`Connected: ${account.address.slice(0, 6)}...`);
+            return;
+        }
 
         const connectFarcasterWallet = async () => {
+            setDebugStatus("Searching for Farcaster wallet...");
             try {
                 const { default: sdk } = await import("@farcaster/frame-sdk");
                 if (sdk.wallet?.ethProvider) {
-                    console.log("Connecting to Farcaster Wallet...");
+                    setDebugStatus("Farcaster wallet found. Connecting...");
                     const wallet = createWallet("io.metamask");
-                    // @ts-ignore - Override with Farcaster provider
                     await wallet.connect({
                         client,
                         // @ts-ignore
@@ -59,17 +63,20 @@ export default function MintScreen({ context }: { context?: any }) {
                     });
 
                     await connect(wallet);
+                    setDebugStatus("Connected successfully!");
+                } else {
+                    setDebugStatus("No Farcaster wallet provider detected.");
                 }
-            } catch (error) {
+            } catch (error: any) {
                 console.error("Error connecting to Farcaster wallet:", error);
+                setDebugStatus(`Connection failed: ${error.message}`);
             }
         };
 
         connectFarcasterWallet();
     }, [mounted, account, connect]);
 
-    if (!mounted) return null; // Avoid hydration mismatch or SSR issues with wallet hooks
-
+    if (!mounted) return null;
 
     // Carousel Navigation
     const navigateCarousel = (direction: number) => {
@@ -127,6 +134,10 @@ export default function MintScreen({ context }: { context?: any }) {
 
     return (
         <div className="screen mint-screen active" id="mint-screen">
+            <div style={{ position: "fixed", bottom: "10px", left: "10px", color: "#666", fontSize: "10px", zIndex: 1000, background: "rgba(0,0,0,0.5)", padding: "2px 5px", borderRadius: "4px" }}>
+                Status: {debugStatus}
+            </div>
+
             {context?.user && (
                 <div style={{ position: 'absolute', top: '20px', right: '20px', display: 'flex', alignItems: 'center', gap: '8px', background: 'rgba(0,0,0,0.5)', padding: '5px 10px', borderRadius: '20px', border: '1px solid var(--accent-primary)' }}>
                     {context.user.pfpUrl && <img src={context.user.pfpUrl} style={{ width: '24px', height: '24px', borderRadius: '50%' }} alt="pfp" />}
@@ -171,37 +182,59 @@ export default function MintScreen({ context }: { context?: any }) {
             </div>
 
             {/* Thirdweb Transaction Button */}
-            <TransactionButton
-                transaction={() => {
-                    console.log("🛠️ Preparing mint transaction for", account?.address);
-                    if (!account) {
-                        console.error("❌ No account found for minting");
-                        throw new Error("Connect wallet first");
-                    }
-                    const tx = claimTo({
-                        contract: CONTRACT,
-                        to: account.address,
-                        quantity: BigInt(quantity)
-                    });
-                    console.log("✅ Transaction object created", tx);
-                    return tx;
-                }}
-                onTransactionSent={(result) => {
-                    console.log("📤 Transaction sent to network. Hash:", result.transactionHash);
-                }}
-                onTransactionConfirmed={(receipt) => {
-                    console.log("🎊 Transaction confirmed! Receipt:", receipt);
-                    // Extract tokenId if possible, else random
-                    setMintedTokenId(BigInt(Math.floor(Math.random() * 10000)));
-                }}
-                onError={(error) => {
-                    console.error("❌ Transaction failed or rejected:", error);
-                    alert(`Transaction failed: ${error.message}`);
-                }}
-                className="mint-btn"
-            >
-                MINT APOSTLE
-            </TransactionButton>
+            {!account ? (
+                <button
+                    className="mint-btn"
+                    onClick={async () => {
+                        try {
+                            setDebugStatus("Manual connect triggered...");
+                            const wallet = createWallet("io.metamask");
+                            // Try to get provider again
+                            const { default: sdk } = await import("@farcaster/frame-sdk");
+                            if (sdk.wallet?.ethProvider) {
+                                await wallet.connect({ client, provider: sdk.wallet.ethProvider });
+                                await connect(wallet);
+                            } else {
+                                alert("No wallet found. Are you in Farcaster?");
+                            }
+                        } catch (e: any) {
+                            alert("Connect failed: " + e.message);
+                        }
+                    }}
+                >
+                    CONNECT WALLET
+                </button>
+            ) : (
+                <TransactionButton
+                    transaction={async () => {
+                        setDebugStatus("Preparing transaction...");
+                        console.log("🛠️ Preparing mint transaction for", account?.address);
+                        const tx = claimTo({
+                            contract: CONTRACT,
+                            to: account.address,
+                            quantity: BigInt(quantity)
+                        });
+                        return tx;
+                    }}
+                    onTransactionSent={(result) => {
+                        setDebugStatus("Transaction sent!");
+                        console.log("📤 Transaction sent to network. Hash:", result.transactionHash);
+                    }}
+                    onTransactionConfirmed={(receipt) => {
+                        setDebugStatus("Transaction confirmed!");
+                        console.log("🎊 Transaction confirmed! Receipt:", receipt);
+                        setMintedTokenId(BigInt(Math.floor(Math.random() * 10000)));
+                    }}
+                    onError={(error) => {
+                        setDebugStatus(`Error: ${error.message.slice(0, 20)}...`);
+                        console.error("❌ Transaction failed or rejected:", error);
+                        alert(`Transaction failed: ${error.message}`);
+                    }}
+                    className="mint-btn"
+                >
+                    MINT APOSTLE
+                </TransactionButton>
+            )}
         </div>
     );
 }
