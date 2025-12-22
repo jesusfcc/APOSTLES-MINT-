@@ -412,35 +412,16 @@ async function handleMint() {
 
     // PRODUCTION MODE - Real wallet transaction
     try {
-        console.log('💼 Checking Farcaster context...');
-        console.log('isFarcasterContext:', isFarcasterContext);
-
-        // Check if we're in Farcaster context
-        if (!isFarcasterContext) {
-            showVisibleError('Not in Farcaster', 'This app must be opened in the Farcaster app.');
-            handleMintFailure({ message: 'Not in Farcaster context' });
-            return;
-        }
-
-        // Check if SDK is initialized
-        if (!farcasterSDK || !farcasterSDK.wallet || !farcasterSDK.wallet.ethProvider) {
-            showVisibleError('SDK Error', 'Farcaster SDK not initialized. Try refreshing the app.');
-            handleMintFailure({ message: 'Farcaster SDK missing' });
-            return;
-        }
-
         console.log('💼 Checking wallet connection...');
         console.log('Wallet connected:', state.walletConnected);
         console.log('Wallet address:', state.walletAddress);
 
         // Check wallet connection
-        if (!state.walletConnected || !state.walletAddress) {
+        if (!state.walletConnected) {
             console.log('⚠️ Wallet not connected, attempting to connect...');
             await connectWallet();
-            if (!state.walletConnected || !state.walletAddress) {
-                showVisibleError('Wallet Error', 'Could not connect to your wallet. Please try again.');
-                handleMintFailure({ message: 'Wallet connection failed' });
-                return;
+            if (!state.walletConnected) {
+                throw new Error('Wallet connection failed');
             }
         }
 
@@ -452,7 +433,7 @@ async function handleMint() {
 
     } catch (error) {
         console.error('❌ Error in handleMint (before transaction):', error);
-        showVisibleError('Error', error.message || 'Unknown error occurred');
+        alert('Pre-transaction error: ' + error.message);
         handleMintFailure(error);
         return;
     }
