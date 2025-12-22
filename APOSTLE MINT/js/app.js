@@ -467,10 +467,21 @@ async function handleMint() {
 
         // Send Transaction (skip gas estimation for Farcaster compatibility)
         console.log('Sending transaction...');
-        const txHash = await requester.request({
-            method: 'eth_sendTransaction',
-            params: [transactionParameters],
-        });
+        console.log('Transaction params:', JSON.stringify(transactionParameters, null, 2));
+        console.log('Using provider:', isFarcasterContext ? 'Farcaster' : 'window.ethereum');
+
+        let txHash;
+        try {
+            txHash = await requester.request({
+                method: 'eth_sendTransaction',
+                params: [transactionParameters],
+            });
+            console.log('✅ Transaction sent successfully!');
+        } catch (txError) {
+            console.error('❌ eth_sendTransaction failed:', txError);
+            showVisibleError('Send Failed', `Could not send transaction: ${txError.message || 'Unknown error'}`);
+            throw txError;
+        }
 
         console.log('Transaction hash:', txHash);
 
