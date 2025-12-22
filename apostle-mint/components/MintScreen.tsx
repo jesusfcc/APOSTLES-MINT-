@@ -50,19 +50,13 @@ export default function MintScreen({ context }: { context?: any }) {
                 const { default: sdk } = await import("@farcaster/frame-sdk");
                 if (sdk.wallet?.ethProvider) {
                     console.log("Connecting to Farcaster Wallet...");
-                    const wallet = createWallet("io.metamask"); // Use any valid ID, we will override the provider
+                    const wallet = createWallet("io.metamask");
                     // @ts-ignore - Override with Farcaster provider
-                    wallet.connect({
+                    await wallet.connect({
                         client,
-                        // @ts-ignore
-                        ecosystem: undefined,
                         // @ts-ignore
                         provider: sdk.wallet.ethProvider
                     });
-
-                    // Alternatively, and more correctly for v5 if available:
-                    // const wallet = createWallet("external:eip1193");
-                    // wallet.setProvider(sdk.wallet.ethProvider);
 
                     await connect(wallet);
                 }
