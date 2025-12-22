@@ -15,11 +15,15 @@
     <link rel="stylesheet" href="css/style.css">
 
     <!-- Farcaster Mini App Config -->
-    <meta property="fc:frame"
-        content='{"version": "1", "imageUrl": "https://example.com/image.png", "button": {"title": "Mint Now", "action": {"type": "launch_frame", "name": "The Apostles", "url": "https://example.com", "splashImageUrl": "https://example.com/splash.png", "splashBackgroundColor": "#000000"}}}' />
-    <!-- fc:miniapp is deprecated/alternative, but adding as requested in plan if needed, though strict spec says fc:frame is the way for v2 frames (mini apps). Wait, the docs say "A Mini App URL must have a MiniAppEmbed in a serialized form in the fc:miniapp meta tag... For backward compatibility... fc:frame is also supported". So I should add fc:miniapp predominantly. -->
-    <meta name="fc:miniapp"
-        content='{"version": "1", "imageUrl": "https://example.com/image.png", "button": {"title": "Mint Now", "action": {"type": "launch_frame", "name": "The Apostles", "url": "https://example.com", "splashImageUrl": "https://example.com/splash.png", "splashBackgroundColor": "#000000"}}}' />
+    <meta property="fc:frame" content="vNext" />
+    <meta property="fc:frame:manifest" content="/.well-known/farcaster.json" />
+    <meta property="of:version" content="vNext" />
+    <meta property="of:accepts:farcaster" content="vNext" />
+    <meta property="of:image" content="https://your-domain.com/images/apostle-2.png" />
+    <meta property="fc:frame:image" content="https://your-domain.com/images/apostle-2.png" />
+    <meta property="fc:frame:button:1" content="Mint Now" />
+    <meta property="fc:frame:button:1:action" content="link" />
+    <meta property="fc:frame:button:1:target" content="https://your-domain.com" />
 </head>
 
 <body>

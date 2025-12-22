@@ -1,0 +1,18 @@
+{
+  "accountAssociation": {
+    "header": "eyJmaWQiOjI4NTUsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHhFMzM3ODI0NzEyMjZENTc5NTM0NTczNTI0RjQ1Njk0QzY1Njg2MTczNzQifQ",
+    "payload": "eyJkb21haW4iOiJ5b3VyLWRvbWFpbi5jb20ifQ",
+    "signature": "MHhhNGIzYzJkMWU1ZjZnN2g4aTlqMGsxbDJtM24zbzRwNXE2cjdzOHQ5dTB2MXcyeDN5NHo1YTZiN2M4ZDllMGYx"
+  },
+  "frame": {
+    "version": "1",
+    "name": "tHe AposTLes",
+    "iconUrl": "https://your-domain.com/images/apostles-pixel.png",
+    "homeUrl": "https://your-domain.com",
+    "imageUrl": "https://your-domain.com/images/apostle-2.png",
+    "buttonTitle": "Mint Now",
+    "splashImageUrl": "https://your-domain.com/images/apostles-pixel.png",
+    "splashBackgroundColor": "#000000",
+    "webhookUrl": "https://your-domain.com/api/webhook"
+  }
+}
