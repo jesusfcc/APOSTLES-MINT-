@@ -8,10 +8,10 @@ export const metadata: Metadata = {
   other: {
     // Farcaster Frame Tags
     "fc:frame": "vNext",
-    "fc:frame:image": "https://the-apostles-seven.vercel.app/images/splash.png",
+    "fc:frame:image": "https://the-apostles-h7q4.vercel.app/images/splash.png",
     "fc:frame:button:1": "Mint Now",
     "fc:frame:action": "tx",
-    "fc:frame:target": "https://the-apostles-seven.vercel.app/api/frame/mint",
+    "fc:frame:target": "https://the-apostles-h7q4.vercel.app/api/frame/mint",
   },
 };
 

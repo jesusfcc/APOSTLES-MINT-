@@ -72,7 +72,7 @@ export default function MintScreen() {
                     </div>
 
                     <a
-                        href={`https://warpcast.com/~/compose?text=${encodeURIComponent(`I just minted Apostle #${mintedTokenId.toString()}! 🪙\n\nWitness the convergence of history and mythology on Base.`)}&embeds[]=${encodeURIComponent("https://the-apostles-seven.vercel.app")}`}
+                        href={`https://warpcast.com/~/compose?text=${encodeURIComponent(`I just minted Apostle #${mintedTokenId.toString()}! 🪙\n\nWitness the convergence of history and mythology on Base.`)}&embeds[]=${encodeURIComponent("https://the-apostles-h7q4.vercel.app")}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="share-btn"
