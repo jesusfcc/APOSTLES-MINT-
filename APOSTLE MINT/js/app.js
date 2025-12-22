@@ -630,9 +630,14 @@ async function handleMint() {
             ? farcasterSDK.wallet.ethProvider
             : window.ethereum;
 
+        if (!provider) {
+            showVisibleError("Critical Error", "No provider found for sending tx");
+            throw new Error("No provider found");
+        }
+
         // Check Gas Estimate first
         try {
-            console.log('⛽ Estimating gas...');
+            showVisibleError('Status', 'Estimating gas...');
             await provider.request({
                 method: 'eth_estimateGas',
                 params: [transactionParameters]
@@ -640,10 +645,13 @@ async function handleMint() {
             console.log('✅ Gas estimate successful');
         } catch (gasError) {
             console.warn('⚠️ Gas estimation failed:', gasError);
+            // Don't show error, just try sending. Often simulation fails but tx works.
         }
 
         // Send Transaction
+        showVisibleError('Status', 'Requesting wallet signature...');
         console.log('Sending transaction...', transactionParameters);
+
         let txHash;
         try {
             txHash = await provider.request({
