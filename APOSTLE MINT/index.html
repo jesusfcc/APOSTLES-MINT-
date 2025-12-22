@@ -149,8 +149,21 @@
         </div>
     </div>
 
-    <!-- Farcaster SDK -->
-    <script src="https://cdn.jsdelivr.net/npm/@farcaster/miniapp-sdk/dist/index.min.js"></script>
+    <!-- Farcaster SDK - Load and call ready() immediately -->
+    <script type="module">
+        import { sdk } from 'https://esm.sh/@farcaster/miniapp-sdk';
+
+        // Make SDK available globally
+        window.farcasterSdk = sdk;
+
+        // Call ready() immediately to dismiss splash screen
+        try {
+            await sdk.actions.ready();
+            console.log('✅ sdk.actions.ready() called via ES module');
+        } catch (e) {
+            console.log('⚠️ sdk.actions.ready() error:', e);
+        }
+    </script>
     <script src="js/app.js"></script>
 </body>
 

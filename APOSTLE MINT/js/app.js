@@ -179,33 +179,17 @@ async function init() {
 // Farcaster SDK Initialization
 // ===========================
 
-// CRITICAL: Call ready() immediately at top level to prevent splash freeze
-// This must happen BEFORE any async operations
-(function callReadyImmediately() {
-    try {
-        if (typeof window.miniapp !== 'undefined' && window.miniapp.sdk) {
-            window.miniapp.sdk.actions.ready();
-            console.log('✅ sdk.actions.ready() called immediately (miniapp)');
-        } else if (typeof window.sdk !== 'undefined') {
-            window.sdk.actions.ready();
-            console.log('✅ sdk.actions.ready() called immediately (legacy)');
-        }
-    } catch (e) {
-        console.log('⚠️ Could not call ready() immediately:', e);
-    }
-})();
+// Note: sdk.actions.ready() is called in index.html via ES module import
+// We just need to re-use the SDK reference for other operations
 
 async function initializeFarcasterSDK() {
     try {
-        // Check for miniapp SDK (newer standard)
-        if (typeof window.miniapp !== 'undefined' && window.miniapp.sdk) {
-            farcasterSDK = window.miniapp.sdk;
-            console.log('✅ Farcaster MiniApp SDK found');
+        // Check for SDK loaded via ES module (set in index.html)
+        if (typeof window.farcasterSdk !== 'undefined') {
+            farcasterSDK = window.farcasterSdk;
+            console.log('✅ Farcaster SDK found (via ES module)');
 
-            // ready() was already called above, but call again just in case
-            try { farcasterSDK.actions.ready(); } catch (e) { }
-
-            // Initialize the SDK context
+            // Get context
             const context = await farcasterSDK.context;
 
             if (context) {
@@ -215,32 +199,42 @@ async function initializeFarcasterSDK() {
 
                 // Attempt direct wallet connection via SDK provider
                 await connectWallet();
+            } else {
+                console.log('🌐 No Farcaster context - browser mode');
+                checkWalletConnection();
             }
         }
-        // Fallback: Check for legacy window.sdk (frame-sdk)
-        else if (typeof window.sdk !== 'undefined') {
-            farcasterSDK = window.sdk;
-            console.log('✅ Farcaster SDK (legacy/frame-sdk) found');
-
-            // ready() was already called above
+        // Legacy fallback
+        else if (typeof window.miniapp !== 'undefined' && window.miniapp.sdk) {
+            farcasterSDK = window.miniapp.sdk;
+            console.log('✅ Farcaster SDK found (miniapp)');
             try { farcasterSDK.actions.ready(); } catch (e) { }
 
             const context = await farcasterSDK.context;
             if (context) {
                 isFarcasterContext = true;
                 farcasterUser = context.user;
-                console.log('🟣 Running in Farcaster context (legacy)');
+                await connectWallet();
+            }
+        }
+        else if (typeof window.sdk !== 'undefined') {
+            farcasterSDK = window.sdk;
+            console.log('✅ Farcaster SDK found (window.sdk)');
+            try { farcasterSDK.actions.ready(); } catch (e) { }
+
+            const context = await farcasterSDK.context;
+            if (context) {
+                isFarcasterContext = true;
+                farcasterUser = context.user;
                 await connectWallet();
             }
         }
         else {
             console.log('🌐 Farcaster SDK not found - running in browser mode');
-            // If not farcaster, check regular wallet
             checkWalletConnection();
         }
     } catch (error) {
         console.error('Error initializing Farcaster SDK:', error);
-        // Fallback
         checkWalletConnection();
     }
 }
