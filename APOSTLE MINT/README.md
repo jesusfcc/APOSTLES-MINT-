@@ -1,4 +1,4 @@
-# tHe AposTLes - Farcaster Mini App
+# The Apostles - Farcaster Mini App
 
 A Farcaster Mini App for minting Apostle NFTs on Base Sepolia.
 
