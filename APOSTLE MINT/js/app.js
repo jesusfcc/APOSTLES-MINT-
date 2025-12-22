@@ -116,13 +116,19 @@ function showScreen(screenName) {
 // Initialization
 // ===========================
 async function init() {
-    // Initialize Farcaster SDK if available
-    await initializeFarcasterSDK();
+    console.log('🚀 App init started');
 
-    // Show splash for 1.5 seconds
+    // Show our app's splash for 1.5 seconds, then transition to mint
+    // This runs independently of SDK initialization
     setTimeout(() => {
+        console.log('⏰ Timeout fired, showing mint screen');
         showScreen('mint');
     }, 1500);
+
+    // Initialize Farcaster SDK (this can take time, don't block splash transition)
+    initializeFarcasterSDK().catch(err => {
+        console.error('SDK init error:', err);
+    });
 
     // Event Listeners
     elements.walletBtn.addEventListener('click', handleWalletClick);
@@ -137,6 +143,7 @@ async function init() {
     if (elements.shareBtn) {
         elements.shareBtn.addEventListener('click', handleShare);
     }
+
 
     // DEMO MODE adjustments
     if (CONFIG.DEMO_MODE) {
