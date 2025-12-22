@@ -646,7 +646,19 @@ async function runDiagnostics() {
         const eth = await loadEthers();
         if (!eth) throw new Error("Ethers.js failed to initialize.");
 
-        const provider = new eth.providers.Web3Provider(window.ethereum);
+        // Use Farcaster provider if available, otherwise window.ethereum
+        let rawProvider;
+        if (isFarcasterContext && farcasterSDK && farcasterSDK.wallet && farcasterSDK.wallet.ethProvider) {
+            rawProvider = farcasterSDK.wallet.ethProvider;
+            console.log("Using Farcaster ethProvider for diagnostics");
+        } else if (window.ethereum) {
+            rawProvider = window.ethereum;
+            console.log("Using window.ethereum for diagnostics");
+        } else {
+            throw new Error("No Web3 provider found (neither Farcaster nor MetaMask)");
+        }
+
+        const provider = new eth.providers.Web3Provider(rawProvider);
 
         // Basic connectivity check
         const network = await provider.getNetwork();
