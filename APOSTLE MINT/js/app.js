@@ -474,6 +474,9 @@ async function handleMint() {
 
         console.log('Transaction hash:', txHash);
 
+        // Show transaction hash to user for verification
+        showVisibleError('Transaction Submitted!', `TX Hash: ${txHash}\n\nCheck on BaseScan Sepolia to confirm.`);
+
         // Wait for transaction confirmation
         console.log('Waiting for confirmation...');
 
