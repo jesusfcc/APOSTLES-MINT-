@@ -506,7 +506,7 @@ async function handleMint() {
             from: state.walletAddress,
             value: totalCostWei,
             data: txData,
-            chainId: CONFIG.CHAIN_ID // Explicitly set Chain ID (Base Sepolia: 0x14a34)
+            chainId: CONFIG.CHAIN_ID
         };
 
         // Select Provider (Farcaster vs Window)
@@ -519,11 +519,8 @@ async function handleMint() {
             console.log('Using window.ethereum');
         }
 
-        // Send Transaction (skip gas estimation for Farcaster compatibility)
+        // Send Transaction
         console.log('Sending transaction...');
-        console.log('Transaction params:', JSON.stringify(transactionParameters, null, 2));
-        console.log('Using provider:', isFarcasterContext ? 'Farcaster' : 'window.ethereum');
-
         let txHash;
         try {
             txHash = await requester.request({
@@ -538,21 +535,15 @@ async function handleMint() {
         }
 
         console.log('Transaction hash:', txHash);
-
-        // Show transaction hash to user for verification
         showVisibleError('Transaction Submitted!', `TX Hash: ${txHash}\n\nCheck on BaseScan Sepolia to confirm.`);
 
-        // Wait for transaction confirmation
-        console.log('Waiting for confirmation...');
-
-        // Poll for receipt (Farcaster compatible)
+        // Poll for receipt
         let receipt = null;
         let attempts = 0;
-        const maxAttempts = 30; // 30 seconds max
+        const maxAttempts = 30;
 
         while (!receipt && attempts < maxAttempts) {
             try {
-                // Use Farcaster provider if available
                 const checkProvider = isFarcasterContext && farcasterSDK && farcasterSDK.wallet && farcasterSDK.wallet.ethProvider
                     ? farcasterSDK.wallet.ethProvider
                     : window.ethereum;
@@ -578,39 +569,21 @@ async function handleMint() {
             console.log('⚠️ Timeout waiting for confirmation, but transaction was submitted');
         }
 
-        // Show success
         handleMintSuccess(txHash);
+    })();
 
-    } catch (error) {
-        console.error('Minting error:', error);
+    // Add 60 second timeout
+    const timeoutPromise = new Promise((_, reject) => {
+        setTimeout(() => reject(new Error('Transaction timeout after 60 seconds')), 60000);
+    });
 
-        // Show visible error with details
-        let errorMsg = 'Unknown error';
-        if (error.message) {
-            errorMsg = error.message;
-        } else if (error.reason) {
-            errorMsg = error.reason;
-        } else if (error.data && error.data.message) {
-            errorMsg = error.data.message;
-        }
-
-        showVisibleError('Transaction Failed', errorMsg);
-        handleMintFailure(error);
+    try {
+        await Promise.race([transactionPromise, timeoutPromise]);
+    } catch (timeoutError) {
+        console.error('❌ Timeout or error:', timeoutError);
+        showVisibleError('Timeout', timeoutError.message || 'Transaction took too long');
+        handleMintFailure(timeoutError);
     }
-}) ();
-
-// Add 60 second timeout
-const timeoutPromise = new Promise((_, reject) => {
-    setTimeout(() => reject(new Error('Transaction timeout after 60 seconds')), 60000);
-});
-
-try {
-    await Promise.race([transactionPromise, timeoutPromise]);
-} catch (timeoutError) {
-    console.error('❌ Timeout or error:', timeoutError);
-    showVisibleError('Timeout', timeoutError.message || 'Transaction took too long');
-    handleMintFailure(timeoutError);
-}
 }
 
 function encodeMintData(quantity) {
