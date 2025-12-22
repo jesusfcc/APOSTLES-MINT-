@@ -127,7 +127,8 @@ async function init() {
         console.log('🎬 DEMO MODE ACTIVE - No wallet needed!');
     } else {
         // Check if wallet is already connected in production mode
-        // If in Farcaster context, we'll use Farcaster wallet
+        // If in Farcaster context, we'll wait for SDK init to handle wallet
+        // If NOT in Farcaster context after init, checkWalletConnection() will be called below
         if (!isFarcasterContext) {
             checkWalletConnection();
         }
@@ -143,14 +144,12 @@ async function init() {
 async function initializeFarcasterSDK() {
     try {
         // Check for miniapp SDK (newer standard)
-        // Note: Global variable is typically window.miniapp
         if (typeof window.miniapp !== 'undefined') {
             farcasterSDK = window.miniapp.sdk;
             console.log('✅ Farcaster MiniApp SDK found');
 
-            // Call ready immediately to signal app is loaded
+            // Call ready immediately
             farcasterSDK.actions.ready();
-            console.log('✅ sdk.actions.ready() called');
 
             // Initialize the SDK
             const context = await farcasterSDK.context;
@@ -158,43 +157,21 @@ async function initializeFarcasterSDK() {
             if (context) {
                 isFarcasterContext = true;
                 farcasterUser = context.user;
-
                 console.log('🟣 Running in Farcaster context');
 
-                // Auto-connect wallet in Farcaster context
-                if (farcasterUser) {
-                    state.walletConnected = true;
-                    // Note: SDK may use different wallet field depending on version
-                    state.walletAddress = farcasterUser.wallet || farcasterUser.verifiedEthAddress || 'Farcaster User';
-                    updateWalletButton();
-                    console.log('Auto-connected Farcaster wallet');
-                }
-            } else {
-                console.log('🌐 Running in browser context (no context)');
-            }
-        }
-        // Fallback or alternative check (sdk variable)
-        else if (typeof window.sdk !== 'undefined') {
-            farcasterSDK = window.sdk;
-            console.log('✅ Farcaster SDK (legacy/frame-sdk) found');
-
-            farcasterSDK.actions.ready();
-
-            const context = await farcasterSDK.context;
-            if (context) {
-                isFarcasterContext = true;
-                farcasterUser = context.user;
-                state.walletConnected = true;
-                state.walletAddress = farcasterUser.wallet || 'Farcaster User';
-                updateWalletButton();
+                // Attempt direct wallet connection via SDK provider
+                await connectWallet();
             }
         }
         else {
             console.log('🌐 Farcaster SDK not found - running in browser mode');
+            // If not farcaster, check regular wallet
+            checkWalletConnection();
         }
     } catch (error) {
         console.error('Error initializing Farcaster SDK:', error);
-        console.log('Falling back to browser mode');
+        // Fallback
+        checkWalletConnection();
     }
 }
 
@@ -219,56 +196,53 @@ async function checkWalletConnection() {
 }
 
 async function connectWallet() {
-    // If in Farcaster context, use Farcaster wallet
-    if (isFarcasterContext && farcasterSDK) {
+    // If in Farcaster context, use Farcaster wallet provider
+    if (isFarcasterContext && farcasterSDK && farcasterSDK.wallet && farcasterSDK.wallet.ethProvider) {
         try {
-            // Request wallet connection through Farcaster SDK
-            // Note: Update to use new SDK method signature if needed
-            // The miniapp SDK might use a different method than ethProvider
-            // But usually it exposes a provider
-            const provider = farcasterSDK.wallet?.ethProvider || window.ethereum;
+            console.log('🔌 Connecting via Farcaster SDK (ethProvider)...');
+            const provider = farcasterSDK.wallet.ethProvider;
 
-            if (provider) {
-                const wallet = await provider.request({
-                    method: 'eth_requestAccounts'
-                });
+            // Request accounts explicitly
+            const accounts = await provider.request({
+                method: 'eth_requestAccounts'
+            });
 
-                if (wallet && wallet.length > 0) {
-                    state.walletConnected = true;
-                    state.walletAddress = wallet[0];
-                    updateWalletButton();
-                    console.log('Farcaster wallet connected:', state.walletAddress);
-                    return;
-                }
+            if (accounts && accounts.length > 0) {
+                state.walletConnected = true;
+                state.walletAddress = accounts[0];
+                updateWalletButton();
+                console.log('✅ Farcaster wallet connected:', state.walletAddress);
+                return;
             }
         } catch (error) {
-            console.error('Error connecting Farcaster wallet:', error);
+            console.error('❌ Error connecting Farcaster wallet:', error);
         }
     }
 
-    // Regular MetaMask/Web3 wallet connection
-    if (typeof window.ethereum === 'undefined') {
-        alert('Please install MetaMask or another Web3 wallet to continue.');
-        return;
-    }
+    // Regular MetaMask/Web3 wallet connection (Browser Mode)
+    if (!isFarcasterContext && typeof window.ethereum !== 'undefined') {
+        try {
+            // Request account access
+            const accounts = await window.ethereum.request({
+                method: 'eth_requestAccounts'
+            });
 
-    try {
-        // Request account access
-        const accounts = await window.ethereum.request({
-            method: 'eth_requestAccounts'
-        });
+            // Check/switch to Base network
+            await switchToBase();
 
-        // Check/switch to Base network
-        await switchToBase();
+            state.walletConnected = true;
+            state.walletAddress = accounts[0];
+            updateWalletButton();
 
-        state.walletConnected = true;
-        state.walletAddress = accounts[0];
-        updateWalletButton();
-
-        console.log('Wallet connected:', state.walletAddress);
-    } catch (error) {
-        console.error('Error connecting wallet:', error);
-        alert('Failed to connect wallet. Please try again.');
+            console.log('Wallet connected:', state.walletAddress);
+        } catch (error) {
+            console.error('Error connecting wallet:', error);
+            // alert('Failed to connect wallet. Please try again.');
+        }
+    } else if (!isFarcasterContext) {
+        // Only show alert if user clicked button, not on auto-connect
+        // We can check if this was triggered by a user event if needed, but for now simple check
+        console.log('No wallet provider found');
     }
 }
 
@@ -425,12 +399,9 @@ async function handleMint() {
         let txHash;
 
         // Use Farcaster wallet if available, otherwise use MetaMask
-        if (isFarcasterContext && farcasterSDK) {
+        if (isFarcasterContext && farcasterSDK && farcasterSDK.wallet && farcasterSDK.wallet.ethProvider) {
             // Send transaction through Farcaster SDK
-            // Check provider availability
-            const provider = farcasterSDK.wallet?.ethProvider || window.ethereum;
-
-            if (!provider) throw new Error("No provider available");
+            const provider = farcasterSDK.wallet.ethProvider;
 
             txHash = await provider.request({
                 method: 'eth_sendTransaction',
