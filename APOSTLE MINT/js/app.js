@@ -385,43 +385,60 @@ async function handleMint() {
 
     try {
         // Calculate total cost
-        // Note: For free mints, we send 0
         const totalCost = (parseFloat(CONFIG.MINT_PRICE) * state.quantity).toFixed(6);
         const totalCostWei = '0x' + (parseFloat(totalCost) * 1e18).toString(16);
 
-        // Create transaction
+        // Prepare Transaction Data
+        const txData = encodeMintData(state.quantity); // Encode using Thirdweb claim signature
+
+        // Transaction Object
         const transactionParameters = {
             to: CONFIG.CONTRACT_ADDRESS,
             from: state.walletAddress,
             value: totalCostWei,
-            data: encodeMintData(state.quantity), // Encode using Thirdweb claim signature
+            data: txData,
+            chainId: CONFIG.CHAIN_ID // Explicitly set Chain ID (Base: 0x2105)
         };
 
-        let txHash;
-
-        // Use Farcaster wallet if available, otherwise use MetaMask
+        // Select Provider (Farcaster vs Window)
+        let provider, requester;
         if (isFarcasterContext && farcasterSDK && farcasterSDK.wallet && farcasterSDK.wallet.ethProvider) {
-            // Send transaction through Farcaster SDK
-            const provider = farcasterSDK.wallet.ethProvider;
-
-            txHash = await provider.request({
-                method: 'eth_sendTransaction',
-                params: [transactionParameters],
-            });
+            provider = farcasterSDK.wallet.ethProvider;
+            requester = provider; // Farcaster SDK provider has request method
         } else {
-            // Send transaction through MetaMask
-            txHash = await window.ethereum.request({
-                method: 'eth_sendTransaction',
+            provider = window.ethereum;
+            requester = window.ethereum;
+        }
+
+        // STEP 1: Verify Transaction Validity (Gas Estimation)
+        // This checks if the contract would revert BEFORE asking user to sign
+        console.log("Verifying transaction...");
+        try {
+            await requester.request({
+                method: 'eth_estimateGas',
                 params: [transactionParameters],
             });
+            console.log("✅ Transaction verified (Gas estimation successful)");
+        } catch (gasError) {
+            console.error("Gas Estimate Failed:", gasError);
+            // Decode error message if possible
+            let reason = "Contract Logic Error (The constraints are not met)";
+            if (gasError.message) reason += ": " + gasError.message;
+            throw new Error(reason);
         }
+
+        // STEP 2: Send Transaction
+        const txHash = await requester.request({
+            method: 'eth_sendTransaction',
+            params: [transactionParameters],
+        });
 
         console.log('Transaction hash:', txHash);
 
         // Wait for confirmation (simplified - in production, poll for receipt)
         await new Promise(resolve => setTimeout(resolve, 3000));
 
-        // Simulate successful mint
+        // Simulate successful mint (Real tracking via events in prod)
         handleMintSuccess(txHash);
 
     } catch (error) {
