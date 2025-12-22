@@ -146,6 +146,9 @@ async function initializeFarcasterSDK() {
         if (typeof window.sdk !== 'undefined') {
             farcasterSDK = window.sdk;
 
+            // Call ready immediately to signal app is loaded and remove Farcaster splash screen
+            farcasterSDK.actions.ready();
+
             // Initialize the SDK
             const context = await farcasterSDK.context;
 
@@ -155,9 +158,6 @@ async function initializeFarcasterSDK() {
 
                 console.log('🟣 Running in Farcaster context');
                 console.log('User FID:', farcasterUser?.fid);
-
-                // Set ready state
-                farcasterSDK.actions.ready();
 
                 // Auto-connect wallet in Farcaster context
                 if (farcasterUser) {
