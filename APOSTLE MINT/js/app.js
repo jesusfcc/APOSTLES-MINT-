@@ -671,13 +671,19 @@ async function handleMint() {
 
         // Poll for receipt
         console.log('Transaction hash:', txHash);
-        showVisibleError('Transaction Submitted!', `TX Hash: ${txHash}\n\nCheck on BaseScan Sepolia.`);
 
         let receipt = null;
         let attempts = 0;
-        const maxAttempts = 45;
+        const maxAttempts = 60; // 60 attempts * 2s = 120s
+
+        showVisibleError('Transaction Submitted!', `TX Hash: ${txHash}\n\nWaiting for confirmation...`);
 
         while (!receipt && attempts < maxAttempts) {
+            // Update status every 5 attempts so user knows it's working
+            if (attempts % 5 === 0) {
+                showVisibleError('Transaction Submitted!', `TX Hash: ${txHash}\n\nConfirming... (${attempts}/${maxAttempts})`);
+            }
+
             try {
                 receipt = await provider.request({
                     method: 'eth_getTransactionReceipt',
@@ -692,23 +698,28 @@ async function handleMint() {
                 console.log('Polling...', attempts);
             }
 
-            await new Promise(resolve => setTimeout(resolve, 1000));
+            await new Promise(resolve => setTimeout(resolve, 2000)); // 2 second delay
             attempts++;
         }
 
         handleMintSuccess(txHash);
     })();
 
-    // Add 60 second overall timeout
+    // Add 130 second overall timeout (slightly longer than polling)
     const timeoutPromise = new Promise((_, reject) => {
-        setTimeout(() => reject(new Error('Transaction timeout after 60 seconds')), 60000);
+        setTimeout(() => reject(new Error('Transaction timeout after 130 seconds')), 130000);
     });
 
     try {
         await Promise.race([transactionPromise, timeoutPromise]);
     } catch (timeoutError) {
         console.error('❌ Timeout or error:', timeoutError);
-        if (!timeoutError.message || !timeoutError.message.includes('rejected')) {
+        // If it's just a timeout but we have a hash, maybe we should let them check?
+        if (timeoutError.message && timeoutError.message.includes('timeout')) {
+            showVisibleError('Taking a while...', 'Transaction is still processing. Check your wallet or BaseScan.');
+            // Don't fail hard, just stop blocking?
+            // handleMintSuccess(txHash); // Optional: assume success?
+        } else if (!timeoutError.message || !timeoutError.message.includes('rejected')) {
             showVisibleError('Error', timeoutError.message || 'Transaction failed');
         }
         handleMintFailure(timeoutError);
