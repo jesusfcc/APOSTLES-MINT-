@@ -19,7 +19,7 @@
 
     <!-- Thirdweb SDK v5 -->
     <script type="module">
-        import { createThirdwebClient, getContract, prepareContractCall, sendTransaction, waitForReceipt, defineChain } from "https://esm.sh/thirdweb";
+        import { createThirdwebClient, getContract, prepareContractCall, sendTransaction, waitForReceipt, defineChain, encode } from "https://esm.sh/thirdweb";
         import { claimTo } from "https://esm.sh/thirdweb/extensions/erc721";
 
         window.Thirdweb = {
@@ -29,7 +29,8 @@
             sendTransaction,
             waitForReceipt,
             defineChain,
-            claimTo
+            claimTo,
+            encode
         };
         console.log("✅ Thirdweb SDK loaded");
     </script>

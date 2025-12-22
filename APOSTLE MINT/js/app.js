@@ -593,7 +593,8 @@ async function handleMint() {
             });
 
             // Encode the transaction data
-            txData = await transaction.encode();
+            // v5 uses functional encode(transaction)
+            txData = await window.Thirdweb.encode(transaction);
 
             // For now, assume free mint or handled by value 0 for this specific contract setup
             // Note: If price > 0, we'd need transaction.getValue() but that requires async resolution
