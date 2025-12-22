@@ -4,7 +4,8 @@ import React, { useState } from 'react';
 import { TransactionButton, useActiveAccount, MediaRenderer, ThirdwebProvider } from "thirdweb/react";
 import { defineChain, getContract } from "thirdweb";
 import { claimTo } from "thirdweb/extensions/erc721";
-import { client } from "@/lib/client";
+import { createWallet } from "thirdweb/wallets";
+import { useConnect } from "thirdweb/react";
 
 // Configuration
 const CHAIN = defineChain(84532); // Base Sepolia
@@ -27,8 +28,9 @@ const IMAGES = [
     "/images/cards/9.png"
 ];
 
-export default function MintScreen() {
+export default function MintScreen({ context }: { context?: any }) {
     const account = useActiveAccount();
+    const { connect } = useConnect();
     const [quantity, setQuantity] = useState(1);
     const [currentCardIndex, setCurrentCardIndex] = useState(0);
     const [mintedTokenId, setMintedTokenId] = useState<bigint | null>(null);
@@ -37,6 +39,28 @@ export default function MintScreen() {
     React.useEffect(() => {
         setMounted(true);
     }, []);
+
+    // Farcaster Wallet Connection
+    React.useEffect(() => {
+        if (!mounted || account) return;
+
+        const connectFarcasterWallet = async () => {
+            try {
+                const { default: sdk } = await import("@farcaster/frame-sdk");
+                if (sdk.wallet?.ethProvider) {
+                    console.log("Connecting to Farcaster Wallet...");
+                    const wallet = createWallet("external:eip1193", {
+                        provider: sdk.wallet.ethProvider,
+                    });
+                    await connect(wallet);
+                }
+            } catch (error) {
+                console.error("Error connecting to Farcaster wallet:", error);
+            }
+        };
+
+        connectFarcasterWallet();
+    }, [mounted, account, connect]);
 
     if (!mounted) return null; // Avoid hydration mismatch or SSR issues with wallet hooks
 
@@ -60,6 +84,12 @@ export default function MintScreen() {
             <div className="screen success-screen active" id="success-screen">
                 <button className="back-btn" onClick={() => setMintedTokenId(null)}>← Back</button>
                 <div className="success-content">
+                    {context?.user && (
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '15px' }}>
+                            {context.user.pfpUrl && <img src={context.user.pfpUrl} style={{ width: '40px', height: '40px', borderRadius: '50%' }} alt="pfp" />}
+                            <span style={{ color: 'var(--accent-primary)', fontWeight: 'bold' }}>@{context.user.username}</span>
+                        </div>
+                    )}
                     <div className="success-card">
                         <img src={IMAGES[currentCardIndex]} alt="Minted Apostle" />
                     </div>
@@ -91,6 +121,12 @@ export default function MintScreen() {
 
     return (
         <div className="screen mint-screen active" id="mint-screen">
+            {context?.user && (
+                <div style={{ position: 'absolute', top: '20px', right: '20px', display: 'flex', alignItems: 'center', gap: '8px', background: 'rgba(0,0,0,0.5)', padding: '5px 10px', borderRadius: '20px', border: '1px solid var(--accent-primary)' }}>
+                    {context.user.pfpUrl && <img src={context.user.pfpUrl} style={{ width: '24px', height: '24px', borderRadius: '50%' }} alt="pfp" />}
+                    <span style={{ fontSize: '12px', color: '#fff' }}>@{context.user.username}</span>
+                </div>
+            )}
             {/* Carousel */}
             <div className="carousel-container">
                 <button className="carousel-btn prev" onClick={() => navigateCarousel(-1)}>←</button>

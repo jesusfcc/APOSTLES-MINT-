@@ -11,6 +11,7 @@ const MintScreen = dynamic(() => import("@/components/MintScreen"), { ssr: false
 export default function Home() {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [context, setContext] = useState<any>(null);
 
   useEffect(() => {
     setMounted(true);
@@ -22,10 +23,11 @@ export default function Home() {
     const load = async () => {
       console.log("Loading Farcaster SDK dynamically...");
       try {
-        // Dynamically import SDK to be safe
         const { default: sdk } = await import("@farcaster/frame-sdk");
+        const ctx = await sdk.context;
+        setContext(ctx);
         await sdk.actions.ready();
-        console.log("SDK Ready called successfully");
+        console.log("SDK Ready called successfully with context:", ctx);
       } catch (e) {
         console.error("Farcaster SDK initialization failed:", e);
       }
@@ -43,7 +45,7 @@ export default function Home() {
   return (
     <main style={{ minHeight: "100vh", background: "#000" }}>
       <ThirdwebProvider>
-        <MintScreen />
+        <MintScreen context={context} />
       </ThirdwebProvider>
     </main>
   );
