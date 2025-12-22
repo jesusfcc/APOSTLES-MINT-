@@ -31,20 +31,22 @@
 
 <body>
     <!-- CRITICAL: Load SDK and call ready() IMMEDIATELY, before anything else -->
-    <script src="https://cdn.jsdelivr.net/npm/@farcaster/miniapp-sdk@0.0.15/dist/index.umd.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@farcaster/miniapp-sdk/dist/index.min.js"></script>
     <script>
         // Call ready() immediately to dismiss Farcaster splash screen
+        // Per npm docs: global variable is 'miniapp' and call miniapp.sdk.actions.ready()
         (function () {
             try {
-                // The UMD bundle exposes 'MiniAppSdk' globally
-                if (typeof MiniAppSdk !== 'undefined' && MiniAppSdk.sdk) {
-                    MiniAppSdk.sdk.actions.ready();
-                    window.farcasterSdk = MiniAppSdk.sdk;
-                    console.log('✅ sdk.actions.ready() called (UMD)');
+                if (typeof miniapp !== 'undefined' && miniapp.sdk) {
+                    miniapp.sdk.actions.ready();
+                    window.farcasterSdk = miniapp.sdk;
+                    console.log('✅ sdk.actions.ready() called (miniapp)');
                 } else if (typeof window.sdk !== 'undefined') {
                     window.sdk.actions.ready();
                     window.farcasterSdk = window.sdk;
                     console.log('✅ sdk.actions.ready() called (window.sdk)');
+                } else {
+                    console.log('⚠️ SDK not found at load time');
                 }
             } catch (e) {
                 console.log('⚠️ SDK ready error:', e);

@@ -179,15 +179,15 @@ async function init() {
 // Farcaster SDK Initialization
 // ===========================
 
-// Note: sdk.actions.ready() is called in index.html via ES module import
+// Note: sdk.actions.ready() is called in index.html before this script loads
 // We just need to re-use the SDK reference for other operations
 
 async function initializeFarcasterSDK() {
     try {
-        // Check for SDK loaded via ES module (set in index.html)
+        // Check for SDK set by index.html (via window.farcasterSdk)
         if (typeof window.farcasterSdk !== 'undefined') {
             farcasterSDK = window.farcasterSdk;
-            console.log('✅ Farcaster SDK found (via ES module)');
+            console.log('✅ Farcaster SDK found (window.farcasterSdk)');
 
             // Get context
             const context = await farcasterSDK.context;
@@ -204,10 +204,10 @@ async function initializeFarcasterSDK() {
                 checkWalletConnection();
             }
         }
-        // Legacy fallback
-        else if (typeof window.miniapp !== 'undefined' && window.miniapp.sdk) {
-            farcasterSDK = window.miniapp.sdk;
-            console.log('✅ Farcaster SDK found (miniapp)');
+        // Fallback: Check for 'miniapp' global (per npm docs)
+        else if (typeof miniapp !== 'undefined' && miniapp.sdk) {
+            farcasterSDK = miniapp.sdk;
+            console.log('✅ Farcaster SDK found (miniapp global)');
             try { farcasterSDK.actions.ready(); } catch (e) { }
 
             const context = await farcasterSDK.context;
@@ -215,8 +215,11 @@ async function initializeFarcasterSDK() {
                 isFarcasterContext = true;
                 farcasterUser = context.user;
                 await connectWallet();
+            } else {
+                checkWalletConnection();
             }
         }
+        // Legacy fallback
         else if (typeof window.sdk !== 'undefined') {
             farcasterSDK = window.sdk;
             console.log('✅ Farcaster SDK found (window.sdk)');
@@ -227,6 +230,8 @@ async function initializeFarcasterSDK() {
                 isFarcasterContext = true;
                 farcasterUser = context.user;
                 await connectWallet();
+            } else {
+                checkWalletConnection();
             }
         }
         else {
