@@ -1,3 +1,8 @@
+"use client";
+
+import React, { useState, useEffect } from "react";
+import SplashScreen from "@/components/SplashScreen";
+import MintScreen from "@/components/MintScreen";
 import sdk from "@farcaster/frame-sdk";
 
 export default function Home() {
