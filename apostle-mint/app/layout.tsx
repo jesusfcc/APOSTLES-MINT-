@@ -23,9 +23,25 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ThirdwebProvider>
-          {children}
-        </ThirdwebProvider>
+        <div id="global-error-layer" style={{ position: 'fixed', top: 0, left: 0, right: 0, zIndex: 100000, color: 'red', background: 'white', display: 'none', padding: '10px', fontSize: '12px' }}></div>
+        <script dangerouslySetInnerHTML={{
+          __html: `
+          window.onerror = function(msg, url, line) {
+            var el = document.getElementById("global-error-layer");
+            if (el) {
+              el.style.display = "block";
+              el.innerText = "Global Error: " + msg + " at " + url + ":" + line;
+            }
+          };
+          window.onunhandledrejection = function(event) {
+            var el = document.getElementById("global-error-layer");
+            if (el) {
+              el.style.display = "block";
+              el.innerText = "Unhandled Promise: " + event.reason;
+            }
+          };
+        `}} />
+        {children}
       </body>
     </html>
   );
