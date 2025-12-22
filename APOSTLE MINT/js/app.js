@@ -585,6 +585,7 @@ async function handleMint() {
         // Use Thirdweb claimTo extension
         let txData, txValue;
         try {
+            showVisibleError('Status', 'Defining transaction...');
             console.log("Encoding for:", state.walletAddress, "Qty:", state.quantity);
             const transaction = window.Thirdweb.claimTo({
                 contract: thirdwebContract,
@@ -592,9 +593,18 @@ async function handleMint() {
                 quantity: BigInt(state.quantity)
             });
 
+            showVisibleError('Status', 'Encoding transaction (fetching data)...');
+
             // Encode the transaction data
-            // v5 uses functional encode(transaction)
-            txData = await window.Thirdweb.encode(transaction);
+            // Add a timeout race for encoding
+            const encodePromise = window.Thirdweb.encode(transaction);
+            const timeoutPromise = new Promise((_, reject) =>
+                setTimeout(() => reject(new Error('Encoding timed out (10s)')), 10000)
+            );
+
+            txData = await Promise.race([encodePromise, timeoutPromise]);
+
+            showVisibleError('Status', 'Encoding successful!');
 
             // For now, assume free mint or handled by value 0 for this specific contract setup
             // Note: If price > 0, we'd need transaction.getValue() but that requires async resolution
