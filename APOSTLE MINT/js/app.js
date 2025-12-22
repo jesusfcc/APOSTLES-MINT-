@@ -451,10 +451,10 @@ function encodeMintData(quantity) {
         const currency = NATIVE_TOKEN;
         const pricePerToken = 0; // Free mint
 
-        // Empty allowlist proof (public mint default)
+        // Empty allowlist proof (must match public mint condition: Limit 5)
         const allowlistProof = {
             proof: [],
-            quantityLimitPerWallet: ethers.constants.MaxUint256, // Unlimited/Default
+            quantityLimitPerWallet: 5, // Matches contract "Public phase" limit
             pricePerToken: pricePerToken,
             currency: currency
         };
