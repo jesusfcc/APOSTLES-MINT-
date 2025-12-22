@@ -454,7 +454,7 @@ function encodeMintData(quantity) {
         // Empty allowlist proof (public mint default)
         const allowlistProof = {
             proof: [],
-            quantityLimitPerWallet: 0,
+            quantityLimitPerWallet: ethers.constants.MaxUint256, // Unlimited/Default
             pricePerToken: pricePerToken,
             currency: currency
         };
