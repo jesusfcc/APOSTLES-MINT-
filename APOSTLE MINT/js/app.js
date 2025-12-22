@@ -61,6 +61,7 @@ const elements = {
     mintedImage: document.getElementById('minted-image'),
     successTitle: document.getElementById('success-title'),
     successDescription: document.getElementById('success-description'),
+    shareBtn: document.querySelector('.share-btn'), // Share button
 };
 
 // ===========================
@@ -96,6 +97,9 @@ async function init() {
     elements.retryBtn.addEventListener('click', retryMint);
     elements.backBtn.addEventListener('click', () => showScreen('mint'));
     elements.mintAnotherBtn.addEventListener('click', () => showScreen('mint'));
+    if (elements.shareBtn) {
+        elements.shareBtn.addEventListener('click', handleShare);
+    }
 
     // DEMO MODE adjustments
     if (CONFIG.DEMO_MODE) {
@@ -472,6 +476,25 @@ function handleMintFailure(error) {
 
 function retryMint() {
     showScreen('mint');
+}
+
+// ===========================
+// Share Functionality
+// ===========================
+function handleShare() {
+    const text = `I just minted Apostle #${state.mintedTokenId}! 🪙\n\nWitness the convergence of history and mythology on Base.\n\nMint yours now: https://the-apostles-seven.vercel.app`;
+    const embedUrl = 'https://the-apostles-seven.vercel.app';
+
+    // Construct Warpcast intent URL
+    const intentUrl = `https://warpcast.com/~/compose?text=${encodeURIComponent(text)}&embeds[]=${encodeURIComponent(embedUrl)}`;
+
+    if (isFarcasterContext && farcasterSDK) {
+        // Use SDK to open URL
+        farcasterSDK.actions.openUrl(intentUrl);
+    } else {
+        // Fallback for browser
+        window.open(intentUrl, '_blank');
+    }
 }
 
 // ===========================
