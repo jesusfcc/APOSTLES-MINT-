@@ -448,9 +448,21 @@ async function handleMint() {
 }
 
 function encodeMintData(quantity) {
-    if (typeof ethers === 'undefined') {
-        console.error('Ethers.js not loaded!');
-        return '0x';
+    console.log('🔧 encodeMintData called with quantity:', quantity);
+
+    // Check for ethers in multiple scopes
+    let eth;
+    if (typeof window.ethers !== 'undefined') {
+        eth = window.ethers;
+        console.log('✅ Using window.ethers');
+    } else if (typeof ethers !== 'undefined') {
+        eth = ethers;
+        console.log('✅ Using global ethers');
+    } else {
+        const errorMsg = '❌ CRITICAL: Ethers.js not loaded! Cannot encode transaction.';
+        console.error(errorMsg);
+        alert(errorMsg + '\n\nPlease refresh the page and try again.');
+        throw new Error(errorMsg);
     }
 
     try {
@@ -459,30 +471,35 @@ function encodeMintData(quantity) {
             "function claim(address _receiver, uint256 _quantity, address _currency, uint256 _pricePerToken, (bytes32[] proof, uint256 quantityLimitPerWallet, uint256 pricePerToken, address currency) _allowlistProof, bytes _data) external payable"
         ];
 
-        const iface = new ethers.utils.Interface(abi);
+        const iface = new eth.utils.Interface(abi);
 
         // Parameters for claim
         const receiver = state.walletAddress;
+        console.log('📍 Receiver:', receiver);
 
         // Use AddressZero because contract strictly compares with stored 0x0...
-        // Since price is 0, we can bypass the 0xEee check in _collectPrice
-        const NATIVE_TOKEN = ethers.constants.AddressZero;
+        const NATIVE_TOKEN = eth.constants.AddressZero;
         const currency = NATIVE_TOKEN;
-        const pricePerToken = 0; // Free mint
+        const pricePerToken = 0;
 
-        // Use AddressZero for the struct (Standard for internal storage of Native Token)
-        const currencyInStruct = ethers.constants.AddressZero;
+        const currencyInStruct = eth.constants.AddressZero;
 
-        // Use MaxUint256 to tell contract "Use the active condition's limit and price"
-        // This is a "Wildcard" that avoids mismatch errors if we hardcode the wrong number
         const allowlistProof = {
             proof: [],
-            quantityLimitPerWallet: ethers.constants.MaxUint256,
-            pricePerToken: ethers.constants.MaxUint256,
+            quantityLimitPerWallet: eth.constants.MaxUint256,
+            pricePerToken: eth.constants.MaxUint256,
             currency: currencyInStruct
         };
 
-        const data = '0x'; // No extra data
+        const data = '0x';
+
+        console.log('📦 Encoding with params:', {
+            receiver,
+            quantity,
+            currency,
+            pricePerToken,
+            allowlistProof
+        });
 
         // Encode function call
         const encodedData = iface.encodeFunctionData("claim", [
@@ -494,12 +511,12 @@ function encodeMintData(quantity) {
             data
         ]);
 
-        console.log('Encoded claim data:', encodedData);
+        console.log('✅ Encoded claim data:', encodedData);
         return encodedData;
     } catch (error) {
-        console.error('Error encoding claim data:', error);
+        console.error('❌ Error encoding claim data:', error);
         alert('Error preparing transaction: ' + error.message);
-        return '0x';
+        throw error; // Re-throw to stop mint process
     }
 }
 
