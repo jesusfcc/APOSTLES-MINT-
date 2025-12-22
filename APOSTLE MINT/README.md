@@ -1,170 +1,99 @@
-# Jesus Mintt - The Apostles NFT Minting App
+# tHe AposTLes - Farcaster Mini App
 
-A premium Web3 minting application for "tHe AposTLes" NFT collection on Base blockchain.
+A Farcaster Mini App for minting Apostle NFTs on Base Sepolia.
 
-## 🎨 Features
+## 🚀 Deployment
 
-- **Splash Screen**: Beautiful pixel art Last Supper intro
-- **Interactive Card Carousel**: Swipeable NFT preview with 3D transforms
-- **Wallet Integration**: MetaMask/Web3 wallet connection with Base network auto-switching
-- **Dynamic Minting**: Quantity selection with real-time price calculation
-- **State Management**: Loading, success, and failure states
-- **Responsive Design**: Mobile-first design with premium animations
+**Live URL:** https://the-apostles-seven.vercel.app
+
+## 📱 Farcaster Integration
+
+This app is configured as a Farcaster Mini App with:
+
+- **FID:** 2855
+- **Manifest:** `/.well-known/farcaster.json`
+- **Farcaster SDK:** Integrated for seamless wallet connection and transactions
+
+## ✨ Features
+
+- **Splash Screen** - Beautiful intro with "tHe AposTLes" branding
+- **NFT Carousel** - Browse different Apostle variations
+- **Wallet Connection** - MetaMask or Farcaster wallet support
+- **Quantity Selection** - Mint 1-10 NFTs at once
+- **Transaction Flow** - Minting → Success/Failed states
+- **Responsive Design** - Works on mobile and desktop
+
+## 🔧 Configuration
+
+The app supports both Farcaster and standalone browser modes:
+
+### Farcaster Context
+- Automatically detects when running in Farcaster
+- Uses Farcaster SDK for wallet operations
+- Auto-connects user's Farcaster wallet
+
+### Browser Mode
+- Falls back to standard Web3 wallet (MetaMask)
+- Full wallet connection flow
+- Network switching to Base Sepolia
 
 ## 📁 Project Structure
 
 ```
-jesus_mintt/
+APOSTLE MINT/
 ├── .well-known/
-│   └── farcaster.json  # Manifest file
+│   └── farcaster.json    # Farcaster manifest
 ├── css/
-│   └── style.css       # Premium CSS styling
-├── docs/               # Documentation
-│   ├── DEMO_GUIDE.md
-│   └── QUICK_START.md
-├── images/             # Generated NFT cards & backgrounds
-│   ├── apostle-1.png
-│   ├── apostle-2.png
-│   ├── apostle-3.png
-│   ├── apostles-pixel.png
-│   └── bg-renaissance.png
+│   └── style.css         # Styles
+├── images/               # NFT images and assets
 ├── js/
-│   └── app.js          # Web3 logic & state management
-├── assets/             # Original reference screenshots
-└── index.html          # Main HTML structure
+│   └── app.js           # Main application logic
+├── index.html           # Entry point
+└── vercel.json          # Vercel deployment config
 ```
 
-## 🚀 Getting Started
+## 🛠️ Tech Stack
 
-### Prerequisites
-- Python 3 (for local server)
-- MetaMask or any Web3 wallet
-- Base network configured in wallet
+- **Frontend:** Vanilla HTML, CSS, JavaScript
+- **Web3:** MetaMask / Farcaster SDK
+- **Blockchain:** Base Sepolia (Chain ID: 84532)
+- **Deployment:** Vercel
+- **Integration:** Farcaster Mini App SDK v0.1.1
 
-### Running Locally
+## 🎯 Smart Contract
 
-1. Navigate to project directory:
-```bash
-cd /Users/mac/.gemini/antigravity/scratch/jesus_mintt
-```
+- **Network:** Base Sepolia
+- **Contract Address:** `0x70CF7B20BCDE6f58faAbb9974CCaC000C1774D4d`
+- **Mint Price:** 0.00000335 ETH
+- **Max Supply:** 10,000
 
-2. Start local server:
-```bash
-python3 -m http.server 8000
-```
+## 📝 Farcaster Manifest
 
-3. Open browser:
-```
-http://localhost:8000
-```
+The manifest is properly configured at:
+- **URL:** `https://the-apostles-seven.vercel.app/.well-known/farcaster.json`
+- **Account Association:** FID 2855
+- **Frame Version:** 1
 
-## ⚙️ Configuration
+## 🔍 Testing
 
-Update the contract address in `app.js`:
+### Browser Testing
+1. Visit: https://the-apostles-seven.vercel.app
+2. Connect MetaMask wallet
+3. Switch to Base Sepolia network
+4. Mint NFTs
 
-```javascript
-const CONFIG = {
-    CHAIN_ID: '0x14a34', // Base Sepolia (84532)
-    MINT_PRICE: '0.00000335', // ETH per mint
-    CONTRACT_ADDRESS: '0x70CF7B20BCDE6f58faAbb9974CCaC000C1774D4d',
-    INITIAL_REMAINING: 2525,
-};
-```
+### Farcaster Testing
+1. Share the app URL in Farcaster
+2. Launch as Mini App
+3. Wallet auto-connects with Farcaster user
+4. Seamless minting experience
 
-### Steps to Deploy:
+## 🚦 Deployment Status
 
-1. **Deploy your NFT contract** to Base Sepolia
-2. **Update `CONTRACT_ADDRESS`** in `app.js` (line 11)
-3. **Update `encodeMintData()`** function to properly encode your contract's mint function if needed
-4. **Test on Base Sepolia testnet**
-5. **Deploy to hosting** (Vercel, Netlify, GitHub Pages, etc.)
+All changes are automatically deployed to Vercel when pushed to the `main` branch.
 
-## 🎯 User Flow
+**Repository:** https://github.com/0xAzeez/THE-APOSTLES-
 
-1. **Splash Screen** (2.5s auto-transition)
-   - Shows "tHe AposTLes" pixel art logo
+---
 
-2. **Mint Page**
-   - Connect wallet (top-right yellow button)
-   - Browse NFTs with carousel arrows
-   - Select quantity (1-10)
-   - View remaining supply
-   - Click "MINT NOW"
-
-3. **Minting State**
-   - Shows loading animation
-   - Processing transaction
-
-4. **Success/Failure**
-   - **Success**: Displays minted NFT with token ID, share option
-   - **Failure**: Shows retry button (common: insufficient balance)
-
-## 💰 Pricing
-
-- **Fixed Price**: `0.00000335 ETH` per NFT
-- User can mint 1-10 NFTs per transaction
-
-## 🌐 Base Network Settings
-
-- **Chain ID**: 84532 (0x14a34)
-- **RPC URL**: https://sepolia.base.org
-- **Explorer**: https://sepolia.basescan.org
-- **Currency**: ETH
-
-The app will automatically prompt users to switch to Base if they're on a different network.
-
-## 🎨 Design Notes
-
-- **Fonts**: Cinzel (titles), Inter (body)
-- **Colors**: Gold (#FFD700), Dark backgrounds
-- **Animations**: Smooth 3D carousel, fade-ins, pulse effects
-- **Responsive**: Optimized for mobile and desktop
-
-## 📝 Next Steps
-
-1. ✅ Update contract address
-2. ✅ Test on Base testnet
-3. ✅ Deploy to production hosting
-4. ✅ Share on Farcaster integration (optional)
-5. ✅ Update remaining supply from contract events
-
-## 🔧 Customization
-
-### Adding More Apostle Cards
-
-Add images to `/images/` and update HTML:
-
-```html
-<div class="card" data-index="3">
-    <img src="images/apostle-4.png" alt="Apostle 4">
-</div>
-```
-
-### Changing Mint Price
-
-Update in `app.js`:
-
-```javascript
-MINT_PRICE: '0.004207', // Your price in ETH
-```
-
-### Modifying Success Description
-
-Edit in `index.html`:
-
-```html
-<p class="success-description" id="success-description">
-    Your custom description here...
-</p>
-```
-
-## ⚠️ Important Notes
-
-- The current contract address is a **placeholder**
-- The `encodeMintData()` function is simplified - use ethers.js/web3.js for production
-- Token IDs in success screen are currently simulated
-- "Share on Farcaster" button is UI-only (add Farcaster SDK for functionality)
-
-## 📄 License
-
-All rights reserved.
+Built with ❤️ for the Farcaster community
