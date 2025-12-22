@@ -385,6 +385,7 @@ async function handleMint() {
 
     try {
         // Calculate total cost
+        // Note: For free mints, we send 0
         const totalCost = (parseFloat(CONFIG.MINT_PRICE) * state.quantity).toFixed(6);
         const totalCostWei = '0x' + (parseFloat(totalCost) * 1e18).toString(16);
 
@@ -393,7 +394,7 @@ async function handleMint() {
             to: CONFIG.CONTRACT_ADDRESS,
             from: state.walletAddress,
             value: totalCostWei,
-            data: encodeMintData(state.quantity), // This would encode the mint function call
+            data: encodeMintData(state.quantity), // Encode using Thirdweb claim signature
         };
 
         let txHash;
@@ -430,10 +431,52 @@ async function handleMint() {
 }
 
 function encodeMintData(quantity) {
-    // Simplified - In production, use ethers.js or web3.js to properly encode
-    // This is a placeholder that represents calling mint(quantity)
-    // For now, we'll just send ETH to the contract address
-    return '0x'; // Empty data - just sending ETH
+    if (typeof ethers === 'undefined') {
+        console.error('Ethers.js not loaded!');
+        return '0x';
+    }
+
+    try {
+        // ABI for Thirdweb Drop claim function
+        const abi = [
+            "function claim(address _receiver, uint256 _quantity, address _currency, uint256 _pricePerToken, (bytes32[] proof, uint256 quantityLimitPerWallet, uint256 pricePerToken, address currency) _allowlistProof, bytes _data) external payable"
+        ];
+
+        const iface = new ethers.utils.Interface(abi);
+
+        // Parameters for claim
+        const receiver = state.walletAddress;
+        // Use standard NATIVE_TOKEN address constant for Thirdweb
+        const NATIVE_TOKEN = '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE';
+        const currency = NATIVE_TOKEN;
+        const pricePerToken = 0; // Free mint
+
+        // Empty allowlist proof (public mint default)
+        const allowlistProof = {
+            proof: [],
+            quantityLimitPerWallet: 0,
+            pricePerToken: pricePerToken,
+            currency: currency
+        };
+
+        const data = '0x'; // No extra data
+
+        // Encode function call
+        const encodedData = iface.encodeFunctionData("claim", [
+            receiver,
+            quantity,
+            currency,
+            pricePerToken,
+            allowlistProof,
+            data
+        ]);
+
+        console.log('Encoded claim data:', encodedData);
+        return encodedData;
+    } catch (error) {
+        console.error('Error encoding claim data:', error);
+        return '0x';
+    }
 }
 
 function handleMintSuccess(txHash) {
