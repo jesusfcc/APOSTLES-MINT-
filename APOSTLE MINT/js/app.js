@@ -570,7 +570,7 @@ function encodeMintData(quantity) {
         return encodedData;
     } catch (error) {
         console.error('❌ Error encoding claim data:', error);
-        alert('Error preparing transaction: ' + error.message);
+        showVisibleError('Encoding Error', `Failed to prepare transaction: ${error.message}`);
         throw error; // Re-throw to stop mint process
     }
 }
