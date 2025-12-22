@@ -185,8 +185,9 @@ async function initializeFarcasterSDK() {
             farcasterSDK = window.miniapp.sdk;
             console.log('✅ Farcaster MiniApp SDK found');
 
-            // Call ready immediately
+            // Call ready immediately to signal app is loaded
             farcasterSDK.actions.ready();
+            console.log('✅ sdk.actions.ready() called');
 
             // Initialize the SDK
             const context = await farcasterSDK.context;
@@ -197,6 +198,22 @@ async function initializeFarcasterSDK() {
                 console.log('🟣 Running in Farcaster context');
 
                 // Attempt direct wallet connection via SDK provider
+                await connectWallet();
+            }
+        }
+        // Fallback: Check for legacy window.sdk (frame-sdk)
+        else if (typeof window.sdk !== 'undefined') {
+            farcasterSDK = window.sdk;
+            console.log('✅ Farcaster SDK (legacy/frame-sdk) found');
+
+            // Call ready immediately
+            farcasterSDK.actions.ready();
+
+            const context = await farcasterSDK.context;
+            if (context) {
+                isFarcasterContext = true;
+                farcasterUser = context.user;
+                console.log('🟣 Running in Farcaster context (legacy)');
                 await connectWallet();
             }
         }
@@ -738,21 +755,3 @@ if (typeof window.ethereum !== 'undefined') {
 // Start the app
 // ===========================
 init();
-
-// TEST: Add visible test button
-const testBtn = document.createElement('button');
-testBtn.innerText = "TEST ERROR";
-testBtn.style.cssText = `
-    position: fixed;
-    bottom: 20px;
-    left: 20px;
-    padding: 15px;
-    background: orange;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 14px;
-    z-index: 9999;
-`;
-testBtn.onclick = () => showVisibleError('Test', 'If you see this, error popups work!');
-document.body.appendChild(testBtn);
