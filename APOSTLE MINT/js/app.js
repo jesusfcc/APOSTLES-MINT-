@@ -586,8 +586,12 @@ async function runDiagnostics() {
     }
 
     try {
-        const provider = new ethers.providers.Web3Provider(window.ethereum);
-        const contract = new ethers.Contract(CONFIG.CONTRACT_ADDRESS, [
+        // Explicitly look for ethers on window
+        const eth = window.ethers;
+        if (!eth) throw new Error("Ethers.js not loaded. Check internet connection.");
+
+        const provider = new eth.providers.Web3Provider(window.ethereum);
+        const contract = new eth.Contract(CONFIG.CONTRACT_ADDRESS, [
             "function getActiveClaimConditionId() view returns (uint256)",
             "function getClaimConditionById(uint256 _conditionId) view returns (tuple(uint256 startTimestamp, uint256 maxClaimableSupply, uint256 supplyClaimed, uint256 quantityLimitPerWallet, bytes32 merkleRoot, uint256 pricePerToken, address currency, string metadata))"
         ], provider);
