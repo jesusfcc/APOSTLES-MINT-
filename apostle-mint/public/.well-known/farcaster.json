@@ -7,11 +7,11 @@
     "miniapp": {
         "version": "1",
         "name": "The Apostles",
-        "iconUrl": "https://the-apostles-seven.vercel.app/images/apostles-pixel.png",
-        "homeUrl": "https://the-apostles-seven.vercel.app",
-        "imageUrl": "https://the-apostles-seven.vercel.app/images/apostle-2.png",
+        "iconUrl": "https://the-apostles-h7q4.vercel.app/images/apostles-pixel.png",
+        "homeUrl": "https://the-apostles-h7q4.vercel.app",
+        "imageUrl": "https://the-apostles-h7q4.vercel.app/images/apostle-2.png",
         "buttonTitle": "Mint Now",
-        "splashImageUrl": "https://the-apostles-seven.vercel.app/images/apostles-pixel.png",
+        "splashImageUrl": "https://the-apostles-h7q4.vercel.app/images/apostles-pixel.png",
         "splashBackgroundColor": "#000000"
     }
 }
