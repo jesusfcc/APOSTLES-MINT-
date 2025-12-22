@@ -447,9 +447,6 @@ function encodeMintData(quantity) {
         // Parameters for claim
         const receiver = state.walletAddress;
 
-        // Parameters for claim
-        const receiver = state.walletAddress;
-
         // Use 0xEeeee... for the function arg (Standard for "Native Token")
         const NATIVE_TOKEN = '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE';
         const currency = NATIVE_TOKEN;
