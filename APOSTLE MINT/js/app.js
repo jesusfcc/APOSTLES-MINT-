@@ -577,3 +577,54 @@ if (typeof window.ethereum !== 'undefined') {
 // Start the app
 // ===========================
 init();
+
+// --- DEBUGGING TOOL ---
+async function runDiagnostics() {
+    if (!state.walletAddress) {
+        alert("Please connect wallet first.");
+        return;
+    }
+
+    try {
+        const provider = new ethers.providers.Web3Provider(window.ethereum);
+        const contract = new ethers.Contract(CONFIG.CONTRACT_ADDRESS, [
+            "function getActiveClaimConditionId() view returns (uint256)",
+            "function getClaimConditionById(uint256 _conditionId) view returns (tuple(uint256 startTimestamp, uint256 maxClaimableSupply, uint256 supplyClaimed, uint256 quantityLimitPerWallet, bytes32 merkleRoot, uint256 pricePerToken, address currency, string metadata))"
+        ], provider);
+
+        const activeId = await contract.getActiveClaimConditionId().catch(e => "Error fetching ID");
+        let activeIdStr = activeId.toString();
+
+        alert(`Active Condition ID: ${activeIdStr}`);
+
+        const condition = await contract.getClaimConditionById(activeId).catch(e => "Error fetching Condition");
+
+        const info = `
+        DEBUG REPORT:
+        ID: ${activeIdStr}
+        Limit: ${condition.quantityLimitPerWallet ? condition.quantityLimitPerWallet.toString() : 'N/A'}
+        Price: ${condition.pricePerToken ? condition.pricePerToken.toString() : 'N/A'}
+        Currency: ${condition.currency}
+        MerkleRoot: ${condition.merkleRoot}
+        `;
+
+        alert(info);
+        console.log(info);
+
+    } catch (error) {
+        alert("Diagnostics Failed: " + error.message);
+    }
+}
+
+// Add Debug Button
+const debugBtn = document.createElement('button');
+debugBtn.innerText = "🕵️ DEBUG CONTRACT";
+debugBtn.style.position = "fixed";
+debugBtn.style.bottom = "10px";
+debugBtn.style.left = "10px";
+debugBtn.style.zIndex = "9999";
+debugBtn.style.padding = "10px";
+debugBtn.style.background = "red";
+debugBtn.style.color = "white";
+debugBtn.onclick = runDiagnostics;
+document.body.appendChild(debugBtn);
