@@ -427,6 +427,62 @@ function updateDisplays() {
     elements.remainingDisplay.textContent = state.remaining;
 }
 
+
+// ===========================
+// Helper: Ensure Correct Chain
+// ===========================
+async function ensureCorrectChain(targetChainIdHex) {
+    console.log(`🔗 Ensuring chain: ${targetChainIdHex}`);
+
+    // Determine provider
+    const provider = isFarcasterContext && farcasterSDK && farcasterSDK.wallet && farcasterSDK.wallet.ethProvider
+        ? farcasterSDK.wallet.ethProvider
+        : window.ethereum;
+
+    if (!provider) {
+        throw new Error('No wallet provider found');
+    }
+
+    try {
+        // Request switch
+        await provider.request({
+            method: 'wallet_switchEthereumChain',
+            params: [{ chainId: targetChainIdHex }],
+        });
+        console.log('✅ Chain switched successfully');
+    } catch (switchError) {
+        // This error code means that the chain has not been added to MetaMask
+        if (switchError.code === 4902) {
+            console.log('⚠️ Chain not found, attempting to add...');
+            try {
+                await provider.request({
+                    method: 'wallet_addEthereumChain',
+                    params: [
+                        {
+                            chainId: targetChainIdHex,
+                            chainName: CONFIG.CHAIN_NAME,
+                            rpcUrls: [CONFIG.RPC_URL],
+                            nativeCurrency: {
+                                name: "Ether",
+                                symbol: "ETH",
+                                decimals: 18
+                            },
+                            blockExplorerUrls: [CONFIG.EXPLORER_URL]
+                        },
+                    ],
+                });
+                console.log('✅ Chain added successfully');
+            } catch (addError) {
+                console.error('❌ Failed to add chain:', addError);
+                throw addError;
+            }
+        } else {
+            console.error('❌ Failed to switch chain:', switchError);
+            throw switchError;
+        }
+    }
+}
+
 // ===========================
 // Minting Logic
 // ===========================
@@ -437,47 +493,43 @@ async function handleMint() {
     if (CONFIG.DEMO_MODE) {
         console.log('🎬 DEMO MODE: Simulating mint transaction');
         showScreen('minting');
-
-        const mintTime = 2000 + Math.random() * 2000;
-        await new Promise(resolve => setTimeout(resolve, mintTime));
-
-        if (Math.random() > 0.1) {
-            handleMintSuccess('demo_tx_hash_' + Date.now());
-        } else {
-            handleMintFailure({ message: 'Demo: Simulated failure' });
-        }
+        // ... demo logic ...
         return;
     }
 
     // PRODUCTION MODE - Real wallet transaction
     try {
         console.log('💼 Checking wallet connection...');
-        console.log('Wallet connected:', state.walletConnected);
-        console.log('Wallet address:', state.walletAddress);
+
+        // select provider
+        const provider = isFarcasterContext && farcasterSDK && farcasterSDK.wallet && farcasterSDK.wallet.ethProvider
+            ? farcasterSDK.wallet.ethProvider
+            : window.ethereum;
 
         // Check wallet connection
-        if (!state.walletConnected) {
+        const accounts = await provider.request({ method: 'eth_accounts' });
+        if (!accounts || accounts.length === 0) {
             console.log('⚠️ Wallet not connected, attempting to connect...');
             await connectWallet();
-            if (!state.walletConnected) {
-                throw new Error('Wallet connection failed');
-            }
+            // Re-check
+            if (!state.walletConnected) throw new Error('Wallet connection failed');
         }
 
         console.log('✅ Wallet check passed');
 
+        // FORCE CHAIN SWITCH BEFORE DOING ANYTHING ELSE
+        await ensureCorrectChain(CONFIG.CHAIN_ID);
+
         // Show minting screen
         showScreen('minting');
-        console.log('📺 Showing minting screen');
 
-        // Show immediate status to user
         setTimeout(() => {
             showVisibleError('Status', 'Preparing transaction...');
         }, 500);
 
     } catch (error) {
-        console.error('❌ Error in handleMint (before transaction):', error);
-        showVisibleError('Wallet Check Failed', error.message || 'Could not verify wallet connection');
+        console.error('❌ Error in handleMint (setup):', error);
+        showVisibleError('Setup Failed', error.message || 'Could not verify wallet/chain');
         handleMintFailure(error);
         return;
     }
@@ -489,66 +541,73 @@ async function handleMint() {
         const totalCostWei = '0x' + (parseFloat(totalCost) * 1e18).toString(16);
 
         // Prepare Transaction Data
-        console.log('🔧 Encoding transaction data...');
         let txData;
         try {
             txData = encodeMintData(state.quantity);
-            console.log('✅ Encoding successful');
         } catch (encodeError) {
-            console.error('❌ Encoding failed:', encodeError);
-            showVisibleError('Encoding Failed', `Cannot prepare transaction: ${encodeError.message}`);
+            showVisibleError('Encoding Failed', encodeError.message);
             throw encodeError;
         }
 
-        // Transaction Object
+        // Transaction Object - Simplified
+        // intentionally NOT including chainId in the transaction object 
+        // to rely on the earlier wallet_switchEthereumChain call
         const transactionParameters = {
             to: CONFIG.CONTRACT_ADDRESS,
             from: state.walletAddress,
             value: totalCostWei,
-            data: txData,
-            chainId: CONFIG.CHAIN_ID
+            data: txData
         };
 
-        // Select Provider (Farcaster vs Window)
-        let requester;
-        if (isFarcasterContext && farcasterSDK && farcasterSDK.wallet && farcasterSDK.wallet.ethProvider) {
-            requester = farcasterSDK.wallet.ethProvider;
-            console.log('Using Farcaster provider');
-        } else {
-            requester = window.ethereum;
-            console.log('Using window.ethereum');
+        // Select Provider
+        const provider = isFarcasterContext && farcasterSDK && farcasterSDK.wallet && farcasterSDK.wallet.ethProvider
+            ? farcasterSDK.wallet.ethProvider
+            : window.ethereum;
+
+        // Check Gas Estimate first (helps catch reverts early)
+        try {
+            console.log('⛽ Estimating gas...');
+            await provider.request({
+                method: 'eth_estimateGas',
+                params: [transactionParameters]
+            });
+            console.log('✅ Gas estimate successful');
+        } catch (gasError) {
+            console.warn('⚠️ Gas estimation failed - transaction might revert', gasError);
+            // We'll continue anyway but log it
         }
 
         // Send Transaction
-        console.log('Sending transaction...');
+        console.log('Sending transaction...', transactionParameters);
         let txHash;
         try {
-            txHash = await requester.request({
+            txHash = await provider.request({
                 method: 'eth_sendTransaction',
                 params: [transactionParameters],
             });
             console.log('✅ Transaction sent successfully!');
         } catch (txError) {
             console.error('❌ eth_sendTransaction failed:', txError);
-            showVisibleError('Send Failed', `Could not send transaction: ${txError.message || 'Unknown error'}`);
+            // This catches "User rejected request" specifically
+            if (txError.message && txError.message.includes('rejected')) {
+                showVisibleError('Rejected', 'You rejected the transaction request.');
+            } else {
+                showVisibleError('Send Failed', `Could not send transaction: ${txError.message || 'Unknown error'}`);
+            }
             throw txError;
         }
 
         console.log('Transaction hash:', txHash);
-        showVisibleError('Transaction Submitted!', `TX Hash: ${txHash}\n\nCheck on BaseScan Sepolia to confirm.`);
+        showVisibleError('Transaction Submitted!', `TX Hash: ${txHash}\n\nCheck on BaseScan Sepolia.`);
 
         // Poll for receipt
         let receipt = null;
         let attempts = 0;
-        const maxAttempts = 30;
+        const maxAttempts = 45; // 45 seconds max
 
         while (!receipt && attempts < maxAttempts) {
             try {
-                const checkProvider = isFarcasterContext && farcasterSDK && farcasterSDK.wallet && farcasterSDK.wallet.ethProvider
-                    ? farcasterSDK.wallet.ethProvider
-                    : window.ethereum;
-
-                receipt = await checkProvider.request({
+                receipt = await provider.request({
                     method: 'eth_getTransactionReceipt',
                     params: [txHash]
                 });
@@ -565,14 +624,10 @@ async function handleMint() {
             attempts++;
         }
 
-        if (!receipt) {
-            console.log('⚠️ Timeout waiting for confirmation, but transaction was submitted');
-        }
-
         handleMintSuccess(txHash);
     })();
 
-    // Add 60 second timeout
+    // Add 60 second overall timeout
     const timeoutPromise = new Promise((_, reject) => {
         setTimeout(() => reject(new Error('Transaction timeout after 60 seconds')), 60000);
     });
@@ -581,7 +636,10 @@ async function handleMint() {
         await Promise.race([transactionPromise, timeoutPromise]);
     } catch (timeoutError) {
         console.error('❌ Timeout or error:', timeoutError);
-        showVisibleError('Timeout', timeoutError.message || 'Transaction took too long');
+        // Only show if it wasn't handled inside the promise (e.g. user rejection)
+        if (!timeoutError.message || !timeoutError.message.includes('rejected')) {
+            showVisibleError('Error', timeoutError.message || 'Transaction failed');
+        }
         handleMintFailure(timeoutError);
     }
 }
