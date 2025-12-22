@@ -10,10 +10,14 @@ export default function Home() {
   useEffect(() => {
     // 1.5s timer for splash
     const timer = setTimeout(() => {
+      console.log("Splash timeout finished");
       setShowSplash(false);
-    }, 1500);
+    }, 1000);
     return () => clearTimeout(timer);
   }, []);
+
+  console.log("Rendering Home, showSplash:", showSplash);
+
 
   if (showSplash) {
     return <SplashScreen />;

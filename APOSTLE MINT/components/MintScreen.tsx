@@ -32,6 +32,14 @@ export default function MintScreen() {
     const [quantity, setQuantity] = useState(1);
     const [currentCardIndex, setCurrentCardIndex] = useState(0);
     const [mintedTokenId, setMintedTokenId] = useState<bigint | null>(null);
+    const [mounted, setMounted] = useState(false);
+
+    React.useEffect(() => {
+        setMounted(true);
+    }, []);
+
+    if (!mounted) return null; // Avoid hydration mismatch or SSR issues with wallet hooks
+
 
     // Carousel Navigation
     const navigateCarousel = (direction: number) => {
