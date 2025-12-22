@@ -1,0 +1,17 @@
+{
+    "accountAssociation": {
+        "header": "eyJmaWQiOjI4NTUsInR5cGUiOiJhdXRoIiwia2V5IjoiMHhlZDQxNkRlMkQ5MkE4ZGYzNTdkOTQxQmNGNDVmODBBRjIwRjI4YTYyIn0",
+        "payload": "eyJkb21haW4iOiJ0aGUtYXBvc3RsZXMtc2V2ZW4udmVyY2VsLmFwcCJ9",
+        "signature": "1eDoSHVsVzThYmVzS2A1QiE86o9KGgQJQTPMIH+b2gISeEwfF+/+Msm7V/aGlIzdeGnvCHx4xMbsVKdI4MkRIxs="
+    },
+    "miniapp": {
+        "version": "1",
+        "name": "The Apostles",
+        "iconUrl": "https://the-apostles-seven.vercel.app/images/apostles-pixel.png",
+        "homeUrl": "https://the-apostles-seven.vercel.app",
+        "imageUrl": "https://the-apostles-seven.vercel.app/images/apostle-2.png",
+        "buttonTitle": "Mint Now",
+        "splashImageUrl": "https://the-apostles-seven.vercel.app/images/apostles-pixel.png",
+        "splashBackgroundColor": "#000000"
+    }
+}
