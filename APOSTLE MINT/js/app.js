@@ -431,6 +431,11 @@ async function handleMint() {
         showScreen('minting');
         console.log('📺 Showing minting screen');
 
+        // Show immediate status to user
+        setTimeout(() => {
+            showVisibleError('Status', 'Preparing transaction...');
+        }, 500);
+
     } catch (error) {
         console.error('❌ Error in handleMint (before transaction):', error);
         showVisibleError('Wallet Check Failed', error.message || 'Could not verify wallet connection');
@@ -438,7 +443,8 @@ async function handleMint() {
         return;
     }
 
-    try {
+    // Wrap transaction in timeout
+    const transactionPromise = (async () => {
         // Calculate total cost
         const totalCost = (parseFloat(CONFIG.MINT_PRICE) * state.quantity).toFixed(6);
         const totalCostWei = '0x' + (parseFloat(totalCost) * 1e18).toString(16);
@@ -552,6 +558,20 @@ async function handleMint() {
         showVisibleError('Transaction Failed', errorMsg);
         handleMintFailure(error);
     }
+}) ();
+
+// Add 60 second timeout
+const timeoutPromise = new Promise((_, reject) => {
+    setTimeout(() => reject(new Error('Transaction timeout after 60 seconds')), 60000);
+});
+
+try {
+    await Promise.race([transactionPromise, timeoutPromise]);
+} catch (timeoutError) {
+    console.error('❌ Timeout or error:', timeoutError);
+    showVisibleError('Timeout', timeoutError.message || 'Transaction took too long');
+    handleMintFailure(timeoutError);
+}
 }
 
 function encodeMintData(quantity) {
