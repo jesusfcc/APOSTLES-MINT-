@@ -444,7 +444,16 @@ async function handleMint() {
         const totalCostWei = '0x' + (parseFloat(totalCost) * 1e18).toString(16);
 
         // Prepare Transaction Data
-        const txData = encodeMintData(state.quantity); // Encode using Thirdweb claim signature
+        console.log('🔧 Encoding transaction data...');
+        let txData;
+        try {
+            txData = encodeMintData(state.quantity);
+            console.log('✅ Encoding successful');
+        } catch (encodeError) {
+            console.error('❌ Encoding failed:', encodeError);
+            showVisibleError('Encoding Failed', `Cannot prepare transaction: ${encodeError.message}`);
+            throw encodeError;
+        }
 
         // Transaction Object
         const transactionParameters = {
@@ -452,7 +461,7 @@ async function handleMint() {
             from: state.walletAddress,
             value: totalCostWei,
             data: txData,
-            chainId: CONFIG.CHAIN_ID // Explicitly set Chain ID (Base: 0x2105)
+            chainId: CONFIG.CHAIN_ID // Explicitly set Chain ID (Base Sepolia: 0x14a34)
         };
 
         // Select Provider (Farcaster vs Window)
