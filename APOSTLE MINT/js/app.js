@@ -4,7 +4,7 @@
 const CONFIG = {
     CHAIN_ID: '0x2105', // Base Mainnet (8453)
     CHAIN_NAME: 'Base',
-    RPC_URL: 'https://mainnet.base.org',
+    RPC_URL: 'https://base.publicnode.com', // Using public node for better reliability
     EXPLORER_URL: 'https://basescan.org',
     MINT_PRICE: '0', // 0 ETH (Free mint)
     CONTRACT_ADDRESS: '0x77fD806ea78D561E646A302C3D406C278f5b1643',
@@ -447,17 +447,23 @@ function encodeMintData(quantity) {
         // Parameters for claim
         const receiver = state.walletAddress;
 
-        // Thirdweb often uses 0xEeeee... for the function arg but 0x0... in the struct for ETH
+        // Parameters for claim
+        const receiver = state.walletAddress;
+
+        // Use 0xEeeee... for the function arg (Standard for "Native Token")
         const NATIVE_TOKEN = '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE';
         const currency = NATIVE_TOKEN;
         const pricePerToken = 0; // Free mint
+
+        // Use AddressZero for the struct (Standard for internal storage of Native Token)
+        const currencyInStruct = ethers.constants.AddressZero;
 
         // Empty allowlist proof (must match public mint condition: Limit 5)
         const allowlistProof = {
             proof: [],
             quantityLimitPerWallet: 5, // Matches contract "Public phase" limit
             pricePerToken: pricePerToken,
-            currency: ethers.constants.AddressZero // Try 0x000... for struct
+            currency: currencyInStruct
         };
 
         const data = '0x'; // No extra data
@@ -476,6 +482,7 @@ function encodeMintData(quantity) {
         return encodedData;
     } catch (error) {
         console.error('Error encoding claim data:', error);
+        alert('Error preparing transaction: ' + error.message);
         return '0x';
     }
 }
