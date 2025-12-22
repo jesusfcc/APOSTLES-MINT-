@@ -498,6 +498,18 @@ async function handleMint() {
 
     } catch (error) {
         console.error('Minting error:', error);
+
+        // Show visible error with details
+        let errorMsg = 'Unknown error';
+        if (error.message) {
+            errorMsg = error.message;
+        } else if (error.reason) {
+            errorMsg = error.reason;
+        } else if (error.data && error.data.message) {
+            errorMsg = error.data.message;
+        }
+
+        showVisibleError('Transaction Failed', errorMsg);
         handleMintFailure(error);
     }
 }
