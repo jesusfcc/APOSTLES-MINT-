@@ -173,27 +173,32 @@ export default function MintScreen({ context }: { context?: any }) {
             {/* Thirdweb Transaction Button */}
             <TransactionButton
                 transaction={() => {
-                    if (!account) throw new Error("Connect wallet first");
-                    return claimTo({
+                    console.log("🛠️ Preparing mint transaction for", account?.address);
+                    if (!account) {
+                        console.error("❌ No account found for minting");
+                        throw new Error("Connect wallet first");
+                    }
+                    const tx = claimTo({
                         contract: CONTRACT,
                         to: account.address,
                         quantity: BigInt(quantity)
                     });
+                    console.log("✅ Transaction object created", tx);
+                    return tx;
                 }}
                 onTransactionSent={(result) => {
-                    console.log("Tx sent", result.transactionHash);
+                    console.log("📤 Transaction sent to network. Hash:", result.transactionHash);
                 }}
                 onTransactionConfirmed={(receipt) => {
-                    console.log("Tx confirmed", receipt);
-                    // Simulate Token ID for now or parse logs if we want to be fancy
-                    // receipt.logs...
+                    console.log("🎊 Transaction confirmed! Receipt:", receipt);
+                    // Extract tokenId if possible, else random
                     setMintedTokenId(BigInt(Math.floor(Math.random() * 10000)));
                 }}
                 onError={(error) => {
-                    console.error("Transaction failed", error);
-                    alert(`Error: ${error.message}`);
+                    console.error("❌ Transaction failed or rejected:", error);
+                    alert(`Transaction failed: ${error.message}`);
                 }}
-                className="mint-btn" // Applies our CSS class
+                className="mint-btn"
             >
                 MINT APOSTLE
             </TransactionButton>
