@@ -456,33 +456,17 @@ async function handleMint() {
         };
 
         // Select Provider (Farcaster vs Window)
-        let provider, requester;
+        let requester;
         if (isFarcasterContext && farcasterSDK && farcasterSDK.wallet && farcasterSDK.wallet.ethProvider) {
-            provider = farcasterSDK.wallet.ethProvider;
-            requester = provider; // Farcaster SDK provider has request method
+            requester = farcasterSDK.wallet.ethProvider;
+            console.log('Using Farcaster provider');
         } else {
-            provider = window.ethereum;
             requester = window.ethereum;
+            console.log('Using window.ethereum');
         }
 
-        // STEP 1: Verify Transaction Validity (Gas Estimation)
-        // This checks if the contract would revert BEFORE asking user to sign
-        console.log("Verifying transaction...");
-        try {
-            await requester.request({
-                method: 'eth_estimateGas',
-                params: [transactionParameters],
-            });
-            console.log("✅ Transaction verified (Gas estimation successful)");
-        } catch (gasError) {
-            console.error("Gas Estimate Failed:", gasError);
-            // Decode error message if possible
-            let reason = "Contract Logic Error (The constraints are not met)";
-            if (gasError.message) reason += ": " + gasError.message;
-            throw new Error(reason);
-        }
-
-        // STEP 2: Send Transaction
+        // Send Transaction (skip gas estimation for Farcaster compatibility)
+        console.log('Sending transaction...');
         const txHash = await requester.request({
             method: 'eth_sendTransaction',
             params: [transactionParameters],
