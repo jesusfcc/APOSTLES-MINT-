@@ -355,16 +355,16 @@ function updateDisplays() {
 // Minting Logic
 // ===========================
 async function handleMint() {
+    console.log('🎯 MINT BUTTON CLICKED');
+
     // DEMO MODE - Simulate minting without wallet
     if (CONFIG.DEMO_MODE) {
         console.log('🎬 DEMO MODE: Simulating mint transaction');
         showScreen('minting');
 
-        // Simulate transaction time (2-4 seconds)
         const mintTime = 2000 + Math.random() * 2000;
         await new Promise(resolve => setTimeout(resolve, mintTime));
 
-        // 90% success rate in demo
         if (Math.random() > 0.1) {
             handleMintSuccess('demo_tx_hash_' + Date.now());
         } else {
@@ -374,14 +374,32 @@ async function handleMint() {
     }
 
     // PRODUCTION MODE - Real wallet transaction
-    // Check wallet connection
-    if (!state.walletConnected) {
-        await connectWallet();
-        if (!state.walletConnected) return;
-    }
+    try {
+        console.log('💼 Checking wallet connection...');
+        console.log('Wallet connected:', state.walletConnected);
+        console.log('Wallet address:', state.walletAddress);
 
-    // Show minting screen
-    showScreen('minting');
+        // Check wallet connection
+        if (!state.walletConnected) {
+            console.log('⚠️ Wallet not connected, attempting to connect...');
+            await connectWallet();
+            if (!state.walletConnected) {
+                throw new Error('Wallet connection failed');
+            }
+        }
+
+        console.log('✅ Wallet check passed');
+
+        // Show minting screen
+        showScreen('minting');
+        console.log('📺 Showing minting screen');
+
+    } catch (error) {
+        console.error('❌ Error in handleMint (before transaction):', error);
+        alert('Pre-transaction error: ' + error.message);
+        handleMintFailure(error);
+        return;
+    }
 
     try {
         // Calculate total cost
@@ -611,97 +629,3 @@ if (typeof window.ethereum !== 'undefined') {
 // Start the app
 // ===========================
 init();
-
-// --- DEBUGGING TOOL ---
-async function runDiagnostics() {
-    if (!state.walletAddress) {
-        alert("Please connect wallet first.");
-        return;
-    }
-
-    // Helper: Dynamically load Ethers if missing
-    const loadEthers = () => new Promise((resolve, reject) => {
-        if (typeof window.ethers !== 'undefined') {
-            console.log("Ethers found in window");
-            return resolve(window.ethers);
-        }
-        if (typeof ethers !== 'undefined') {
-            console.log("Ethers found in scope");
-            return resolve(ethers);
-        }
-
-        console.log("Ethers missing. Loading from CDN...");
-        const script = document.createElement('script');
-        script.src = "https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js";
-        script.type = "text/javascript";
-        script.onload = () => {
-            console.log("Ethers loaded from CDN");
-            resolve(window.ethers);
-        };
-        script.onerror = () => reject(new Error("Failed to load ethers.js from CDN"));
-        document.head.appendChild(script);
-    });
-
-    try {
-        const eth = await loadEthers();
-        if (!eth) throw new Error("Ethers.js failed to initialize.");
-
-        // Use Farcaster provider if available, otherwise window.ethereum
-        let rawProvider;
-        if (isFarcasterContext && farcasterSDK && farcasterSDK.wallet && farcasterSDK.wallet.ethProvider) {
-            rawProvider = farcasterSDK.wallet.ethProvider;
-            console.log("Using Farcaster ethProvider for diagnostics");
-        } else if (window.ethereum) {
-            rawProvider = window.ethereum;
-            console.log("Using window.ethereum for diagnostics");
-        } else {
-            throw new Error("No Web3 provider found (neither Farcaster nor MetaMask)");
-        }
-
-        const provider = new eth.providers.Web3Provider(rawProvider);
-
-        // Basic connectivity check
-        const network = await provider.getNetwork();
-        console.log("Connected to network:", network);
-
-        const contract = new eth.Contract(CONFIG.CONTRACT_ADDRESS, [
-            "function getActiveClaimConditionId() view returns (uint256)",
-            "function getClaimConditionById(uint256 _conditionId) view returns (tuple(uint256 startTimestamp, uint256 maxClaimableSupply, uint256 supplyClaimed, uint256 quantityLimitPerWallet, bytes32 merkleRoot, uint256 pricePerToken, address currency, string metadata))"
-        ], provider);
-
-        const activeId = await contract.getActiveClaimConditionId().catch(e => "Error fetching ID");
-        let activeIdStr = activeId.toString();
-
-        alert(`Active Condition ID: ${activeIdStr}`);
-
-        const condition = await contract.getClaimConditionById(activeId).catch(e => "Error fetching Condition");
-
-        const info = `
-        DEBUG REPORT:
-        ID: ${activeIdStr}
-        Limit: ${condition.quantityLimitPerWallet ? condition.quantityLimitPerWallet.toString() : 'N/A'}
-        Price: ${condition.pricePerToken ? condition.pricePerToken.toString() : 'N/A'}
-        Currency: ${condition.currency}
-        MerkleRoot: ${condition.merkleRoot}
-        `;
-
-        alert(info);
-        console.log(info);
-
-    } catch (error) {
-        alert("Diagnostics Failed: " + error.message);
-    }
-}
-
-// Add Debug Button
-const debugBtn = document.createElement('button');
-debugBtn.innerText = "🕵️ DEBUG CONTRACT";
-debugBtn.style.position = "fixed";
-debugBtn.style.bottom = "10px";
-debugBtn.style.left = "10px";
-debugBtn.style.zIndex = "9999";
-debugBtn.style.padding = "10px";
-debugBtn.style.background = "red";
-debugBtn.style.color = "white";
-debugBtn.onclick = runDiagnostics;
-document.body.appendChild(debugBtn);
