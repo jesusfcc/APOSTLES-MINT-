@@ -138,100 +138,63 @@ async function init() {
 }
 
 // ===========================
-// Debug Utilities
-// ===========================
-function createDebugOverlay() {
-    const overlay = document.createElement('div');
-    overlay.id = 'debug-overlay';
-    overlay.style.cssText = `
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        max-height: 200px;
-        overflow-y: auto;
-        background: rgba(0, 0, 0, 0.85);
-        color: #0f0;
-        font-family: monospace;
-        font-size: 12px;
-        padding: 10px;
-        z-index: 10000;
-        pointer-events: none;
-        border-top: 1px solid #333;
-    `;
-    document.body.appendChild(overlay);
-    return overlay;
-}
-
-function logDebug(message) {
-    console.log(message);
-    const overlay = document.getElementById('debug-overlay') || createDebugOverlay();
-    const line = document.createElement('div');
-    line.textContent = `[${new Date().toISOString().split('T')[1].slice(0, -1)}] ${message}`;
-    overlay.appendChild(line);
-    overlay.scrollTop = overlay.scrollHeight;
-}
-
-// ===========================
 // Farcaster SDK Initialization
 // ===========================
 async function initializeFarcasterSDK() {
-    logDebug('🚀 Initializing Farcaster SDK...');
-
     try {
-        let attempts = 0;
-        const maxAttempts = 50; // 5 seconds
+        // Check for miniapp SDK (newer standard)
+        // Note: Global variable is typically window.miniapp
+        if (typeof window.miniapp !== 'undefined') {
+            farcasterSDK = window.miniapp.sdk;
+            console.log('✅ Farcaster MiniApp SDK found');
 
-        // Poll for SDK presence
-        while (typeof window.sdk === 'undefined' && attempts < maxAttempts) {
-            attempts++;
-            if (attempts % 5 === 0) logDebug(`Waiting for SDK... (${attempts}/${maxAttempts})`);
-            await new Promise(resolve => setTimeout(resolve, 100));
-        }
-
-        // Check if Farcaster SDK is loaded
-        if (typeof window.sdk !== 'undefined') {
-            logDebug('✅ SDK Found!');
-            farcasterSDK = window.sdk;
-
-            // Call ready immediately to signal app is loaded and remove Farcaster splash screen
-            try {
-                logDebug('Calling sdk.actions.ready()...');
-                farcasterSDK.actions.ready();
-                logDebug('✅ sdk.actions.ready() called successfully');
-            } catch (readyError) {
-                logDebug(`❌ Error calling ready(): ${readyError.message}`);
-            }
+            // Call ready immediately to signal app is loaded
+            farcasterSDK.actions.ready();
+            console.log('✅ sdk.actions.ready() called');
 
             // Initialize the SDK
-            logDebug('Requesting context...');
             const context = await farcasterSDK.context;
-            logDebug('Context received');
 
             if (context) {
                 isFarcasterContext = true;
                 farcasterUser = context.user;
 
-                logDebug('🟣 Running in Farcaster context');
-                logDebug(`User FID: ${farcasterUser?.fid}`);
+                console.log('🟣 Running in Farcaster context');
 
                 // Auto-connect wallet in Farcaster context
                 if (farcasterUser) {
                     state.walletConnected = true;
-                    state.walletAddress = farcasterUser.wallet || 'Farcaster User';
+                    // Note: SDK may use different wallet field depending on version
+                    state.walletAddress = farcasterUser.wallet || farcasterUser.verifiedEthAddress || 'Farcaster User';
                     updateWalletButton();
-                    logDebug('Auto-connected wallet');
+                    console.log('Auto-connected Farcaster wallet');
                 }
             } else {
-                logDebug('🌐 Running in browser context (no context returned)');
+                console.log('🌐 Running in browser context (no context)');
             }
-        } else {
-            logDebug('⚠️ SDK Timeout - running in browser mode');
+        }
+        // Fallback or alternative check (sdk variable)
+        else if (typeof window.sdk !== 'undefined') {
+            farcasterSDK = window.sdk;
+            console.log('✅ Farcaster SDK (legacy/frame-sdk) found');
+
+            farcasterSDK.actions.ready();
+
+            const context = await farcasterSDK.context;
+            if (context) {
+                isFarcasterContext = true;
+                farcasterUser = context.user;
+                state.walletConnected = true;
+                state.walletAddress = farcasterUser.wallet || 'Farcaster User';
+                updateWalletButton();
+            }
+        }
+        else {
+            console.log('🌐 Farcaster SDK not found - running in browser mode');
         }
     } catch (error) {
-        logDebug(`❌ Error initializing SDK: ${error.message}`);
         console.error('Error initializing Farcaster SDK:', error);
-        logDebug('Falling back to browser mode');
+        console.log('Falling back to browser mode');
     }
 }
 
@@ -260,20 +223,26 @@ async function connectWallet() {
     if (isFarcasterContext && farcasterSDK) {
         try {
             // Request wallet connection through Farcaster SDK
-            const wallet = await farcasterSDK.wallet.ethProvider.request({
-                method: 'eth_requestAccounts'
-            });
+            // Note: Update to use new SDK method signature if needed
+            // The miniapp SDK might use a different method than ethProvider
+            // But usually it exposes a provider
+            const provider = farcasterSDK.wallet?.ethProvider || window.ethereum;
 
-            if (wallet && wallet.length > 0) {
-                state.walletConnected = true;
-                state.walletAddress = wallet[0];
-                updateWalletButton();
-                console.log('Farcaster wallet connected:', state.walletAddress);
-                return;
+            if (provider) {
+                const wallet = await provider.request({
+                    method: 'eth_requestAccounts'
+                });
+
+                if (wallet && wallet.length > 0) {
+                    state.walletConnected = true;
+                    state.walletAddress = wallet[0];
+                    updateWalletButton();
+                    console.log('Farcaster wallet connected:', state.walletAddress);
+                    return;
+                }
             }
         } catch (error) {
             console.error('Error connecting Farcaster wallet:', error);
-            // Fall through to regular wallet connection
         }
     }
 
@@ -458,7 +427,12 @@ async function handleMint() {
         // Use Farcaster wallet if available, otherwise use MetaMask
         if (isFarcasterContext && farcasterSDK) {
             // Send transaction through Farcaster SDK
-            txHash = await farcasterSDK.wallet.ethProvider.request({
+            // Check provider availability
+            const provider = farcasterSDK.wallet?.ethProvider || window.ethereum;
+
+            if (!provider) throw new Error("No provider available");
+
+            txHash = await provider.request({
                 method: 'eth_sendTransaction',
                 params: [transactionParameters],
             });
