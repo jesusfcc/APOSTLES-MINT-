@@ -48,20 +48,22 @@ export default function Home() {
     return () => clearTimeout(timer);
   }, []);
 
-  if (showSplash) {
-    return (
-      <>
-        <SplashScreen />
-        <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, background: 'rgba(0,0,0,0.8)', color: '#0f0', fontSize: '10px', height: '100px', overflow: 'auto', zIndex: 9999 }}>
-          {logs.map((L, i) => <div key={i}>{L}</div>)}
-        </div>
-      </>
-    );
+  if (false) {
+    // Legacy fallback just in case
+    return null;
   }
 
   return (
     <ErrorBoundary>
-      <MintScreen />
+      <div style={{ display: showSplash ? 'block' : 'none' }}>
+        <SplashScreen />
+        <div style={{ position: 'fixed', bottom: 0, left: 0, right: 0, background: 'rgba(0,0,0,0.8)', color: '#0f0', fontSize: '10px', height: '100px', overflow: 'auto', zIndex: 9999 }}>
+          {logs.map((L, i) => <div key={i}>{L}</div>)}
+        </div>
+      </div>
+      <div style={{ display: !showSplash ? 'block' : 'none' }}>
+        <MintScreen />
+      </div>
     </ErrorBoundary>
   );
 }
