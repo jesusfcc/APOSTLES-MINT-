@@ -585,16 +585,32 @@ async function runDiagnostics() {
         return;
     }
 
-    try {
-        // Robust check for ethers
-        let eth;
-        if (typeof ethers !== 'undefined') {
-            eth = ethers;
-        } else if (typeof window.ethers !== 'undefined') {
-            eth = window.ethers;
-        } else {
-            throw new Error("Ethers library not found in any scope.");
+    // Helper: Dynamically load Ethers if missing
+    const loadEthers = () => new Promise((resolve, reject) => {
+        if (typeof window.ethers !== 'undefined') {
+            console.log("Ethers found in window");
+            return resolve(window.ethers);
         }
+        if (typeof ethers !== 'undefined') {
+            console.log("Ethers found in scope");
+            return resolve(ethers);
+        }
+
+        console.log("Ethers missing. Loading from CDN...");
+        const script = document.createElement('script');
+        script.src = "https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js";
+        script.type = "text/javascript";
+        script.onload = () => {
+            console.log("Ethers loaded from CDN");
+            resolve(window.ethers);
+        };
+        script.onerror = () => reject(new Error("Failed to load ethers.js from CDN"));
+        document.head.appendChild(script);
+    });
+
+    try {
+        const eth = await loadEthers();
+        if (!eth) throw new Error("Ethers.js failed to initialize.");
 
         const provider = new eth.providers.Web3Provider(window.ethereum);
 
