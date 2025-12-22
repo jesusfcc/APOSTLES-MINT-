@@ -666,3 +666,21 @@ if (typeof window.ethereum !== 'undefined') {
 // Start the app
 // ===========================
 init();
+
+// TEST: Add visible test button
+const testBtn = document.createElement('button');
+testBtn.innerText = "TEST ERROR";
+testBtn.style.cssText = `
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    padding: 15px;
+    background: orange;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    z-index: 9999;
+`;
+testBtn.onclick = () => showVisibleError('Test', 'If you see this, error popups work!');
+document.body.appendChild(testBtn);
