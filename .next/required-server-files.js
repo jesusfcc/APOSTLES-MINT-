@@ -140,7 +140,7 @@ self.__SERVER_FILES_MANIFEST={
       "isExperimentalCompile": false
     }
   },
-  "appDir": "/Users/mac/.gemini/antigravity/scratch/THE-APOSTLES-",
+  "appDir": "/Users/mac/.gemini/antigravity/scratch/THE-APOSTLES-/apostle-mint",
   "relativeAppDir": "",
   "files": [
     ".next/routes-manifest.json",
