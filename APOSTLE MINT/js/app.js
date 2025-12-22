@@ -447,8 +447,9 @@ function encodeMintData(quantity) {
         // Parameters for claim
         const receiver = state.walletAddress;
 
-        // Use 0xEeeee... for the function arg (Standard for "Native Token")
-        const NATIVE_TOKEN = '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE';
+        // Use AddressZero because contract strictly compares with stored 0x0...
+        // Since price is 0, we can bypass the 0xEee check in _collectPrice
+        const NATIVE_TOKEN = ethers.constants.AddressZero;
         const currency = NATIVE_TOKEN;
         const pricePerToken = 0; // Free mint
 
