@@ -2,12 +2,12 @@
 // Configuration
 // ===========================
 const CONFIG = {
-    CHAIN_ID: '0x14a34', // Base Sepolia (84532)
-    CHAIN_NAME: 'Base Sepolia',
-    RPC_URL: 'https://sepolia.base.org',
-    EXPLORER_URL: 'https://sepolia.basescan.org',
-    MINT_PRICE: '0.00000335', // ETH per mint
-    CONTRACT_ADDRESS: '0x70CF7B20BCDE6f58faAbb9974CCaC000C1774D4d',
+    CHAIN_ID: '0x2105', // Base Mainnet (8453)
+    CHAIN_NAME: 'Base',
+    RPC_URL: 'https://mainnet.base.org',
+    EXPLORER_URL: 'https://basescan.org',
+    MINT_PRICE: '0', // 0 ETH (Free mint)
+    CONTRACT_ADDRESS: '0x77fD806ea78D561E646A302C3D406C278f5b1643',
     MAX_SUPPLY: 10000,
     INITIAL_REMAINING: 2525,
     DEMO_MODE: false, // Set to false for real contract interaction
