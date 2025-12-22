@@ -433,7 +433,7 @@ async function handleMint() {
 
     } catch (error) {
         console.error('❌ Error in handleMint (before transaction):', error);
-        alert('Pre-transaction error: ' + error.message);
+        showVisibleError('Wallet Check Failed', error.message || 'Could not verify wallet connection');
         handleMintFailure(error);
         return;
     }
