@@ -455,11 +455,12 @@ function encodeMintData(quantity) {
         // Use AddressZero for the struct (Standard for internal storage of Native Token)
         const currencyInStruct = ethers.constants.AddressZero;
 
-        // Empty allowlist proof (must match public mint condition: Limit 5)
+        // Use MaxUint256 to tell contract "Use the active condition's limit and price"
+        // This is a "Wildcard" that avoids mismatch errors if we hardcode the wrong number
         const allowlistProof = {
             proof: [],
-            quantityLimitPerWallet: 5, // Matches contract "Public phase" limit
-            pricePerToken: pricePerToken,
+            quantityLimitPerWallet: ethers.constants.MaxUint256,
+            pricePerToken: ethers.constants.MaxUint256,
             currency: currencyInStruct
         };
 
