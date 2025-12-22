@@ -17,6 +17,23 @@
     <!-- Ethers.js (Local Copy for Reliability) -->
     <script src="js/ethers.min.js" type="application/javascript"></script>
 
+    <!-- Thirdweb SDK v5 -->
+    <script type="module">
+        import { createThirdwebClient, getContract, prepareContractCall, sendTransaction, waitForReceipt, defineChain } from "https://esm.sh/thirdweb";
+        import { claimTo } from "https://esm.sh/thirdweb/extensions/erc721";
+
+        window.Thirdweb = {
+            createThirdwebClient,
+            getContract,
+            prepareContractCall,
+            sendTransaction,
+            waitForReceipt,
+            defineChain,
+            claimTo
+        };
+        console.log("✅ Thirdweb SDK loaded");
+    </script>
+
     <!-- Farcaster Mini App Config -->
     <meta property="fc:frame" content="vNext" />
     <meta property="fc:frame:manifest" content="/.well-known/farcaster.json" />
