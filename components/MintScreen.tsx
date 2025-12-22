@@ -207,6 +207,7 @@ export default function MintScreen({ context }: { context?: any }) {
             ) : (
                 <TransactionButton
                     transaction={async () => {
+                        alert("MINT BUTTON CLICKED! Starting preparation...");
                         console.log("🚀 STARTING MINT PROCESS");
                         setDebugStatus("Step 1: Preparing tx...");
                         try {
