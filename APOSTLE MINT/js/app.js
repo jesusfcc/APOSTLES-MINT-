@@ -474,10 +474,43 @@ async function handleMint() {
 
         console.log('Transaction hash:', txHash);
 
-        // Wait for confirmation (simplified - in production, poll for receipt)
-        await new Promise(resolve => setTimeout(resolve, 3000));
+        // Wait for transaction confirmation
+        console.log('Waiting for confirmation...');
 
-        // Simulate successful mint (Real tracking via events in prod)
+        // Poll for receipt (Farcaster compatible)
+        let receipt = null;
+        let attempts = 0;
+        const maxAttempts = 30; // 30 seconds max
+
+        while (!receipt && attempts < maxAttempts) {
+            try {
+                // Use Farcaster provider if available
+                const checkProvider = isFarcasterContext && farcasterSDK && farcasterSDK.wallet && farcasterSDK.wallet.ethProvider
+                    ? farcasterSDK.wallet.ethProvider
+                    : window.ethereum;
+
+                receipt = await checkProvider.request({
+                    method: 'eth_getTransactionReceipt',
+                    params: [txHash]
+                });
+
+                if (receipt) {
+                    console.log('✅ Transaction confirmed!', receipt);
+                    break;
+                }
+            } catch (e) {
+                console.log('Polling...', attempts);
+            }
+
+            await new Promise(resolve => setTimeout(resolve, 1000));
+            attempts++;
+        }
+
+        if (!receipt) {
+            console.log('⚠️ Timeout waiting for confirmation, but transaction was submitted');
+        }
+
+        // Show success
         handleMintSuccess(txHash);
 
     } catch (error) {
