@@ -446,7 +446,8 @@ function encodeMintData(quantity) {
 
         // Parameters for claim
         const receiver = state.walletAddress;
-        // Use standard NATIVE_TOKEN address constant for Thirdweb
+
+        // Thirdweb often uses 0xEeeee... for the function arg but 0x0... in the struct for ETH
         const NATIVE_TOKEN = '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE';
         const currency = NATIVE_TOKEN;
         const pricePerToken = 0; // Free mint
@@ -456,7 +457,7 @@ function encodeMintData(quantity) {
             proof: [],
             quantityLimitPerWallet: 5, // Matches contract "Public phase" limit
             pricePerToken: pricePerToken,
-            currency: currency
+            currency: ethers.constants.AddressZero // Try 0x000... for struct
         };
 
         const data = '0x'; // No extra data
