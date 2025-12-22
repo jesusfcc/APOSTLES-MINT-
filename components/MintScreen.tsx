@@ -207,28 +207,36 @@ export default function MintScreen({ context }: { context?: any }) {
             ) : (
                 <TransactionButton
                     transaction={async () => {
-                        setDebugStatus("Preparing transaction...");
-                        console.log("🛠️ Preparing mint transaction for", account?.address);
-                        const tx = claimTo({
-                            contract: CONTRACT,
-                            to: account.address,
-                            quantity: BigInt(quantity)
-                        });
-                        return tx;
+                        console.log("🚀 STARTING MINT PROCESS");
+                        setDebugStatus("Step 1: Preparing tx...");
+                        try {
+                            const tx = claimTo({
+                                contract: CONTRACT,
+                                to: account.address,
+                                quantity: BigInt(quantity)
+                            });
+                            console.log("✅ Step 2: Tx object created", tx);
+                            setDebugStatus("Step 3: Sending to wallet...");
+                            return tx;
+                        } catch (e: any) {
+                            console.error("❌ Step 1.5: Error in claimTo definition", e);
+                            setDebugStatus(`Prep Error: ${e.message.slice(0, 15)}`);
+                            throw e;
+                        }
                     }}
                     onTransactionSent={(result) => {
-                        setDebugStatus("Transaction sent!");
-                        console.log("📤 Transaction sent to network. Hash:", result.transactionHash);
+                        console.log("📤 Step 4: Transaction sent to network. Hash:", result.transactionHash);
+                        setDebugStatus("Step 5: Awaiting confirmation...");
                     }}
                     onTransactionConfirmed={(receipt) => {
-                        setDebugStatus("Transaction confirmed!");
-                        console.log("🎊 Transaction confirmed! Receipt:", receipt);
+                        console.log("🎊 Step 6: Transaction confirmed! Receipt:", receipt);
+                        setDebugStatus("Prophecy Fulfilled!");
                         setMintedTokenId(BigInt(Math.floor(Math.random() * 10000)));
                     }}
                     onError={(error) => {
-                        setDebugStatus(`Error: ${error.message.slice(0, 20)}...`);
-                        console.error("❌ Transaction failed or rejected:", error);
-                        alert(`Transaction failed: ${error.message}`);
+                        console.error("❌ TRANSACTION ERROR:", error);
+                        setDebugStatus(`Tx Failed: ${error.message.slice(0, 20)}`);
+                        alert(`Mint Failed: ${error.message}`);
                     }}
                     className="mint-btn"
                 >
