@@ -446,8 +446,8 @@ function encodeMintData(quantity) {
 
         // Parameters for claim
         const receiver = state.walletAddress;
-        // Use standard NATIVE_TOKEN address constant for Thirdweb
-        const NATIVE_TOKEN = '0xEeeeeEeeeEeEeeEeEeEeeEEEeeeeEeeeeeeeEEeE';
+        // Use AddressZero for Native Token (some contracts expect this)
+        const NATIVE_TOKEN = ethers.constants.AddressZero;
         const currency = NATIVE_TOKEN;
         const pricePerToken = 0; // Free mint
 
