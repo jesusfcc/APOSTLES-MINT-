@@ -178,18 +178,34 @@ async function init() {
 // ===========================
 // Farcaster SDK Initialization
 // ===========================
+
+// CRITICAL: Call ready() immediately at top level to prevent splash freeze
+// This must happen BEFORE any async operations
+(function callReadyImmediately() {
+    try {
+        if (typeof window.miniapp !== 'undefined' && window.miniapp.sdk) {
+            window.miniapp.sdk.actions.ready();
+            console.log('✅ sdk.actions.ready() called immediately (miniapp)');
+        } else if (typeof window.sdk !== 'undefined') {
+            window.sdk.actions.ready();
+            console.log('✅ sdk.actions.ready() called immediately (legacy)');
+        }
+    } catch (e) {
+        console.log('⚠️ Could not call ready() immediately:', e);
+    }
+})();
+
 async function initializeFarcasterSDK() {
     try {
         // Check for miniapp SDK (newer standard)
-        if (typeof window.miniapp !== 'undefined') {
+        if (typeof window.miniapp !== 'undefined' && window.miniapp.sdk) {
             farcasterSDK = window.miniapp.sdk;
             console.log('✅ Farcaster MiniApp SDK found');
 
-            // Call ready immediately to signal app is loaded
-            farcasterSDK.actions.ready();
-            console.log('✅ sdk.actions.ready() called');
+            // ready() was already called above, but call again just in case
+            try { farcasterSDK.actions.ready(); } catch (e) { }
 
-            // Initialize the SDK
+            // Initialize the SDK context
             const context = await farcasterSDK.context;
 
             if (context) {
@@ -206,8 +222,8 @@ async function initializeFarcasterSDK() {
             farcasterSDK = window.sdk;
             console.log('✅ Farcaster SDK (legacy/frame-sdk) found');
 
-            // Call ready immediately
-            farcasterSDK.actions.ready();
+            // ready() was already called above
+            try { farcasterSDK.actions.ready(); } catch (e) { }
 
             const context = await farcasterSDK.context;
             if (context) {
