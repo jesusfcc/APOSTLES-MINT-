@@ -14,6 +14,13 @@ const CONFIG = {
 };
 
 // ===========================
+// Farcaster SDK
+// ===========================
+let farcasterSDK = null;
+let isFarcasterContext = false;
+let farcasterUser = null;
+
+// ===========================
 // State Management
 // ===========================
 const state = {
@@ -70,7 +77,10 @@ function showScreen(screenName) {
 // ===========================
 // Initialization
 // ===========================
-function init() {
+async function init() {
+    // Initialize Farcaster SDK if available
+    await initializeFarcasterSDK();
+
     // Show splash for 1.5 seconds
     setTimeout(() => {
         showScreen('mint');
@@ -113,11 +123,54 @@ function init() {
         console.log('🎬 DEMO MODE ACTIVE - No wallet needed!');
     } else {
         // Check if wallet is already connected in production mode
-        checkWalletConnection();
+        // If in Farcaster context, we'll use Farcaster wallet
+        if (!isFarcasterContext) {
+            checkWalletConnection();
+        }
     }
 
     // Update displays
     updateDisplays();
+}
+
+// ===========================
+// Farcaster SDK Initialization
+// ===========================
+async function initializeFarcasterSDK() {
+    try {
+        // Check if Farcaster SDK is loaded
+        if (typeof window.sdk !== 'undefined') {
+            farcasterSDK = window.sdk;
+
+            // Initialize the SDK
+            const context = await farcasterSDK.context;
+
+            if (context) {
+                isFarcasterContext = true;
+                farcasterUser = context.user;
+
+                console.log('🟣 Running in Farcaster context');
+                console.log('User FID:', farcasterUser?.fid);
+
+                // Set ready state
+                farcasterSDK.actions.ready();
+
+                // Auto-connect wallet in Farcaster context
+                if (farcasterUser) {
+                    state.walletConnected = true;
+                    state.walletAddress = farcasterUser.wallet || 'Farcaster User';
+                    updateWalletButton();
+                }
+            } else {
+                console.log('🌐 Running in browser context');
+            }
+        } else {
+            console.log('🌐 Farcaster SDK not available - running in browser mode');
+        }
+    } catch (error) {
+        console.error('Error initializing Farcaster SDK:', error);
+        console.log('Falling back to browser mode');
+    }
 }
 
 // ===========================
@@ -141,6 +194,28 @@ async function checkWalletConnection() {
 }
 
 async function connectWallet() {
+    // If in Farcaster context, use Farcaster wallet
+    if (isFarcasterContext && farcasterSDK) {
+        try {
+            // Request wallet connection through Farcaster SDK
+            const wallet = await farcasterSDK.wallet.ethProvider.request({
+                method: 'eth_requestAccounts'
+            });
+
+            if (wallet && wallet.length > 0) {
+                state.walletConnected = true;
+                state.walletAddress = wallet[0];
+                updateWalletButton();
+                console.log('Farcaster wallet connected:', state.walletAddress);
+                return;
+            }
+        } catch (error) {
+            console.error('Error connecting Farcaster wallet:', error);
+            // Fall through to regular wallet connection
+        }
+    }
+
+    // Regular MetaMask/Web3 wallet connection
     if (typeof window.ethereum === 'undefined') {
         alert('Please install MetaMask or another Web3 wallet to continue.');
         return;
@@ -316,11 +391,22 @@ async function handleMint() {
             data: encodeMintData(state.quantity), // This would encode the mint function call
         };
 
-        // Send transaction
-        const txHash = await window.ethereum.request({
-            method: 'eth_sendTransaction',
-            params: [transactionParameters],
-        });
+        let txHash;
+
+        // Use Farcaster wallet if available, otherwise use MetaMask
+        if (isFarcasterContext && farcasterSDK) {
+            // Send transaction through Farcaster SDK
+            txHash = await farcasterSDK.wallet.ethProvider.request({
+                method: 'eth_sendTransaction',
+                params: [transactionParameters],
+            });
+        } else {
+            // Send transaction through MetaMask
+            txHash = await window.ethereum.request({
+                method: 'eth_sendTransaction',
+                params: [transactionParameters],
+            });
+        }
 
         console.log('Transaction hash:', txHash);
 
