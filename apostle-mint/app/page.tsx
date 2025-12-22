@@ -1,37 +1,50 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import SplashScreen from "@/components/SplashScreen";
-import MintScreen from "@/components/MintScreen";
-import sdk from "@farcaster/frame-sdk";
+import dynamic from "next/dynamic";
+import { ThirdwebProvider } from "thirdweb/react";
+
+// Use dynamic imports to prevent SSR issues and initialization crashes
+const SplashScreen = dynamic(() => import("@/components/SplashScreen"), { ssr: false });
+const MintScreen = dynamic(() => import("@/components/MintScreen"), { ssr: false });
 
 export default function Home() {
   const [isSDKLoaded, setIsSDKLoaded] = useState(false);
+  const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (!mounted) return;
+
     const load = async () => {
-      console.log("Initializing Farcaster SDK...");
+      console.log("Loading Farcaster SDK dynamically...");
       try {
+        // Dynamically import SDK to be safe
+        const { default: sdk } = await import("@farcaster/frame-sdk");
         await sdk.actions.ready();
-        console.log("Farcaster SDK Ready");
+        console.log("SDK Ready called successfully");
       } catch (e) {
-        console.error("SDK Ready failed", e);
+        console.error("Farcaster SDK initialization failed:", e);
       }
       setIsSDKLoaded(true);
     };
 
-    if (sdk) {
-      load();
-    }
-  }, []);
+    load();
+  }, [mounted]);
 
-  if (!isSDKLoaded) {
+  // Initial render (SSR and first hydration)
+  if (!mounted || !isSDKLoaded) {
     return <SplashScreen />;
   }
 
   return (
     <main style={{ minHeight: "100vh", background: "#000" }}>
-      <MintScreen />
+      <ThirdwebProvider>
+        <MintScreen />
+      </ThirdwebProvider>
     </main>
   );
 }

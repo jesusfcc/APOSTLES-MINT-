@@ -90,73 +90,71 @@ export default function MintScreen() {
     }
 
     return (
-        <ThirdwebProvider>
-            <div className="screen mint-screen active" id="mint-screen">
-                {/* Carousel */}
-                <div className="carousel-container">
-                    <button className="carousel-btn prev" onClick={() => navigateCarousel(-1)}>←</button>
-                    <div className="cards-wrapper">
-                        {IMAGES.map((src, index) => (
-                            <div
-                                key={index}
-                                className={`card ${index === currentCardIndex ? 'active' : ''}`}
-                                style={{ display: Math.abs(index - currentCardIndex) <= 1 ? 'block' : 'none' }} // Simple optimization
-                            >
-                                <img src={src} alt={`Apostle ${index + 1}`} />
-                            </div>
-                        ))}
-                    </div>
-                    <button className="carousel-btn next" onClick={() => navigateCarousel(1)}>→</button>
-                </div>
-
-                {/* Info Panel */}
-                <div className="info-panel">
-                    <div className="info-row">
-                        <span className="info-label">Price</span>
-                        <span className="info-value">FREE</span>
-                    </div>
-                    <div className="info-row">
-                        <span className="info-label">Quantity</span>
-                        <div className="quantity-controls">
-                            <button className="qty-btn" onClick={() => updateQuantity(-1)}>-</button>
-                            <span className="qty-value">{quantity}</span>
-                            <button className="qty-btn" onClick={() => updateQuantity(1)}>+</button>
+        <div className="screen mint-screen active" id="mint-screen">
+            {/* Carousel */}
+            <div className="carousel-container">
+                <button className="carousel-btn prev" onClick={() => navigateCarousel(-1)}>←</button>
+                <div className="cards-wrapper">
+                    {IMAGES.map((src, index) => (
+                        <div
+                            key={index}
+                            className={`card ${index === currentCardIndex ? 'active' : ''}`}
+                            style={{ display: Math.abs(index - currentCardIndex) <= 1 ? 'block' : 'none' }} // Simple optimization
+                        >
+                            <img src={src} alt={`Apostle ${index + 1}`} />
                         </div>
-                    </div>
-                    <div className="info-row">
-                        <span className="info-label">Total</span>
-                        <span className="info-value">{(0 * quantity).toFixed(4)} ETH</span>
+                    ))}
+                </div>
+                <button className="carousel-btn next" onClick={() => navigateCarousel(1)}>→</button>
+            </div>
+
+            {/* Info Panel */}
+            <div className="info-panel">
+                <div className="info-row">
+                    <span className="info-label">Price</span>
+                    <span className="info-value">FREE</span>
+                </div>
+                <div className="info-row">
+                    <span className="info-label">Quantity</span>
+                    <div className="quantity-controls">
+                        <button className="qty-btn" onClick={() => updateQuantity(-1)}>-</button>
+                        <span className="qty-value">{quantity}</span>
+                        <button className="qty-btn" onClick={() => updateQuantity(1)}>+</button>
                     </div>
                 </div>
-
-                {/* Thirdweb Transaction Button */}
-                <TransactionButton
-                    transaction={() => {
-                        if (!account) throw new Error("Connect wallet first");
-                        return claimTo({
-                            contract: CONTRACT,
-                            to: account.address,
-                            quantity: BigInt(quantity)
-                        });
-                    }}
-                    onTransactionSent={(result) => {
-                        console.log("Tx sent", result.transactionHash);
-                    }}
-                    onTransactionConfirmed={(receipt) => {
-                        console.log("Tx confirmed", receipt);
-                        // Simulate Token ID for now or parse logs if we want to be fancy
-                        // receipt.logs...
-                        setMintedTokenId(BigInt(Math.floor(Math.random() * 10000)));
-                    }}
-                    onError={(error) => {
-                        console.error("Transaction failed", error);
-                        alert(`Error: ${error.message}`);
-                    }}
-                    className="mint-btn" // Applies our CSS class
-                >
-                    MINT APOSTLE
-                </TransactionButton>
+                <div className="info-row">
+                    <span className="info-label">Total</span>
+                    <span className="info-value">{(0 * quantity).toFixed(4)} ETH</span>
+                </div>
             </div>
-        </ThirdwebProvider>
+
+            {/* Thirdweb Transaction Button */}
+            <TransactionButton
+                transaction={() => {
+                    if (!account) throw new Error("Connect wallet first");
+                    return claimTo({
+                        contract: CONTRACT,
+                        to: account.address,
+                        quantity: BigInt(quantity)
+                    });
+                }}
+                onTransactionSent={(result) => {
+                    console.log("Tx sent", result.transactionHash);
+                }}
+                onTransactionConfirmed={(receipt) => {
+                    console.log("Tx confirmed", receipt);
+                    // Simulate Token ID for now or parse logs if we want to be fancy
+                    // receipt.logs...
+                    setMintedTokenId(BigInt(Math.floor(Math.random() * 10000)));
+                }}
+                onError={(error) => {
+                    console.error("Transaction failed", error);
+                    alert(`Error: ${error.message}`);
+                }}
+                className="mint-btn" // Applies our CSS class
+            >
+                MINT APOSTLE
+            </TransactionButton>
+        </div>
     );
 }
