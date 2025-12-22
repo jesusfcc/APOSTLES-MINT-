@@ -138,42 +138,100 @@ async function init() {
 }
 
 // ===========================
+// Debug Utilities
+// ===========================
+function createDebugOverlay() {
+    const overlay = document.createElement('div');
+    overlay.id = 'debug-overlay';
+    overlay.style.cssText = `
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        max-height: 200px;
+        overflow-y: auto;
+        background: rgba(0, 0, 0, 0.85);
+        color: #0f0;
+        font-family: monospace;
+        font-size: 12px;
+        padding: 10px;
+        z-index: 10000;
+        pointer-events: none;
+        border-top: 1px solid #333;
+    `;
+    document.body.appendChild(overlay);
+    return overlay;
+}
+
+function logDebug(message) {
+    console.log(message);
+    const overlay = document.getElementById('debug-overlay') || createDebugOverlay();
+    const line = document.createElement('div');
+    line.textContent = `[${new Date().toISOString().split('T')[1].slice(0, -1)}] ${message}`;
+    overlay.appendChild(line);
+    overlay.scrollTop = overlay.scrollHeight;
+}
+
+// ===========================
 // Farcaster SDK Initialization
 // ===========================
 async function initializeFarcasterSDK() {
+    logDebug('🚀 Initializing Farcaster SDK...');
+
     try {
+        let attempts = 0;
+        const maxAttempts = 50; // 5 seconds
+
+        // Poll for SDK presence
+        while (typeof window.sdk === 'undefined' && attempts < maxAttempts) {
+            attempts++;
+            if (attempts % 5 === 0) logDebug(`Waiting for SDK... (${attempts}/${maxAttempts})`);
+            await new Promise(resolve => setTimeout(resolve, 100));
+        }
+
         // Check if Farcaster SDK is loaded
         if (typeof window.sdk !== 'undefined') {
+            logDebug('✅ SDK Found!');
             farcasterSDK = window.sdk;
 
             // Call ready immediately to signal app is loaded and remove Farcaster splash screen
-            farcasterSDK.actions.ready();
+            try {
+                logDebug('Calling sdk.actions.ready()...');
+                farcasterSDK.actions.ready();
+                logDebug('✅ sdk.actions.ready() called successfully');
+            } catch (readyError) {
+                logDebug(`❌ Error calling ready(): ${readyError.message}`);
+            }
 
             // Initialize the SDK
+            logDebug('Requesting context...');
             const context = await farcasterSDK.context;
+            logDebug('Context received');
 
             if (context) {
                 isFarcasterContext = true;
                 farcasterUser = context.user;
 
-                console.log('🟣 Running in Farcaster context');
-                console.log('User FID:', farcasterUser?.fid);
+                logDebug('🟣 Running in Farcaster context');
+                logDebug(`User FID: ${farcasterUser?.fid}`);
 
                 // Auto-connect wallet in Farcaster context
                 if (farcasterUser) {
                     state.walletConnected = true;
                     state.walletAddress = farcasterUser.wallet || 'Farcaster User';
                     updateWalletButton();
+                    logDebug('Auto-connected wallet');
                 }
             } else {
-                console.log('🌐 Running in browser context');
+                logDebug('🌐 Running in browser context (no context returned)');
             }
         } else {
-            console.log('🌐 Farcaster SDK not available - running in browser mode');
+            logDebug('⚠️ SDK Timeout - running in browser mode');
         }
     } catch (error) {
+        logDebug(`❌ Error initializing SDK: ${error.message}`);
         console.error('Error initializing Farcaster SDK:', error);
-        console.log('Falling back to browser mode');
+        logDebug('Falling back to browser mode');
     }
 }
 
