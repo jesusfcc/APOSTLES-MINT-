@@ -516,7 +516,7 @@ function encodeMintData(quantity) {
     } else {
         const errorMsg = '❌ CRITICAL: Ethers.js not loaded! Cannot encode transaction.';
         console.error(errorMsg);
-        alert(errorMsg + '\n\nPlease refresh the page and try again.');
+        showVisibleError('Ethers.js Missing', 'Library failed to load. Please refresh the app.');
         throw new Error(errorMsg);
     }
 
