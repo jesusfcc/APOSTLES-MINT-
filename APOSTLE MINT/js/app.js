@@ -340,7 +340,7 @@ function updateCarousel() {
 // ===========================
 function updateQuantity(delta) {
     const newQuantity = state.quantity + delta;
-    if (newQuantity >= 1 && newQuantity <= 10) {
+    if (newQuantity >= 1 && newQuantity <= 5) {
         state.quantity = newQuantity;
         updateDisplays();
     }
