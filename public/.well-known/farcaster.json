@@ -1,17 +1,17 @@
 {
     "accountAssociation": {
         "header": "eyJmaWQiOjI4NTUsInR5cGUiOiJhdXRoIiwia2V5IjoiMHhlZDQxNkRlMkQ5MkE4ZGYzNTdkOTQxQmNGNDVmODBBRjIwRjI4YTYyIn0",
-        "payload": "eyJkb21haW4iOiJ0aGUtYXBvc3RsZXMtaDdxNC52ZXJjZWwuYXBwIn0",
-        "signature": "DyVChbf/sIREoLQfqkoKRQT/YQbhnkZNHq5F9JZlXhQVPysQI+jwEc3WSg+6IReAKj7s1mDB0hoCGZ0LgM8V0Rs="
+        "payload": "eyJkb21haW4iOiJhcG9zdGxlLW1pbnR0LnZlcmNlbC5hcHAifQ",
+        "signature": "REPLACE_WITH_SIGNATURE_FOR_APOSTLE_MINTT_VERCEL_APP"
     },
     "miniapp": {
         "version": "1",
         "name": "The Apostles",
-        "iconUrl": "https://the-apostles-h7q4.vercel.app/images/apostles-pixel.png",
-        "homeUrl": "https://the-apostles-h7q4.vercel.app",
-        "imageUrl": "https://the-apostles-h7q4.vercel.app/images/apostle-2.png",
+        "iconUrl": "https://apostle-mintt.vercel.app/images/apostles-pixel.png",
+        "homeUrl": "https://apostle-mintt.vercel.app",
+        "imageUrl": "https://apostle-mintt.vercel.app/images/apostle-2.png",
         "buttonTitle": "Mint Now",
-        "splashImageUrl": "https://the-apostles-h7q4.vercel.app/images/apostles-pixel.png",
+        "splashImageUrl": "https://apostle-mintt.vercel.app/images/apostles-pixel.png",
         "splashBackgroundColor": "#000000"
     }
 }

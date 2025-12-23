@@ -115,7 +115,7 @@ export default function MintScreen({ context }: { context?: any }) {
                     </div>
 
                     <a
-                        href={`https://warpcast.com/~/compose?text=${encodeURIComponent(`I just minted Apostle #${mintedTokenId.toString()}! 🪙\n\nWitness the convergence of history and mythology on Base.`)}&embeds[]=${encodeURIComponent("https://the-apostles-h7q4.vercel.app")}`}
+                        href={`https://warpcast.com/~/compose?text=${encodeURIComponent(`I just minted Apostle #${mintedTokenId.toString()}! 🪙\n\nWitness the convergence of history and mythology on Base.`)}&embeds[]=${encodeURIComponent("https://apostle-mintt.vercel.app")}`}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="share-btn"
@@ -165,7 +165,7 @@ export default function MintScreen({ context }: { context?: any }) {
             <div className="info-panel">
                 <div className="info-row">
                     <span className="info-label">Price</span>
-                    <span className="info-value">FREE</span>
+                    <span className="info-value">15 Silver coins</span>
                 </div>
                 <div className="info-row">
                     <span className="info-label">Quantity</span>
@@ -177,7 +177,7 @@ export default function MintScreen({ context }: { context?: any }) {
                 </div>
                 <div className="info-row">
                     <span className="info-label">Total</span>
-                    <span className="info-value">{(0 * quantity).toFixed(4)} ETH</span>
+                    <span className="info-value">{(0.00000335 * quantity).toFixed(8)} ETH</span>
                 </div>
             </div>
 
