@@ -24,14 +24,14 @@ export interface AppProps {
  * - Failed: Error screen with retry option
  * - Success: Congratulations screen with share options
  */
-export default function App({ title }: AppProps = { title: "The Apostles" }) {
+export default function App({ title: _title }: AppProps = { title: "The Apostles" }) {
   // --- Farcaster Context ---
-  const { isLoading: isFarcasterLoading, composeCast, signIn } = useFarcaster();
+  const { isLoading: isFarcasterLoading, composeCast, signIn, user } = useFarcaster();
 
   // --- Wallet from wagmi ---
   const { address: walletAddress } = useAccount();
 
-  // --- Mint hook ---
+  // --- Mint hook (with FID for Neynar score check) ---
   const {
     mint,
     isLoading: isMintLoading,
@@ -41,9 +41,10 @@ export default function App({ title }: AppProps = { title: "The Apostles" }) {
     error: mintError,
     txHash,
     reset: resetMint,
-    isAllowlisted,
-    checkingAllowlist,
-  } = useMint(walletAddress);
+    isEligible,
+    checkingEligibility: _checkingEligibility,
+    neynarScore,
+  } = useMint(walletAddress, user?.fid);
 
   // --- Fetch minted NFT data ---
   const {
@@ -57,7 +58,7 @@ export default function App({ title }: AppProps = { title: "The Apostles" }) {
   const [currentScreen, setCurrentScreen] = useState<AppScreen>("splash");
   const [isSplashFadingOut, setIsSplashFadingOut] = useState(false);
   const [showSplash, setShowSplash] = useState(true);
-  const [mintQuantity, setMintQuantity] = useState(1);
+  const [_mintQuantity, setMintQuantity] = useState(1);
 
   // --- Splash screen timer ---
   useEffect(() => {
@@ -88,11 +89,11 @@ export default function App({ title }: AppProps = { title: "The Apostles" }) {
   }, [isMintLoading, isConfirming]);
 
   useEffect(() => {
-    // Wait for mint success AND NFT data to be loaded
-    if (isMintSuccess && txHash && mintedTokenId && !isLoadingNFT) {
+    // Show success screen once mint is confirmed (don't wait for NFT data)
+    if (isMintSuccess && txHash) {
       setCurrentScreen("success");
     }
-  }, [isMintSuccess, txHash, mintedTokenId, isLoadingNFT]);
+  }, [isMintSuccess, txHash]);
 
   useEffect(() => {
     const handleMintError = async () => {
@@ -101,9 +102,9 @@ export default function App({ title }: AppProps = { title: "The Apostles" }) {
 
         const errorMessage = mintError.message?.toLowerCase() || "";
 
-        // Check if it's an allowlist error - stay on mint screen
-        if (errorMessage.includes("allowlist") || errorMessage.includes("not on")) {
-          console.log("Allowlist error - user not on allowlist");
+        // Check if it's an eligibility error (Neynar score) - stay on mint screen
+        if (errorMessage.includes("neynar score") || errorMessage.includes("eligib")) {
+          console.log("Eligibility error - Neynar score too low");
           // Don't navigate to failed screen, let them see the error on mint screen
           return;
         }
@@ -157,8 +158,11 @@ export default function App({ title }: AppProps = { title: "The Apostles" }) {
   const handleShare = async () => {
     try {
       await composeCast({
-        text: `I just minted The Apostle #${mintedTokenId}! 🙏✨`,
-        embeds: ["https://warpcast.com/~/compose"], // Update with actual URL
+        text: `I have secured my place among the 2525. I am now an Apostle, holding a claim to the Spirit [$‎‎REDACTED].
+
+Join the Gathering. The Miracle has begun
+`,
+        embeds: ["https://apostle-mint.vercel.app"],
       });
     } catch (err) {
       console.error("Share failed:", err);
@@ -183,8 +187,9 @@ export default function App({ title }: AppProps = { title: "The Apostles" }) {
         onSignIn={signIn}
         walletAddress={walletAddress}
         isMinting={isMintLoading || isConfirming}
-        isAllowlisted={isAllowlisted}
-        mintError={isMintError && mintError?.message?.includes("allowlist") ? mintError.message : null}
+        isEligible={isEligible}
+        neynarScore={neynarScore}
+        mintError={isMintError && mintError?.message?.includes("score") ? mintError.message : null}
       />
 
       {/* Minting Overlay */}
@@ -203,9 +208,10 @@ export default function App({ title }: AppProps = { title: "The Apostles" }) {
         onBack={handleBack}
         onMintAnother={handleMintAnother}
         onShare={handleShare}
-        mintedImage={mintedImage || "/assets/apostle-2.png"}
+        mintedImage={mintedImage}
         tokenId={mintedTokenId || undefined}
         description={mintedMetadata?.description}
+        isLoadingNFT={isLoadingNFT}
       />
     </>
   );

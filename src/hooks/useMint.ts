@@ -6,13 +6,17 @@ import { base } from "wagmi/chains";
 import {
   APOSTLES_CONTRACT_ADDRESS,
   APOSTLES_ABI,
-  NATIVE_TOKEN_ADDRESS,
+  NATIVE_TOKEN_ADDRESS as _NATIVE_TOKEN_ADDRESS,
+  EMPTY_ALLOWLIST_PROOF,
   type AllowlistProof,
 } from "~/lib/contract";
 import { useApostlesContract } from "./useApostlesContract";
 
-interface ProofResponse {
-  isAllowlisted: boolean;
+interface EligibilityResponse {
+  isEligible: boolean;
+  score?: number;
+  minScore?: number;
+  error?: string;
   proof: string[];
   quantityLimitPerWallet: string;
   pricePerToken: string;
@@ -28,15 +32,16 @@ interface UseMintResult {
   error: Error | null;
   txHash: `0x${string}` | undefined;
   reset: () => void;
-  isAllowlisted: boolean | null;
-  checkingAllowlist: boolean;
+  isEligible: boolean | null;
+  checkingEligibility: boolean;
+  neynarScore: number | null;
 }
 
 /**
  * Hook for minting Apostles NFTs
- * Fetches merkle proof from API and uses it for allowlist mints
+ * Checks Neynar score >= 0.5 for eligibility (public mint)
  */
-export function useMint(walletAddress: string | undefined): UseMintResult {
+export function useMint(walletAddress: string | undefined, fid: number | undefined): UseMintResult {
   // Get price and supply info from contract
   const { priceWei, claimCondition, remaining } = useApostlesContract();
   const pricePerToken = priceWei ?? 0n;
@@ -53,10 +58,10 @@ export function useMint(walletAddress: string | undefined): UseMintResult {
     },
   });
 
-  // Allowlist state
-  const [isAllowlisted, setIsAllowlisted] = useState<boolean | null>(null);
-  const [checkingAllowlist, setCheckingAllowlist] = useState(false);
-  const [cachedProof, setCachedProof] = useState<AllowlistProof | null>(null);
+  // Eligibility state (based on Neynar score)
+  const [isEligible, setIsEligible] = useState<boolean | null>(null);
+  const [checkingEligibility, setCheckingEligibility] = useState(false);
+  const [neynarScore, setNeynarScore] = useState<number | null>(null);
   const [mintError, setMintError] = useState<Error | null>(null);
 
   // Write contract hook
@@ -79,37 +84,33 @@ export function useMint(walletAddress: string | undefined): UseMintResult {
     hash: txHash,
   });
 
-  // Fetch proof from API
-  const fetchProof = useCallback(async (address: string): Promise<AllowlistProof | null> => {
+  // Check eligibility based on Neynar score
+  const checkEligibility = useCallback(async (userFid: number): Promise<boolean> => {
     try {
-      setCheckingAllowlist(true);
+      setCheckingEligibility(true);
       setMintError(null);
 
-      const response = await fetch(`/api/proof?address=${address}`);
-      const data = await response.json();
+      const response = await fetch(`/api/proof?fid=${userFid}`);
+      const data: EligibilityResponse = await response.json();
 
-      if (!response.ok || !data.isAllowlisted) {
-        setIsAllowlisted(false);
-        return null;
+      if (!data.isEligible) {
+        setIsEligible(false);
+        setNeynarScore(data.score ?? null);
+        if (data.error) {
+          setMintError(new Error(data.error));
+        }
+        return false;
       }
 
-      setIsAllowlisted(true);
-
-      const proof: AllowlistProof = {
-        proof: data.proof as `0x${string}`[],
-        quantityLimitPerWallet: BigInt(data.quantityLimitPerWallet || "0"),
-        pricePerToken: BigInt(data.pricePerToken || "0"),
-        currency: (data.currency || NATIVE_TOKEN_ADDRESS) as `0x${string}`,
-      };
-
-      setCachedProof(proof);
-      return proof;
+      setIsEligible(true);
+      setNeynarScore(data.score ?? null);
+      return true;
     } catch (error) {
-      console.error("Error fetching proof:", error);
-      setIsAllowlisted(false);
-      return null;
+      console.error("Error checking eligibility:", error);
+      setIsEligible(false);
+      return false;
     } finally {
-      setCheckingAllowlist(false);
+      setCheckingEligibility(false);
     }
   }, []);
 
@@ -117,6 +118,12 @@ export function useMint(walletAddress: string | undefined): UseMintResult {
     if (!walletAddress) {
       console.error("No wallet address");
       setMintError(new Error("Please connect your wallet to mint"));
+      return;
+    }
+
+    if (!fid) {
+      console.error("No FID");
+      setMintError(new Error("Please connect your Farcaster account to mint"));
       return;
     }
 
@@ -144,26 +151,24 @@ export function useMint(walletAddress: string | undefined): UseMintResult {
       }
     }
 
-    // Fetch proof if we don't have it cached
-    let proof = cachedProof;
-    if (!proof) {
-      proof = await fetchProof(walletAddress);
-    }
-
-    if (!proof) {
-      const error = new Error("Your wallet is not on the allowlist for this phase");
-      setMintError(error);
-      console.error("Not on allowlist:", walletAddress);
+    // Check eligibility based on Neynar score if not already checked
+    if (isEligible === null) {
+      const eligible = await checkEligibility(fid);
+      if (!eligible) {
+        return; // Error already set in checkEligibility
+      }
+    } else if (!isEligible) {
+      setMintError(new Error("Your Neynar score is too low to mint"));
       return;
     }
 
-    // Check if user has already minted their max allocation
+    // Check if user has already minted their max allocation (1 per wallet for public mint)
     const currentBalance = userBalance !== undefined ? BigInt(userBalance as bigint) : 0n;
-    const maxAllowed = proof.quantityLimitPerWallet;
+    const maxAllowed = 10n; // 10 per wallet for public mint
 
-    if (maxAllowed > 0n && currentBalance >= maxAllowed) {
+    if (currentBalance >= maxAllowed) {
       const error = new Error(
-        `You've already minted your maximum allocation (${maxAllowed.toString()} NFT${maxAllowed > 1n ? "s" : ""})`
+        `You've already minted your maximum allocation (${maxAllowed.toString()} NFT)`
       );
       setMintError(error);
       console.error("Max per wallet exceeded:", {
@@ -173,28 +178,19 @@ export function useMint(walletAddress: string | undefined): UseMintResult {
       return;
     }
 
-    // Check if requested quantity would exceed max
-    if (maxAllowed > 0n && currentBalance + BigInt(quantity) > maxAllowed) {
-      const remaining = maxAllowed - currentBalance;
-      const error = new Error(
-        `You can only mint ${remaining.toString()} more NFT${remaining > 1n ? "s" : ""}`
-      );
-      setMintError(error);
-      return;
-    }
-
-    // Use price from proof if available, otherwise from claim condition
-    const mintPrice = proof.pricePerToken > 0n ? proof.pricePerToken : pricePerToken;
+    // Use empty proof for public mint
+    const proof: AllowlistProof = EMPTY_ALLOWLIST_PROOF;
+    const mintPrice = pricePerToken;
     const totalValue = mintPrice * BigInt(quantity);
 
-    console.log("Minting with proof:", {
+    console.log("Minting (public with Neynar score check):", {
       quantity,
       pricePerToken: mintPrice.toString(),
       totalValue: totalValue.toString(),
       receiver: walletAddress,
-      proofLength: proof.proof.length,
+      fid,
+      neynarScore,
       currentBalance: currentBalance.toString(),
-      maxAllowed: maxAllowed.toString(),
     });
 
     writeContract({
@@ -206,30 +202,33 @@ export function useMint(walletAddress: string | undefined): UseMintResult {
         BigInt(quantity),               // _quantity
         proof.currency,                 // _currency
         mintPrice,                      // _pricePerToken
-        proof,                          // _allowlistProof
+        proof,                          // _allowlistProof (empty for public)
         "0x",                           // _data
       ],
       value: totalValue,
       chainId: base.id,
     });
-  }, [walletAddress, cachedProof, fetchProof, pricePerToken, writeContract, userBalance, remaining, claimCondition]);
+  }, [walletAddress, fid, isEligible, checkEligibility, pricePerToken, writeContract, userBalance, remaining, claimCondition, neynarScore]);
 
   const reset = useCallback(() => {
     resetWrite();
     setMintError(null);
+    setIsEligible(null);
+    setNeynarScore(null);
   }, [resetWrite]);
 
   return {
     mint,
-    isLoading: isWritePending || checkingAllowlist,
+    isLoading: isWritePending || checkingEligibility,
     isConfirming,
     isSuccess,
     isError: isWriteError || isConfirmError || mintError !== null,
     error: writeError || confirmError || mintError,
     txHash,
     reset,
-    isAllowlisted,
-    checkingAllowlist,
+    isEligible,
+    checkingEligibility,
+    neynarScore,
   };
 }
 

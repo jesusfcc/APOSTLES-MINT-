@@ -1,13 +1,22 @@
 import { NextResponse } from 'next/server';
-import { getFarcasterDomainManifest } from '~/lib/utils';
 
 export async function GET() {
-  try {
-    const config = await getFarcasterDomainManifest();
-    return NextResponse.json(config);
-  } catch (error) {
-    console.error('Error generating metadata:', error);
-    const errorMessage = error instanceof Error ? error.message : 'Unknown error occurred';
-    return NextResponse.json({ error: errorMessage }, { status: 500 });
-  }
+  return NextResponse.json({
+    "accountAssociation": {
+      "header": "eyJmaWQiOjI4NTUsInR5cGUiOiJjdXN0b2R5Iiwia2V5IjoiMHgzMjEzN2YwRDVBNjgxYzJCQkIzQzAxQkRGNWI2ZTNjMzcxNUREMmRBIn0",
+      "payload": "eyJkb21haW4iOiJhcG9zdGxlLW1pbnQudmVyY2VsLmFwcCJ9",
+      "signature": "jJ9bh4XFvITjeqVk7iis1istK63oB7lvfBnISb0xovk/tezrNN/AzI0yZgxTZBJA+CYXN0RizVqQCyJqZPorqRw="
+    },
+    "frame": {
+      "version": "1",
+      "name": "Example Frame",
+      "iconUrl": "https://apostle-mint.vercel.app/icon.png",
+      "homeUrl": "https://apostle-mint.vercel.app",
+      "imageUrl": "https://apostle-mint.vercel.app/image.png",
+      "buttonTitle": "Check this out",
+      "splashImageUrl": "https://apostle-mint.vercel.app/splash.png",
+      "splashBackgroundColor": "#eeccff",
+      "webhookUrl": "https://apostle-mint.vercel.app/api/webhook"
+    }
+  });
 }

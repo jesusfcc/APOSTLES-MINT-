@@ -11,7 +11,8 @@ interface MintScreenProps {
   onSignIn?: () => Promise<boolean>;
   walletAddress?: string;
   isMinting?: boolean;
-  isAllowlisted?: boolean | null;
+  isEligible?: boolean | null;
+  neynarScore?: number | null;
   mintError?: string | null;
 }
 
@@ -41,7 +42,8 @@ export function MintScreen({
   onSignIn,
   walletAddress,
   isMinting = false,
-  isAllowlisted,
+  isEligible,
+  neynarScore: _neynarScore,
   mintError,
 }: MintScreenProps) {
   const [quantity, setQuantity] = useState(1);
@@ -84,8 +86,8 @@ export function MintScreen({
   const isLoading = isContractLoading;
   const isSoldOut = remaining === 0;
   const needsSignIn = !walletAddress;
-  const notOnAllowlist = isAllowlisted === false;
-  const canMint = !isLoading && !isSoldOut && !isMinting && !isSigningIn && !notOnAllowlist;
+  const notEligible = isEligible === false;
+  const canMint = !isLoading && !isSoldOut && !isMinting && !isSigningIn && !notEligible;
 
   // Determine button text
   const getButtonText = () => {
@@ -93,7 +95,7 @@ export function MintScreen({
     if (isMinting) return "MINTING...";
     if (isSoldOut) return "SOLD OUT";
     if (needsSignIn) return "SIGN IN TO MINT";
-    if (notOnAllowlist) return "NOT ON ALLOWLIST";
+    if (notEligible) return "NOT ELIGIBLE";
     return "MINT NOW";
   };
 
@@ -258,11 +260,11 @@ export function MintScreen({
           onClick={handleMintClick}
           disabled={!canMint}
           className={`w-full max-w-[500px] py-5 px-8 rounded-lg text-xl font-bold font-cinzel tracking-wider transition-all disabled:opacity-50 disabled:cursor-not-allowed ${
-            notOnAllowlist
+            notEligible
               ? "bg-red-500/50 text-white"
               : "bg-gold text-black hover:bg-gold-bright"
           }`}
-          style={{ boxShadow: notOnAllowlist ? "none" : "0 8px 24px rgba(255, 215, 0, 0.4)" }}
+          style={{ boxShadow: notEligible ? "none" : "0 8px 24px rgba(255, 215, 0, 0.4)" }}
         >
           {getButtonText()}
         </button>
