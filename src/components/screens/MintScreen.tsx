@@ -268,6 +268,7 @@ export function MintScreen({
         >
           {getButtonText()}
         </button>
+
       </div>
     </div>
   );

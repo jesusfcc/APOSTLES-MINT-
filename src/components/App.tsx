@@ -158,10 +158,9 @@ export default function App({ title: _title }: AppProps = { title: "The Apostles
   const handleShare = async () => {
     try {
       await composeCast({
-        text: `I have secured my place among the 2525. I am now an Apostle, holding a claim to the Spirit [$‎‎REDACTED].
+        text: `I have secured my place among the 2525. I am now an Apostle, holding a claim to the Spirit $REDACTED.
 
-Join the Gathering. The Miracle has begun
-`,
+Join the Gathering. The Miracle has begun`,
         embeds: ["https://apostle-mint.vercel.app"],
       });
     } catch (err) {
